@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - James McGuigan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">James McGuigan</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link active">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="certifications.html" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="education.html" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experience.html" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Hero Section -->
+    <section class="projects-hero">
+        <div class="container">
+            <div class="projects-hero-content">
+                <h1 class="page-title">My <span class="highlight">Projects</span></h1>
+                <p class="page-subtitle">A showcase of my development journey and technical expertise</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Filters -->
+    <section class="project-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="algorithms">📊 Algorithms & Data Structures</button>
+                <button class="filter-btn" data-filter="web">🌐 Web Development</button>
+                <button class="filter-btn" data-filter="games">🎮 Games & Interactive</button>
+                <button class="filter-btn" data-filter="tools">🧠 Tools & Utilities</button>
+                <button class="filter-btn" data-filter="learning">📚 Learning & Concepts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-grid-section">
+        <div class="container">
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Integration -->
+    <section class="github-integration">
+        <div class="container">
+            <h2 class="section-title">GitHub Activity</h2>
+            <div class="github-stats-grid">
+                <div class="github-stat-card">
+                    <h3>Profile Overview</h3>
+                    <div class="github-embed">
+                        <iframe src="https://github.com/Jimmyu2foru18" width="100%" height="400" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+                <div class="github-stat-card">
+                    <h3>Contribution Stats</h3>
+                    <img src="https://github-readme-stats.vercel.app/api?username=Jimmyu2foru18&show_icons=true&theme=radical" alt="GitHub Stats" class="github-stats-img">
+                </div>
+                
+                <div class="github-stat-card">
+                    <h3>Top Languages</h3>
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jimmyu2foru18&layout=compact&theme=radical" alt="Top Languages" class="github-stats-img">
+                </div>
+                
+                <div class="github-stat-card">
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Created Video-Transcription-and-Text repository</span>
+                            <small>June 26, 2025</small>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-plus"></i>
+                            <span>Created LLM-Hackathon repository</span>
+                            <small>June 17, 2025</small>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-code"></i>
+                            <span>Created handwritten-digit-recognition</span>
+                            <small>June 12, 2025</small>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <span>Created Student-Assignment-Tracker</span>
+                            <small>June 12, 2025</small>
+                        </div>
+                        <div class="activity-item">
+                            <i class="fas fa-globe"></i>
+                            <span>Created Job-Portal-Application-System</span>
+                            <small>June 12, 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 James McGuigan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced project data with all projects from GitHub
+        const allProjects = [
+            // Algorithm & Data Structures
+            {
+                title: "Traveling Salesman Problem Solver",
+                description: "Advanced TSP solver implementation using Processing with multiple optimization algorithms including genetic algorithm and nearest neighbor heuristics.",
+                category: "algorithms",
+                technologies: ["Processing", "Java", "Algorithms"],
+                github: "https://github.com/Jimmyu2foru18/Traveling-Salesman",
+                features: ["Multiple solving algorithms", "Visual representation", "Performance optimization"]
+            },
+            {
+                title: "Circuit Switch Network Simulation",
+                description: "Interactive drag-and-drop network simulation demonstrating circuit switching concepts with real-time visualization.",
+                category: "algorithms",
+                technologies: ["JavaScript", "HTML5 Canvas", "Network Theory"],
+                github: "https://github.com/Jimmyu2foru18/Circuit-Switch",
+                features: ["Drag-and-drop interface", "Real-time simulation", "Network visualization"]
+            },
+            {
+                title: "Fibonacci Web Application",
+                description: "Interactive web application for visualizing Fibonacci sequence calculations with multiple calculation methods and performance analysis.",
+                category: "algorithms",
+                technologies: ["JavaScript", "HTML", "CSS", "Mathematics"],
+                github: "https://github.com/Jimmyu2foru18/FibonacciWebApp",
+                features: ["Multiple algorithms", "Performance comparison", "Interactive visualization"]
+            },
+            {
+                title: "Interactive Linear Algebra Learning",
+                description: "HTML-based interactive learning platform for Linear Algebra concepts with step-by-step problem solving.",
+                category: "algorithms",
+                technologies: ["HTML", "JavaScript", "CSS", "Mathematics"],
+                github: "https://github.com/Jimmyu2foru18/Simple-Linear-Algebra",
+                features: ["Interactive problems", "Step-by-step solutions", "Educational content"]
+            },
+            
+            // Web Development & Applications
+            {
+                title: "Financial Management Application",
+                description: "Comprehensive automated finance management system with budget tracking, expense categorization, and financial reporting.",
+                category: "web",
+                technologies: ["JavaScript", "Node.js", "Express", "MongoDB"],
+                github: "https://github.com/Jimmyu2foru18/Financial-management-application-with-automation",
+                features: ["Automated tracking", "Budget management", "Financial reports", "Data visualization"]
+            },
+            {
+                title: "Tutorial Finder AI",
+                description: "AI-powered tool that intelligently finds and recommends coding tutorials based on user preferences and skill level.",
+                category: "web",
+                technologies: ["Python", "AI/ML", "Web Scraping", "NLP"],
+                github: "https://github.com/Jimmyu2foru18/Tutorial-Finder-AI",
+                features: ["AI recommendations", "Skill-based filtering", "Tutorial curation"]
+            },
+            {
+                title: "System Design Project",
+                description: "Comprehensive system design and architecture implementation showcasing scalable software design patterns.",
+                category: "web",
+                technologies: ["System Design", "Architecture", "Scalability"],
+                github: "https://github.com/Jimmyu2foru18/System-Design-Project",
+                features: ["Scalable architecture", "Design patterns", "Performance optimization"]
+            },
+            {
+                title: "Authentication System",
+                description: "Secure sign-in/sign-up system with modern authentication practices and user management.",
+                category: "web",
+                technologies: ["JavaScript", "Node.js", "JWT", "bcrypt"],
+                github: "https://github.com/Jimmyu2foru18/sign-in-sign-up-",
+                features: ["Secure authentication", "JWT tokens", "Password hashing"]
+            },
+            {
+                title: "Game UI Framework",
+                description: "Specialized user interface framework designed for game development with responsive and interactive components.",
+                category: "web",
+                technologies: ["JavaScript", "CSS", "HTML", "Game Development"],
+                github: "https://github.com/Jimmyu2foru18/Game-UI",
+                features: ["Game-specific components", "Responsive design", "Interactive elements"]
+            },
+            {
+                title: "Register Management System",
+                description: "TypeScript-based inventory and registration management system with real-time data handling.",
+                category: "web",
+                technologies: ["TypeScript", "Node.js", "Database"],
+                github: "https://github.com/Jimmyu2foru18/Register-Management-System",
+                features: ["Real-time updates", "Inventory tracking", "Data management"]
+            },
+            {
+                title: "School Database System",
+                description: "Comprehensive PHP-based school data management system with student, teacher, and course management.",
+                category: "web",
+                technologies: ["PHP", "MySQL", "HTML", "CSS"],
+                github: "https://github.com/Jimmyu2foru18/School-Database",
+                features: ["Student management", "Course tracking", "Administrative tools"]
+            },
+            {
+                title: "SQL Application",
+                description: "Python-based SQL application with advanced database operations and query optimization.",
+                category: "web",
+                technologies: ["Python", "SQL", "Database"],
+                github: "https://github.com/Jimmyu2foru18/SQL-Application",
+                features: ["Advanced queries", "Database optimization", "Data analysis"]
+            },
+            {
+                title: "Job Portal Application System",
+                description: "Complete job portal with employer and candidate management, job posting, and application tracking.",
+                category: "web",
+                technologies: ["HTML", "CSS", "JavaScript", "PHP"],
+                github: "https://github.com/Jimmyu2foru18/Job-Portal-Application-System",
+                features: ["Job posting", "Application tracking", "User management"]
+            },
+            
+            // Games & Interactive
+            {
+                title: "CarrotQuest Platformer",
+                description: "2D platformer game featuring character control, level progression, and interactive gameplay mechanics.",
+                category: "games",
+                technologies: ["Game Development", "2D Graphics", "Physics"],
+                github: "https://github.com/Jimmyu2foru18/CarrotQuest",
+                features: ["Character control", "Level design", "Physics simulation"]
+            },
+            {
+                title: "Creature Battle Arena",
+                description: "GDScript-based arena battle game with creature management, combat systems, and strategic gameplay.",
+                category: "games",
+                technologies: ["GDScript", "Godot", "Game Logic"],
+                github: "https://github.com/Jimmyu2foru18/Creature-Battle-Arena",
+                features: ["Combat system", "Creature management", "Strategic gameplay"]
+            },
+            {
+                title: "2D Creature Battle Arena",
+                description: "Enhanced 2D version of the creature battle system with improved graphics and gameplay mechanics.",
+                category: "games",
+                technologies: ["2D Graphics", "Game Development", "Animation"],
+                github: "https://github.com/Jimmyu2foru18/2D-Game---Creature-Battle-Arena",
+                features: ["Enhanced graphics", "Improved mechanics", "Animation system"]
+            },
+            {
+                title: "GhostyMon Project",
+                description: "Creature battle concept game with unique ghost-themed creatures and battle mechanics.",
+                category: "games",
+                technologies: ["Game Design", "Concept Development"],
+                github: "https://github.com/Jimmyu2foru18/GhostyMon-Project",
+                features: ["Unique creatures", "Battle mechanics", "Theme design"]
+            },
+            {
+                title: "Abacus Educational Game",
+                description: "JavaScript-based educational game teaching mathematical concepts through interactive abacus simulation.",
+                category: "games",
+                technologies: ["JavaScript", "HTML5", "Educational Gaming"],
+                github: "https://github.com/Jimmyu2foru18/Abacus-Project",
+                features: ["Educational content", "Interactive learning", "Mathematical concepts"]
+            },
+            {
+                title: "Lighthouse Mouse Project",
+                description: "Interactive game concept demo featuring lighthouse-themed gameplay and mouse-based controls.",
+                category: "games",
+                technologies: ["Game Development", "Interactive Design"],
+                github: "https://github.com/Jimmyu2foru18/Lighthouse-Mouse-Project",
+                features: ["Mouse controls", "Themed gameplay", "Concept demo"]
+            },
+            
+            // Tools & Utilities
+            {
+                title: "RESTful API Guide",
+                description: "Comprehensive practical breakdown and implementation guide for RESTful APIs with examples and best practices.",
+                category: "tools",
+                technologies: ["REST API", "Documentation", "Best Practices"],
+                github: "https://github.com/Jimmyu2foru18/RESTfulAPI-Explained",
+                features: ["Comprehensive guide", "Practical examples", "Best practices"]
+            },
+            {
+                title: "GitHub Analyzer V2",
+                description: "Advanced Python tool for analyzing GitHub repositories with detailed metrics, code analysis, and reporting.",
+                category: "tools",
+                technologies: ["Python", "GitHub API", "Data Analysis"],
+                github: "https://github.com/Jimmyu2foru18/github-analyzerV2",
+                features: ["Repository analysis", "Code metrics", "Detailed reporting"]
+            },
+            {
+                title: "LinkedIn Post Scheduler",
+                description: "Python automation tool for scheduling and managing LinkedIn posts with content optimization features.",
+                category: "tools",
+                technologies: ["Python", "LinkedIn API", "Automation"],
+                github: "https://github.com/Jimmyu2foru18/Linkedin-Post-Scheduler",
+                features: ["Post scheduling", "Content optimization", "Automation"]
+            },
+            {
+                title: "RTT Logger",
+                description: "AWS-based Round Trip Time monitoring solution for network performance analysis and logging.",
+                category: "tools",
+                technologies: ["AWS", "Network Monitoring", "Python"],
+                github: "https://github.com/Jimmyu2foru18/rtt-logger",
+                features: ["Network monitoring", "AWS integration", "Performance analysis"]
+            },
+            {
+                title: "Personal Finance Tracker",
+                description: "JavaScript-based personal finance management tool with expense tracking and budget analysis.",
+                category: "tools",
+                technologies: ["JavaScript", "Local Storage", "Data Visualization"],
+                github: "https://github.com/Jimmyu2foru18/Personal-Finance-Management",
+                features: ["Expense tracking", "Budget analysis", "Data visualization"]
+            },
+            {
+                title: "Coffee Shop POS System",
+                description: "PHP-based Point of Sale system prototype designed for coffee shops with inventory and sales management.",
+                category: "tools",
+                technologies: ["PHP", "MySQL", "POS System"],
+                github: "https://github.com/Jimmyu2foru18/Coffee-Shop-POS-Build",
+                features: ["Sales management", "Inventory tracking", "POS interface"]
+            },
+            {
+                title: "Post Generator Tool",
+                description: "JavaScript tool for generating social media posts with templates and customization options.",
+                category: "tools",
+                technologies: ["JavaScript", "Template Engine", "Social Media"],
+                github: "https://github.com/Jimmyu2foru18/post-generator",
+                features: ["Template system", "Customization", "Social media integration"]
+            },
+            {
+                title: "Social Steam System",
+                description: "Social application prototype with Steam-like features for gaming communities and social interaction.",
+                category: "tools",
+                technologies: ["Social Platform", "Community Features"],
+                github: "https://github.com/Jimmyu2foru18/Social-Steam-System",
+                features: ["Community features", "Social interaction", "Gaming focus"]
+            },
+            {
+                title: "Discord Bots Collection",
+                description: "Various Discord bot implementations with different functionalities and automation features.",
+                category: "tools",
+                technologies: ["Discord.js", "Node.js", "Bot Development"],
+                github: "https://github.com/Jimmyu2foru18/discord-bots",
+                features: ["Multiple bots", "Automation", "Discord integration"]
+            },
+            {
+                title: "AI PDF Summarizer",
+                description: "Python-based AI tool for automatically summarizing PDF documents using natural language processing.",
+                category: "tools",
+                technologies: ["Python", "AI/ML", "NLP", "PDF Processing"],
+                github: "https://github.com/Jimmyu2foru18/ai-pdf-summarizer",
+                features: ["AI summarization", "PDF processing", "NLP integration"]
+            },
+            {
+                title: "Video Transcription and Text Analysis",
+                description: "Advanced Python tool for video transcription and comprehensive text analysis with AI capabilities.",
+                category: "tools",
+                technologies: ["Python", "Speech Recognition", "Text Analysis", "AI"],
+                github: "https://github.com/Jimmyu2foru18/Video-Transcription-and-Text",
+                features: ["Video transcription", "Text analysis", "AI processing"]
+            },
+            {
+                title: "Handwritten Digit Recognition",
+                description: "C++ implementation of machine learning algorithms for recognizing handwritten digits with high accuracy.",
+                category: "tools",
+                technologies: ["C++", "Machine Learning", "Computer Vision"],
+                github: "https://github.com/Jimmyu2foru18/handwritten-digit-recognition",
+                features: ["ML algorithms", "Computer vision", "High accuracy"]
+            },
+            {
+                title: "Student Assignment Tracker",
+                description: "Java-based application for tracking student assignments, deadlines, and academic progress.",
+                category: "tools",
+                technologies: ["Java", "GUI", "Database"],
+                github: "https://github.com/Jimmyu2foru18/Student-Assignment-Tracker",
+                features: ["Assignment tracking", "Deadline management", "Progress monitoring"]
+            },
+            
+            // Learning & Concept Projects
+            {
+                title: "COVID Climate Analysis",
+                description: "Machine learning and data analysis project examining COVID-19 data and climate change trends with visualization.",
+                category: "learning",
+                technologies: ["Python", "Machine Learning", "Data Analysis", "Jupyter"],
+                github: "https://github.com/Jimmyu2foru18/covid-climate-analysis",
+                features: ["Data analysis", "ML models", "Visualization", "Research"]
+            },
+            {
+                title: "Research Project",
+                description: "Data exploration and research project using Jupyter notebooks for comprehensive data analysis.",
+                category: "learning",
+                technologies: ["Jupyter", "Python", "Data Science", "Research"],
+                github: "https://github.com/Jimmyu2foru18/Research-Project",
+                features: ["Data exploration", "Research methodology", "Jupyter notebooks"]
+            },
+            {
+                title: "Souls Series UML Diagrams",
+                description: "Comprehensive UML diagrams and system design documentation for Souls game series analysis.",
+                category: "learning",
+                technologies: ["UML", "System Design", "Documentation"],
+                github: "https://github.com/Jimmyu2foru18/Souls-Series",
+                features: ["UML diagrams", "System analysis", "Game design study"]
+            },
+            {
+                title: "Library Management System",
+                description: "C# implementation of a comprehensive library management system with book tracking and user management.",
+                category: "learning",
+                technologies: ["C#", ".NET", "Database", "System Design"],
+                github: "https://github.com/Jimmyu2foru18/Library-Management-System",
+                features: ["Book management", "User system", "Database integration"]
+            },
+            {
+                title: "Doodle Sketch Tool",
+                description: "HTML-based interactive sketching and drawing tool with various brush options and canvas features.",
+                category: "learning",
+                technologies: ["HTML5", "Canvas API", "JavaScript"],
+                github: "https://github.com/Jimmyu2foru18/doodle",
+                features: ["Interactive drawing", "Brush options", "Canvas manipulation"]
+            },
+            {
+                title: "LLM Hackathon Project",
+                description: "Large Language Model hackathon project exploring AI capabilities and innovative applications.",
+                category: "learning",
+                technologies: ["AI/ML", "LLM", "Innovation"],
+                github: "https://github.com/Jimmyu2foru18/LLM-Hackathon",
+                features: ["LLM integration", "AI innovation", "Hackathon project"]
+            }
+        ];
+
+        // Project filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectsGrid = document.getElementById('projectsGrid');
+
+        function renderProjects(projects) {
+            projectsGrid.innerHTML = projects.map(project => `
+                <div class="project-card" data-category="${project.category}">
+                    <div class="project-header">
+                        <h3 class="project-title">${project.title}</h3>
+                        <div class="project-links">
+                            <a href="${project.github}" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="project-description">${project.description}</p>
+                    <div class="project-technologies">
+                        ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterProjects(category) {
+            const filteredProjects = category === 'all' ? allProjects : allProjects.filter(project => project.category === category);
+            renderProjects(filteredProjects);
+            
+            // Apply fade-in-up class to all project cards after filtering
+            document.querySelectorAll('.project-card').forEach(card => {
+                // Remove the class first to reset the animation
+                card.classList.remove('fade-in-up');
+                
+                // Force a reflow to ensure the animation plays again
+                void card.offsetWidth;
+                
+                // Add the class back to trigger the animation
+                card.classList.add('fade-in-up');
+            });
+        }
+
+        // Initialize projects by simulating a click on the 'All Projects' button
+        // This ensures the grid looks the same on initial load as when the button is clicked
+        document.addEventListener('DOMContentLoaded', () => {
+            // First render all projects
+            renderProjects(allProjects);
+            
+            // Apply fade-in-up class to all project cards with proper animation
+            document.querySelectorAll('.project-card').forEach(card => {
+                // Make sure the card is visible first
+                card.style.opacity = '1';
+                
+                // Remove the class first to reset the animation
+                card.classList.remove('fade-in-up');
+                
+                // Force a reflow to ensure the animation plays
+                void card.offsetWidth;
+                
+                // Add the class back to trigger the animation
+                card.classList.add('fade-in-up');
+            });
+            
+            // Make sure the 'All Projects' button is active
+            const allProjectsBtn = document.querySelector('.filter-btn[data-filter="all"]');
+            if (allProjectsBtn) {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                allProjectsBtn.classList.add('active');
+            }
+        });
+
+        // Filter button event listeners
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                filterProjects(filter);
+            });
+        });
+    </script>
+    
+    <style>
+        .projects-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
+            text-align: center;
+        }
+        
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+        }
+        
+        .project-filters {
+            padding: 2rem 0;
+            background-color: var(--surface-color);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .projects-grid-section {
+            padding: 3rem 0;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--surface-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            border: 1px solid var(--border-color);
+            /* Ensure cards are visible on initial load */
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .project-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            /* Ensure the link is visible and properly styled on initial load */
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-link:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .project-features {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+        
+        .project-features h4 {
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .project-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .project-features li {
+            color: var(--text-secondary);
+            padding: 0.2rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        
+        .project-features li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .github-integration {
+            padding: 5rem 0;
+            background-color: var(--surface-color);
+        }
+        
+        .github-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .github-stat-card {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .github-stat-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .github-stats-img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .github-embed {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .activity-list {
+            space-y: 1rem;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .activity-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .activity-item span {
+            flex: 1;
+            color: var(--text-color);
+        }
+        
+        .activity-item small {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .github-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

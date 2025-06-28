@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James McGuigan - Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>James McGuigan</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="certifications.html" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="education.html" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experience.html" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">James McGuigan</span> 👋</h1>
+                    <p class="hero-subtitle">Software Developer & Problem Solver</p>
+                    <p class="hero-description">
+                        I'm a developer focused on advancing my knowledge and skills in software development, 
+                        with interests in web development, computer networks, and algorithmic problem-solving.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/Jimmyu2foru18" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-user"></i>
+                        <p>Professional Photo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Software Developer & Lifelong Learner</h3>
+                    <p>
+                        I'm passionate about creating efficient, scalable solutions and continuously expanding my technical expertise. 
+                        My journey in software development spans multiple languages and frameworks, with a focus on clean code 
+                        and innovative problem-solving.
+                    </p>
+                    <div class="philosophy">
+                        <h4>📔 Development Philosophy</h4>
+                        <ul>
+                            <li>Composition > Inheritance</li>
+                            <li>Clean Code is Good Code</li>
+                            <li>Document Whenever Possible</li>
+                            <li>Use the DRY Principle</li>
+                            <li>Strive for Simplicity</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>💻 Languages</h4>
+                        <div class="skills">
+                            <span class="skill">Java</span>
+                            <span class="skill">Python</span>
+                            <span class="skill">C++</span>
+                            <span class="skill">C#</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">Lua</span>
+                            <span class="skill">R</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🌐 Web Technologies</h4>
+                        <div class="skills">
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                            <span class="skill">PHP</span>
+                            <span class="skill">React</span>
+                            <span class="skill">Vue.js</span>
+                            <span class="skill">Node.js</span>
+                            <span class="skill">Ruby</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🗄️ Databases</h4>
+                        <div class="skills">
+                            <span class="skill">MySQL</span>
+                            <span class="skill">PostgreSQL</span>
+                            <span class="skill">Redis</span>
+                            <span class="skill">NoSQL</span>
+                            <span class="skill">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>🛠️ Tools & Frameworks</h4>
+                        <div class="skills">
+                            <span class="skill">Linux</span>
+                            <span class="skill">Git</span>
+                            <span class="skill">GitHub</span>
+                            <span class="skill">Laravel</span>
+                            <span class="skill">Ruby on Rails</span>
+                            <span class="skill">Express.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="algorithms">Algorithms</button>
+                <button class="category-btn" data-category="web">Web Dev</button>
+                <button class="category-btn" data-category="games">Games</button>
+                <button class="category-btn" data-category="tools">Tools</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3>Google Coursera Certifications</h3>
+                    <ul>
+                        <li>Automation & Python Specialization</li>
+                        <li>Business Intelligence</li>
+                        <li>Cyber Security</li>
+                        <li>Data Analytics</li>
+                        <li>IT Support</li>
+                        <li>UX Design</li>
+                    </ul>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Starbucks ASU Certifications</h3>
+                    <ul>
+                        <li>Business Leadership Design</li>
+                        <li>Coffee Academy 100</li>
+                        <li>Coffee Academy 200</li>
+                        <li>Coffee Academy 300</li>
+                        <li>Coffee Academy Sourcing</li>
+                        <li>Coffee Academy Roasting</li>
+                    </ul>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Design & Technical Skills</h3>
+                    <ul>
+                        <li>Photoshop Essentials</li>
+                        <li>PC Assembly Specialist</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats Section -->
+    <section id="github-stats" class="github-stats">
+        <div class="container">
+            <h2 class="section-title">GitHub Activity</h2>
+            <div class="github-content">
+                <div class="github-info">
+                    <h3>📊 GitHub Stats</h3>
+                    <p>562 contributions in the last year</p>
+                    <a href="https://github.com/Jimmyu2foru18" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i>
+                        View Full Profile
+                    </a>
+                </div>
+                <div class="github-embed">
+                    <iframe src="https://github.com/Jimmyu2foru18" width="100%" height="400" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect!</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>📫 Get In Touch</h3>
+                    <p>I'm always open to new collaborations and conversations!</p>
+                    <div class="contact-links">
+                        <a href="https://github.com/Jimmyu2foru18" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/james-mcguigan-jr-b26a5b317/" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.facebook.com/jimmyu2foru18/" target="_blank" class="contact-link">
+                            <i class="fab fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/th3viousgameus/" target="_blank" class="contact-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/@th3viousgameus" target="_blank" class="contact-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="mailto:jimmymcguigan18@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 James McGuigan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

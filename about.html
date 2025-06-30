@@ -373,8 +373,10 @@
 }
 
 .about-hero img {
-    width: 50%;
-    height: auto;
+    width: 100%; /* fill container width */
+    height: auto; /* keep aspect ratio */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
         
@@ -469,10 +471,11 @@
             color: var(--text-secondary);
         }
         
-        .image-placeholder.large {
-            width: 100%;
-            height: 400px;
-        }
+.image-placeholder.large {
+    max-width: 400px; /* limit container width */
+    height: auto;     /* remove fixed height */
+    margin: 0 auto;   /* center horizontally */
+}
         
         .skills-deep-dive {
             padding: 5rem 0;

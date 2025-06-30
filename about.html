@@ -360,11 +360,23 @@
     </script>
     
     <style>
-        .about-hero {
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
-            text-align: center;
-        }
+    .about-hero {
+        padding: 120px 0 80px;
+        background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+.about-hero img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
         
         .page-title {
             font-size: 3rem;

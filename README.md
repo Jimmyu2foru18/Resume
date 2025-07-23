@@ -87,6 +87,6 @@ MY WEBSITE/
 
 - **Email**: james.mcguigan.dev@gmail.com
 - **GitHub**: [@Jimmyu2foru18](https://github.com/Jimmyu2foru18)
-- **LinkedIn**: [Connect with me](https://linkedin.com/in/your-profile)
+- **LinkedIn**: [Connect with me](https://linkedin.com/in/james-mcguigan-jr-b26a5b317)
 
 ---

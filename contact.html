@@ -412,120 +412,109 @@
         }
         
         .contact-method {
-            display: flex;
-            gap: 1.2rem;
-            padding: 1.5rem;
             background: var(--bg-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-3px);
+        }
+        
+        .faq-section {
+            padding: 4rem 0;
+            background: var(--bg-color);
+        }
+        
+        .faq-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+            }
+            
+            .contact-info-section {
+                position: static;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+            }
+        }
+        
+        .contact-method {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--surface-color);
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
         }
         
         .method-icon {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
-        
-        .method-info {
-            flex-grow: 1;
+            font-size: 1.3rem;
         }
         
         .method-info h3 {
             color: var(--text-color);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
             font-size: 1.1rem;
-            font-weight: 600;
         }
         
         .method-info p {
             color: var(--text-secondary);
             margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
         }
         
         .method-info small {
             color: var(--text-secondary);
             font-size: 0.85rem;
-            opacity: 0.8;
         }
         
         .method-link {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            margin-top: 0.5rem;
         }
         
         .method-link:hover {
-            text-decoration: none;
-            color: var(--accent-color);
-        }
-        
-        .method-link:after {
-            content: '→';
-            transition: transform 0.3s ease;
-        }
-        
-        .method-link:hover:after {
-            transform: translateX(4px);
+            text-decoration: underline;
         }
         
         .availability-status {
-            margin: 2rem 0;
-            padding: 1.2rem;
-            background: var(--bg-color);
-            border-radius: 10px;
-            border-left: 4px solid #10b981;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            font-size: 0.95rem;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: var(--surface-color);
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
         
         .status-indicator.available {
-            width: 10px;
-            height: 10px;
             background-color: #10b981;
-            border-radius: 50%;
-            position: relative;
-        }
-        
-        .status-indicator.available:before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: #10b981;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
-            70% {
-                transform: scale(2);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(2.5);
-                opacity: 0;
-            }
         }
         
         .response-time {
@@ -628,81 +617,6 @@
             
             .page-title {
                 font-size: 2.5rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                color: var(--text-color);
-            }
-            
-            .page-subtitle {
-                font-size: 1.2rem;
-                color: var(--text-secondary);
-                max-width: 600px;
-                margin: 0 auto;
-            }
-            
-            .contact-form-section h2,
-            .contact-info-section h2 {
-                font-size: 1.8rem;
-                color: var(--text-color);
-                margin-bottom: 1.5rem;
-            }
-            
-            .form-group {
-                margin-bottom: 1.8rem;
-            }
-            
-            .form-group label {
-                display: block;
-                margin-bottom: 0.6rem;
-                color: var(--text-color);
-                font-weight: 500;
-                font-size: 0.95rem;
-            }
-            
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                width: 100%;
-                padding: 0.9rem 1rem;
-                border: 2px solid var(--border-color);
-                border-radius: 8px;
-                background-color: var(--bg-color);
-                color: var(--text-color);
-                font-size: 1rem;
-                transition: all 0.3s ease;
-            }
-            
-            .form-group input:hover,
-            .form-group select:hover,
-            .form-group textarea:hover {
-                border-color: var(--primary-color);
-            }
-            
-            .form-group input:focus,
-            .form-group select:focus,
-            .form-group textarea:focus {
-                outline: none;
-                border-color: var(--primary-color);
-                box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb), 0.1);
-            }
-            
-            .submit-btn {
-                width: 100%;
-                padding: 1rem 1.5rem;
-                margin-top: 1rem;
-                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-                color: white;
-                border: none;
-                border-radius: 8px;
-                font-size: 1.1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            }
-            
-            .submit-btn:hover:not(:disabled) {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
             
             .faq-grid {

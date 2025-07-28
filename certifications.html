@@ -602,7 +602,7 @@
                 <div class="certification-card" data-category="${cert.category}">
                     <div class="cert-header">
                         <div class="cert-image">
-                            <i class="fas fa-certificate"></i>
+                             ${cert.image ? `<img src="${cert.image}" alt="${cert.title}">` : `<i class="fas fa-certificate"></i>`}
                         </div>
                         <div class="cert-info">
                             <h3 class="cert-title">${cert.title}</h3>

@@ -373,9 +373,10 @@
 
     <style>
         .contact-hero {
-            padding: 120px 0 80px;
+            padding: 140px 0 60px;
             background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
-            text-align: center;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .page-title {
@@ -396,8 +397,14 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
+            align-items: start;
         }
+        
+        .contact-info-section h2 { margin-top: 0; }
+        .contact-form-section h2 { margin-top: 0; }
+        
+        .method-info p { margin-top: 0.25rem; }
 
         .contact-form-section h2,
         .contact-info-section h2 {

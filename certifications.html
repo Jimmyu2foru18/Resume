@@ -7,13 +7,465 @@
 	<link rel="stylesheet" href="styles.css">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+	<style>
+		/* --- Global & Variable Setup --- */
+		:root {
+			--primary-color: #0f4c81;
+			--secondary-color: #1b8ace;
+			--bg-color: #f8fafc;
+			--surface-color: #ffffff;
+			--text-color: #1e293b;
+			--text-secondary: #64748b;
+			--text-muted: #94a3b8;
+			--border-color: #e2e8f0;
+			--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+			--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+			--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+			--radius: 10px;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: 'Inter', system-ui, -apple-system, sans-serif;
+			background-color: var(--bg-color);
+			color: var(--text-color);
+			line-height: 1.6;
+		}
+
+		.container {
+			max-width: 1150px;
+			margin: 0 auto;
+			padding: 0 1.5rem;
+		}
+
+		/* --- Navigation Layout --- */
+		.navbar {
+			background-color: var(--surface-color);
+			border-bottom: 1px solid var(--border-color);
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+		}
+
+		.nav-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			max-width: 1150px;
+			margin: 0 auto;
+			padding: 1rem 1.5rem;
+		}
+
+		.nav-logo h2 a {
+			color: var(--primary-color);
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		.nav-menu {
+			display: flex;
+			list-style: none;
+			gap: 1.5rem;
+		}
+
+		.nav-link {
+			text-decoration: none;
+			color: var(--text-secondary);
+			font-weight: 500;
+			transition: color 0.2s ease;
+		}
+
+		.nav-link:hover,
+		.nav-link.active {
+			color: var(--primary-color);
+		}
+
+		.hamburger {
+			display: none;
+			flex-direction: column;
+			gap: 5px;
+			cursor: pointer;
+		}
+
+		.hamburger .bar {
+			width: 25px;
+			height: 3px;
+			background-color: var(--text-color);
+			border-radius: 2px;
+		}
+
+		/* --- Hero Section --- */
+		.certifications-hero {
+			padding: 4.5rem 0 2.5rem;
+			background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
+			border-bottom: 1px solid var(--border-color);
+			text-align: center;
+		}
+
+		.page-title {
+			font-size: 2.75rem;
+			font-weight: 700;
+			margin-bottom: 0.75rem;
+		}
+
+		.highlight {
+			color: var(--primary-color);
+		}
+
+		.page-subtitle {
+			font-size: 1.15rem;
+			color: var(--text-secondary);
+			max-width: 650px;
+			margin: 0 auto;
+		}
+
+		/* --- Category Filter Tabs --- */
+		.certification-categories {
+			padding: 2rem 0 1rem;
+		}
+
+		.category-tabs {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0.6rem;
+		}
+
+		.category-tab {
+			background-color: var(--surface-color);
+			border: 1px solid var(--border-color);
+			color: var(--text-secondary);
+			padding: 0.6rem 1.25rem;
+			border-radius: 20px;
+			font-size: 0.9rem;
+			font-weight: 500;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+
+		.category-tab:hover {
+			border-color: var(--primary-color);
+			color: var(--primary-color);
+		}
+
+		.category-tab.active {
+			background-color: var(--primary-color);
+			color: #ffffff;
+			border-color: var(--primary-color);
+			box-shadow: var(--shadow-sm);
+		}
+
+		/* --- Certification Cards Grid --- */
+		.certifications-grid-section {
+			padding: 2rem 0 4rem;
+		}
+
+		.certifications-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+			gap: 1.75rem;
+		}
+
+		.cert-card {
+			background-color: var(--surface-color);
+			border: 1px solid var(--border-color);
+			border-radius: var(--radius);
+			padding: 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			box-shadow: var(--shadow-sm);
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.cert-card:hover {
+			transform: translateY(-3px);
+			box-shadow: var(--shadow);
+		}
+
+		.cert-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 0.85rem;
+			color: var(--text-muted);
+			font-weight: 500;
+			margin-bottom: 0.75rem;
+		}
+
+		.cert-provider {
+			color: var(--primary-color);
+			font-weight: 600;
+		}
+
+		.cert-card h3 {
+			font-size: 1.15rem;
+			color: var(--text-color);
+			margin-bottom: 0.75rem;
+			line-height: 1.4;
+		}
+
+		.cert-card p {
+			font-size: 0.925rem;
+			color: var(--text-secondary);
+			margin-bottom: 1.25rem;
+		}
+
+		.cert-skills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.4rem;
+			margin-bottom: 1.25rem;
+		}
+
+		.skill-tag {
+			background-color: var(--bg-color);
+			color: var(--text-secondary);
+			border: 1px solid var(--border-color);
+			font-size: 0.775rem;
+			font-weight: 500;
+			padding: 0.25rem 0.55rem;
+			border-radius: 6px;
+		}
+
+		.cert-actions {
+			margin-top: auto;
+			padding-top: 1rem;
+			border-top: 1px solid var(--border-color);
+		}
+
+		.cert-link {
+			text-decoration: none;
+			color: var(--secondary-color);
+			font-weight: 600;
+			font-size: 0.9rem;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			transition: color 0.2s ease;
+		}
+
+		.cert-link:hover {
+			color: var(--primary-color);
+		}
+
+		/* --- Skills & Competencies Section --- */
+		.skills-competencies {
+			background-color: var(--surface-color);
+			padding: 4rem 0;
+			border-top: 1px solid var(--border-color);
+			border-bottom: 1px solid var(--border-color);
+		}
+
+		.section-title {
+			font-size: 2rem;
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.competencies-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		.competency-category {
+			background-color: var(--bg-color);
+			border: 1px solid var(--border-color);
+			border-radius: var(--radius);
+			padding: 1.75rem;
+		}
+
+		.competency-category h3 {
+			font-size: 1.15rem;
+			color: var(--text-color);
+			margin-bottom: 1.5rem;
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+		}
+
+		.competency-category h3 i {
+			color: var(--primary-color);
+		}
+
+		.competency-items {
+			display: flex;
+			flex-direction: column;
+			gap: 1.25rem;
+		}
+
+		.competency-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.competency-name {
+			font-size: 0.925rem;
+			font-weight: 500;
+			color: var(--text-color);
+		}
+
+		.competency-level {
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+			font-size: 0.85rem;
+			color: var(--text-secondary);
+		}
+
+		.level-indicator {
+			width: 60px;
+			height: 6px;
+			background-color: var(--border-color);
+			border-radius: 3px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.level-indicator::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			background-color: var(--primary-color);
+			border-radius: 3px;
+		}
+
+		.level-indicator.intermediate::after { width: 60%; }
+		.level-indicator.advanced::after { width: 85%; }
+		.level-indicator.expert::after { width: 100%; background-color: var(--secondary-color); }
+
+		/* --- Continuous Learning Journey --- */
+		.learning-path {
+			padding: 4rem 0;
+		}
+
+		.learning-timeline {
+			position: relative;
+			max-width: 800px;
+			margin: 0 auto;
+			padding-left: 2rem;
+			border-left: 3px solid var(--border-color);
+		}
+
+		.timeline-item {
+			position: relative;
+			margin-bottom: 2rem;
+		}
+
+		.timeline-item:last-child {
+			margin-bottom: 0;
+		}
+
+		.timeline-marker {
+			position: absolute;
+			left: -2.6rem;
+			top: 0.3rem;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: var(--surface-color);
+			border: 4px solid var(--primary-color);
+		}
+
+		.timeline-content {
+			background-color: var(--surface-color);
+			padding: 1.5rem;
+			border-radius: var(--radius);
+			border: 1px solid var(--border-color);
+			box-shadow: var(--shadow-sm);
+		}
+
+		.timeline-content h3 {
+			font-size: 1.1rem;
+			color: var(--primary-color);
+			margin-bottom: 0.4rem;
+		}
+
+		.timeline-content p {
+			font-size: 0.95rem;
+			color: var(--text-secondary);
+			margin-bottom: 1rem;
+		}
+
+		.timeline-skills {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.4rem;
+		}
+
+		/* --- Footer Layout --- */
+		.footer {
+			background-color: var(--surface-color);
+			padding: 2rem 0;
+			text-align: center;
+			color: var(--text-secondary);
+			font-size: 0.9rem;
+			border-top: 1px solid var(--border-color);
+		}
+
+		/* --- Mobile Responsiveness --- */
+		@media (max-width: 768px) {
+			.page-title {
+				font-size: 2.15rem;
+			}
+
+			.category-tabs {
+				justify-content: flex-start;
+				overflow-x: auto;
+				padding-bottom: 0.5rem;
+			}
+
+			.category-tab {
+				white-space: nowrap;
+			}
+
+			.learning-timeline {
+				padding-left: 1.5rem;
+			}
+
+			.timeline-marker {
+				left: -2.1rem;
+			}
+
+			.hamburger {
+				display: flex;
+			}
+
+			.nav-menu {
+				position: fixed;
+				left: -100%;
+				top: 65px;
+				flex-direction: column;
+				background-color: var(--surface-color);
+				width: 100%;
+				text-align: center;
+				transition: 0.3s ease;
+				box-shadow: var(--shadow);
+				padding: 2rem 0;
+			}
+
+			.nav-menu.active {
+				left: 0;
+			}
+		}
+	</style>
 </head>
 <body>
 	<!-- Navigation -->
 	<nav class="navbar">
 		<div class="nav-container">
 			<div class="nav-logo">
-				<h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
+				<h2><a href="index.html">My Resume</a></h2>
 			</div>
 			<ul class="nav-menu">
 				<li class="nav-item">
@@ -254,7 +706,7 @@
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="container">
-			<p>&copy; 2025 James McGuigan. All rights reserved.</p>
+			<p>&copy; 2026 James McGuigan. All rights reserved.</p>
 		</div>
 	</footer>
 
@@ -592,25 +1044,25 @@
 				: certifications.filter(cert => cert.category.toLowerCase() === filter.toLowerCase());
 
 			if (filtered.length === 0) {
-				grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: #6b7280; padding: 2rem;">No certifications found under this category.</p>`;
+				grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-secondary); padding: 3rem 0;">No certifications found under this category.</p>`;
 				return;
 			}
 
 			grid.innerHTML = filtered.map(cert => `
-				<div class="cert-card" style="background: var(--card-bg, #ffffff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+				<div class="cert-card">
 					<div>
-						<div class="cert-header" style="display: flex; justify-content: space-between; font-size: 0.875rem; color: #6b7280; margin-bottom: 0.5rem;">
+						<div class="cert-header">
 							<span class="cert-provider">${cert.provider}</span>
 							<span class="cert-date">${cert.date}</span>
 						</div>
-						<h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">${cert.title}</h3>
-						<p style="font-size: 0.95rem; line-height: 1.5; color: #4b5563; margin-bottom: 1rem;">${cert.description}</p>
-						<div class="cert-skills" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-							${cert.skills.map(s => `<span class="skill-tag" style="background: #f3f4f6; color: #374151; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 4px;">${s}</span>`).join('')}
+						<h3>${cert.title}</h3>
+						<p>${cert.description}</p>
+						<div class="cert-skills">
+							${cert.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
 						</div>
 					</div>
-					<div class="cert-actions" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid #f3f4f6;">
-						${cert.pdfPath ? `<a href="${cert.pdfPath}" target="_blank" class="cert-link" style="text-decoration: none; color: #2563eb; font-weight: 500; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;"><i class="fas fa-file-pdf"></i> View Certificate</a>` : ''}
+					<div class="cert-actions">
+						${cert.pdfPath ? `<a href="${cert.pdfPath}" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> View Certificate</a>` : ''}
 					</div>
 				</div>
 			`).join('');
@@ -628,6 +1080,23 @@
 					renderCertifications(category);
 				});
 			});
+
+			const hamburger = document.querySelector('.hamburger');
+			const navMenu = document.querySelector('.nav-menu');
+
+			if (hamburger && navMenu) {
+				hamburger.addEventListener('click', () => {
+					hamburger.classList.toggle('active');
+					navMenu.classList.toggle('active');
+				});
+
+				document.querySelectorAll('.nav-link').forEach(link => {
+					link.addEventListener('click', () => {
+						hamburger.classList.remove('active');
+						navMenu.classList.remove('active');
+					});
+				});
+			}
 		});
 	</script>
 	<script src="script.js"></script>

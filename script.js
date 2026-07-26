@@ -115,12 +115,14 @@ class ProjectsManager {
     constructor() {
         this.projectsGrid = document.getElementById('projectsGrid');
         this.categoryBtns = document.querySelectorAll('.category-btn');
-        this.projects = this.getProjectsData();
-        this.init();
+        this.projects = [];
+        if (this.projectsGrid) {
+            this.init();
+        }
     }
 
-    init() {
-        this.renderProjects('all');
+    async init() {
+        await this.loadProjectsData();
         this.categoryBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const category = e.target.getAttribute('data-category');
@@ -130,108 +132,43 @@ class ProjectsManager {
         });
     }
 
-    getProjectsData() {
-        return [
-            {
-                title: "Traveling Salesman Problem",
-                description: "Solves the TSP using Processing with visual representation of the algorithm's progress.",
-                category: "algorithms",
-                tech: ["Processing", "Java", "Algorithms"],
-                icon: "fas fa-route",
-                github: "https://github.com/Jimmyu2foru18/Traveling-Salesman"
-            },
-            {
-                title: "Circuit Switch Simulation",
-                description: "Network drag-and-drop simulation for understanding circuit switching concepts.",
-                category: "algorithms",
-                tech: ["JavaScript", "HTML5", "CSS3"],
-                icon: "fas fa-network-wired",
-                github: "https://github.com/Jimmyu2foru18/Circuit-Switch"
-            },
-            {
-                title: "Fibonacci Web App",
-                description: "Interactive web application to visualize Fibonacci sequence calculations.",
-                category: "web",
-                tech: ["JavaScript", "HTML", "CSS"],
-                icon: "fas fa-calculator",
-                github: "https://github.com/Jimmyu2foru18/FibonacciWebApp"
-            },
-            {
-                title: "Linear Algebra Learning Tool",
-                description: "HTML-based interactive learning platform for Linear Algebra concepts.",
-                category: "web",
-                tech: ["HTML", "JavaScript", "Math.js"],
-                icon: "fas fa-square-root-alt",
-                github: "https://github.com/Jimmyu2foru18/Simple-Linear-Algebra"
-            },
-            {
-                title: "Financial Management App",
-                description: "Automated finance management application with JavaScript automation features.",
-                category: "web",
-                tech: ["JavaScript", "Node.js", "Automation"],
-                icon: "fas fa-chart-line",
-                github: "https://github.com/Jimmyu2foru18/Financial-management-application-with-automation"
-            },
-            {
-                title: "Tutorial Finder AI",
-                description: "AI-powered tool to find and recommend coding tutorials based on user preferences.",
-                category: "tools",
-                tech: ["Python", "AI", "Machine Learning"],
-                icon: "fas fa-robot",
-                github: "https://github.com/Jimmyu2foru18/Tutorial-Finder-AI"
-            },
-            {
-                title: "CarrotQuest Game",
-                description: "Platformer game with character control and interactive gameplay mechanics.",
-                category: "games",
-                tech: ["GDScript", "Godot", "Game Development"],
-                icon: "fas fa-gamepad",
-                github: "https://github.com/Jimmyu2foru18/CarrotQuest"
-            },
-            {
-                title: "Creature Battle Arena",
-                description: "GDScript-based arena battle game with creature combat mechanics.",
-                category: "games",
-                tech: ["GDScript", "Godot", "Game Design"],
-                icon: "fas fa-dragon",
-                github: "https://github.com/Jimmyu2foru18/Creature-Battle-Arena"
-            },
-            {
-                title: "GitHub Analyzer V2",
-                description: "Python tool to analyze GitHub repositories and provide insights.",
-                category: "tools",
-                tech: ["Python", "GitHub API", "Data Analysis"],
-                icon: "fab fa-github",
-                github: "https://github.com/Jimmyu2foru18/github-analyzerV2"
-            },
-            {
-                title: "LinkedIn Post Scheduler",
-                description: "Automated tool to schedule LinkedIn posts using Python.",
-                category: "tools",
-                tech: ["Python", "LinkedIn API", "Automation"],
-                icon: "fab fa-linkedin",
-                github: "https://github.com/Jimmyu2foru18/Linkedin-Post-Scheduler"
-            },
-            {
-                title: "RTT Logger",
-                description: "AWS-based Round Trip Time monitoring solution for network analysis.",
-                category: "tools",
-                tech: ["AWS", "Python", "Networking"],
-                icon: "fas fa-stopwatch",
-                github: "https://github.com/Jimmyu2foru18/rtt-logger"
-            },
-            {
-                title: "COVID Climate Analysis",
-                description: "Machine learning and data analysis project examining COVID-19 and climate data.",
-                category: "algorithms",
-                tech: ["Python", "Machine Learning", "Data Science"],
-                icon: "fas fa-chart-bar",
-                github: "https://github.com/Jimmyu2foru18/covid-climate-analysis"
-            }
-        ];
+    async loadProjectsData() {
+        try {
+            const response = await fetch('https://api.github.com/users/Jimmyu2foru18/repos?sort=updated&per_page=15');
+            const repos = await response.json();
+            this.projects = repos.filter(repo => !repo.fork).map(repo => {
+                let category = "tools";
+                if (repo.language && ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'PHP'].includes(repo.language)) {
+                    category = "web";
+                } else if (repo.language && ['Java', 'C++', 'Python', 'Jupyter Notebook'].includes(repo.language)) {
+                    category = "algorithms";
+                } else if (repo.language === 'GDScript') {
+                    category = "games";
+                }
+                
+                let icon = "fas fa-code";
+                if (category === "web") icon = "fas fa-globe";
+                if (category === "algorithms") icon = "fas fa-calculator";
+                if (category === "games") icon = "fas fa-gamepad";
+                if (category === "tools") icon = "fas fa-wrench";
+
+                return {
+                    title: repo.name.replace(/-/g, ' '),
+                    description: repo.description || "Repository for " + repo.name,
+                    category: category,
+                    tech: repo.language ? [repo.language] : ["Various"],
+                    icon: icon,
+                    github: repo.html_url
+                };
+            });
+            this.renderProjects('all');
+        } catch (error) {
+            console.error("Failed to load GitHub projects", error);
+        }
     }
 
     renderProjects(category) {
+        if (!this.projectsGrid) return;
         const filteredProjects = category === 'all' 
             ? this.projects 
             : this.projects.filter(project => project.category === category);
@@ -401,10 +338,10 @@ class TypingAnimation {
     constructor() {
         this.element = document.querySelector('.hero-subtitle');
         this.texts = [
-            'Software Developer & Problem Solver',
-            'Full-Stack Web Developer',
-            'Algorithm Enthusiast',
-            'Open Source Contributor'
+            'Data Science & Education Professional',
+            'Mathematics & CIS Tutor',
+            'Information Systems Graduate',
+            'Tech & Analytics Enthusiast'
         ];
         this.currentIndex = 0;
         this.currentText = '';

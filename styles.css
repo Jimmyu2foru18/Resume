@@ -28,10 +28,10 @@ body {
 
 /* --- Theme Design Tokens --- */
 :root {
-    /* Color Palette - Light Mode (Slate Analytics) */
-    --primary-color: #2563eb;
-    --secondary-color: #1d4ed8;
-    --accent-color: #3b82f6;
+    /* Color Palette - Professional Corporate Theme */
+    --primary-color: #0f4c81; /* Classic Blue */
+    --secondary-color: #2c3e50; /* Dark Navy */
+    --accent-color: #34495e;
     
     --bg-color: #f8fafc;
     --surface-color: #ffffff;
@@ -58,10 +58,10 @@ body {
 }
 
 [data-theme="dark"] {
-    /* Color Palette - Dark Mode (Pro Console) */
-    --primary-color: #38bdf8;
-    --secondary-color: #0284c7;
-    --accent-color: #60a5fa;
+    /* Color Palette - Dark Mode Professional */
+    --primary-color: #4b7bec;
+    --secondary-color: #3867d6;
+    --accent-color: #a5b1c2;
     
     --bg-color: #0b0f19;
     --surface-color: #111827;

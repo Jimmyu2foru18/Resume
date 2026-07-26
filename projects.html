@@ -61,11 +61,11 @@
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="algorithms">📊 Algorithms & Data Structures</button>
-                <button class="filter-btn" data-filter="web">🌐 Web Development</button>
-                <button class="filter-btn" data-filter="games">🎮 Games & Interactive</button>
-                <button class="filter-btn" data-filter="tools">🧠 Tools & Utilities</button>
-                <button class="filter-btn" data-filter="learning">📚 Learning & Concepts</button>
+                <button class="filter-btn" data-filter="algorithms"> Algorithms & Data Structures</button>
+                <button class="filter-btn" data-filter="web"> Web Development</button>
+                <button class="filter-btn" data-filter="games"> Games & Interactive</button>
+                <button class="filter-btn" data-filter="tools"> Tools & Utilities</button>
+                <button class="filter-btn" data-filter="learning"> Learning & Concepts</button>
             </div>
         </div>
     </section>
@@ -146,320 +146,1268 @@
     <script>
         // Enhanced project data with all projects from GitHub
         const allProjects = [
-            // Algorithm & Data Structures
-            {
-                title: "Traveling Salesman Problem Solver",
-                description: "Advanced TSP solver implementation using Processing with multiple optimization algorithms including genetic algorithm and nearest neighbor heuristics.",
-                category: "algorithms",
-                technologies: ["Processing", "Java", "Algorithms"],
-                github: "https://github.com/Jimmyu2foru18/Traveling-Salesman",
-                features: ["Multiple solving algorithms", "Visual representation", "Performance optimization"]
-            },
-            {
-                title: "Circuit Switch Network Simulation",
-                description: "Interactive drag-and-drop network simulation demonstrating circuit switching concepts with real-time visualization.",
-                category: "algorithms",
-                technologies: ["JavaScript", "HTML5 Canvas", "Network Theory"],
-                github: "https://github.com/Jimmyu2foru18/Circuit-Switch",
-                features: ["Drag-and-drop interface", "Real-time simulation", "Network visualization"]
-            },
-            {
-                title: "Fibonacci Web Application",
-                description: "Interactive web application for visualizing Fibonacci sequence calculations with multiple calculation methods and performance analysis.",
-                category: "algorithms",
-                technologies: ["JavaScript", "HTML", "CSS", "Mathematics"],
-                github: "https://github.com/Jimmyu2foru18/FibonacciWebApp",
-                features: ["Multiple algorithms", "Performance comparison", "Interactive visualization"]
-            },
-            {
-                title: "Interactive Linear Algebra Learning",
-                description: "HTML-based interactive learning platform for Linear Algebra concepts with step-by-step problem solving.",
-                category: "algorithms",
-                technologies: ["HTML", "JavaScript", "CSS", "Mathematics"],
-                github: "https://github.com/Jimmyu2foru18/Simple-Linear-Algebra",
-                features: ["Interactive problems", "Step-by-step solutions", "Educational content"]
-            },
-            
-            // Web Development & Applications
-            {
-                title: "Financial Management Application",
-                description: "Comprehensive automated finance management system with budget tracking, expense categorization, and financial reporting.",
-                category: "web",
-                technologies: ["JavaScript", "Node.js", "Express", "MongoDB"],
-                github: "https://github.com/Jimmyu2foru18/Financial-management-application-with-automation",
-                features: ["Automated tracking", "Budget management", "Financial reports", "Data visualization"]
-            },
-            {
-                title: "Tutorial Finder AI",
-                description: "AI-powered tool that intelligently finds and recommends coding tutorials based on user preferences and skill level.",
-                category: "web",
-                technologies: ["Python", "AI/ML", "Web Scraping", "NLP"],
-                github: "https://github.com/Jimmyu2foru18/Tutorial-Finder-AI",
-                features: ["AI recommendations", "Skill-based filtering", "Tutorial curation"]
-            },
-            {
-                title: "System Design Project",
-                description: "Comprehensive system design and architecture implementation showcasing scalable software design patterns.",
-                category: "web",
-                technologies: ["System Design", "Architecture", "Scalability"],
-                github: "https://github.com/Jimmyu2foru18/System-Design-Project",
-                features: ["Scalable architecture", "Design patterns", "Performance optimization"]
-            },
-            {
-                title: "Authentication System",
-                description: "Secure sign-in/sign-up system with modern authentication practices and user management.",
-                category: "web",
-                technologies: ["JavaScript", "Node.js", "JWT", "bcrypt"],
-                github: "https://github.com/Jimmyu2foru18/sign-in-sign-up-",
-                features: ["Secure authentication", "JWT tokens", "Password hashing"]
-            },
-            {
-                title: "Game UI Framework",
-                description: "Specialized user interface framework designed for game development with responsive and interactive components.",
-                category: "web",
-                technologies: ["JavaScript", "CSS", "HTML", "Game Development"],
-                github: "https://github.com/Jimmyu2foru18/Game-UI",
-                features: ["Game-specific components", "Responsive design", "Interactive elements"]
-            },
-            {
-                title: "Register Management System",
-                description: "TypeScript-based inventory and registration management system with real-time data handling.",
-                category: "web",
-                technologies: ["TypeScript", "Node.js", "Database"],
-                github: "https://github.com/Jimmyu2foru18/Register-Management-System",
-                features: ["Real-time updates", "Inventory tracking", "Data management"]
-            },
-            {
-                title: "School Database System",
-                description: "Comprehensive PHP-based school data management system with student, teacher, and course management.",
-                category: "web",
-                technologies: ["PHP", "MySQL", "HTML", "CSS"],
-                github: "https://github.com/Jimmyu2foru18/School-Database",
-                features: ["Student management", "Course tracking", "Administrative tools"]
-            },
-            {
-                title: "SQL Application",
-                description: "Python-based SQL application with advanced database operations and query optimization.",
-                category: "web",
-                technologies: ["Python", "SQL", "Database"],
-                github: "https://github.com/Jimmyu2foru18/SQL-Application",
-                features: ["Advanced queries", "Database optimization", "Data analysis"]
-            },
-            {
-                title: "Job Portal Application System",
-                description: "Complete job portal with employer and candidate management, job posting, and application tracking.",
-                category: "web",
-                technologies: ["HTML", "CSS", "JavaScript", "PHP"],
-                github: "https://github.com/Jimmyu2foru18/Job-Portal-Application-System",
-                features: ["Job posting", "Application tracking", "User management"]
-            },
-            
-            // Games & Interactive
-            {
-                title: "CarrotQuest Platformer",
-                description: "2D platformer game featuring character control, level progression, and interactive gameplay mechanics.",
-                category: "games",
-                technologies: ["Game Development", "2D Graphics", "Physics"],
-                github: "https://github.com/Jimmyu2foru18/CarrotQuest",
-                features: ["Character control", "Level design", "Physics simulation"]
-            },
-            {
-                title: "Creature Battle Arena",
-                description: "GDScript-based arena battle game with creature management, combat systems, and strategic gameplay.",
-                category: "games",
-                technologies: ["GDScript", "Godot", "Game Logic"],
-                github: "https://github.com/Jimmyu2foru18/Creature-Battle-Arena",
-                features: ["Combat system", "Creature management", "Strategic gameplay"]
-            },
-            {
-                title: "2D Creature Battle Arena",
-                description: "Enhanced 2D version of the creature battle system with improved graphics and gameplay mechanics.",
-                category: "games",
-                technologies: ["2D Graphics", "Game Development", "Animation"],
-                github: "https://github.com/Jimmyu2foru18/2D-Game---Creature-Battle-Arena",
-                features: ["Enhanced graphics", "Improved mechanics", "Animation system"]
-            },
-            {
-                title: "GhostyMon Project",
-                description: "Creature battle concept game with unique ghost-themed creatures and battle mechanics.",
-                category: "games",
-                technologies: ["Game Design", "Concept Development"],
-                github: "https://github.com/Jimmyu2foru18/GhostyMon-Project",
-                features: ["Unique creatures", "Battle mechanics", "Theme design"]
-            },
-            {
-                title: "Abacus Educational Game",
-                description: "JavaScript-based educational game teaching mathematical concepts through interactive abacus simulation.",
-                category: "games",
-                technologies: ["JavaScript", "HTML5", "Educational Gaming"],
-                github: "https://github.com/Jimmyu2foru18/Abacus-Project",
-                features: ["Educational content", "Interactive learning", "Mathematical concepts"]
-            },
-            {
-                title: "Lighthouse Mouse Project",
-                description: "Interactive game concept demo featuring lighthouse-themed gameplay and mouse-based controls.",
-                category: "games",
-                technologies: ["Game Development", "Interactive Design"],
-                github: "https://github.com/Jimmyu2foru18/Lighthouse-Mouse-Project",
-                features: ["Mouse controls", "Themed gameplay", "Concept demo"]
-            },
-            
-            // Tools & Utilities
-            {
-                title: "RESTful API Guide",
-                description: "Comprehensive practical breakdown and implementation guide for RESTful APIs with examples and best practices.",
-                category: "tools",
-                technologies: ["REST API", "Documentation", "Best Practices"],
-                github: "https://github.com/Jimmyu2foru18/RESTfulAPI-Explained",
-                features: ["Comprehensive guide", "Practical examples", "Best practices"]
-            },
-            {
-                title: "GitHub Analyzer V2",
-                description: "Advanced Python tool for analyzing GitHub repositories with detailed metrics, code analysis, and reporting.",
-                category: "tools",
-                technologies: ["Python", "GitHub API", "Data Analysis"],
-                github: "https://github.com/Jimmyu2foru18/github-analyzerV2",
-                features: ["Repository analysis", "Code metrics", "Detailed reporting"]
-            },
-            {
-                title: "LinkedIn Post Scheduler",
-                description: "Python automation tool for scheduling and managing LinkedIn posts with content optimization features.",
-                category: "tools",
-                technologies: ["Python", "LinkedIn API", "Automation"],
-                github: "https://github.com/Jimmyu2foru18/Linkedin-Post-Scheduler",
-                features: ["Post scheduling", "Content optimization", "Automation"]
-            },
-            {
-                title: "RTT Logger",
-                description: "AWS-based Round Trip Time monitoring solution for network performance analysis and logging.",
-                category: "tools",
-                technologies: ["AWS", "Network Monitoring", "Python"],
-                github: "https://github.com/Jimmyu2foru18/rtt-logger",
-                features: ["Network monitoring", "AWS integration", "Performance analysis"]
-            },
-            {
-                title: "Personal Finance Tracker",
-                description: "JavaScript-based personal finance management tool with expense tracking and budget analysis.",
-                category: "tools",
-                technologies: ["JavaScript", "Local Storage", "Data Visualization"],
-                github: "https://github.com/Jimmyu2foru18/Personal-Finance-Management",
-                features: ["Expense tracking", "Budget analysis", "Data visualization"]
-            },
-            {
-                title: "Coffee Shop POS System",
-                description: "PHP-based Point of Sale system prototype designed for coffee shops with inventory and sales management.",
-                category: "tools",
-                technologies: ["PHP", "MySQL", "POS System"],
-                github: "https://github.com/Jimmyu2foru18/Coffee-Shop-POS-Build",
-                features: ["Sales management", "Inventory tracking", "POS interface"]
-            },
-            {
-                title: "Post Generator Tool",
-                description: "JavaScript tool for generating social media posts with templates and customization options.",
-                category: "tools",
-                technologies: ["JavaScript", "Template Engine", "Social Media"],
-                github: "https://github.com/Jimmyu2foru18/post-generator",
-                features: ["Template system", "Customization", "Social media integration"]
-            },
-            {
-                title: "Social Steam System",
-                description: "Social application prototype with Steam-like features for gaming communities and social interaction.",
-                category: "tools",
-                technologies: ["Social Platform", "Community Features"],
-                github: "https://github.com/Jimmyu2foru18/Social-Steam-System",
-                features: ["Community features", "Social interaction", "Gaming focus"]
-            },
-            {
-                title: "Discord Bots Collection",
-                description: "Various Discord bot implementations with different functionalities and automation features.",
-                category: "tools",
-                technologies: ["Discord.js", "Node.js", "Bot Development"],
-                github: "https://github.com/Jimmyu2foru18/discord-bots",
-                features: ["Multiple bots", "Automation", "Discord integration"]
-            },
-            {
-                title: "AI PDF Summarizer",
-                description: "Python-based AI tool for automatically summarizing PDF documents using natural language processing.",
-                category: "tools",
-                technologies: ["Python", "AI/ML", "NLP", "PDF Processing"],
-                github: "https://github.com/Jimmyu2foru18/ai-pdf-summarizer",
-                features: ["AI summarization", "PDF processing", "NLP integration"]
-            },
-            {
-                title: "Video Transcription and Text Analysis",
-                description: "Advanced Python tool for video transcription and comprehensive text analysis with AI capabilities.",
-                category: "tools",
-                technologies: ["Python", "Speech Recognition", "Text Analysis", "AI"],
-                github: "https://github.com/Jimmyu2foru18/Video-Transcription-and-Text",
-                features: ["Video transcription", "Text analysis", "AI processing"]
-            },
-            {
-                title: "Handwritten Digit Recognition",
-                description: "C++ implementation of machine learning algorithms for recognizing handwritten digits with high accuracy.",
-                category: "tools",
-                technologies: ["C++", "Machine Learning", "Computer Vision"],
-                github: "https://github.com/Jimmyu2foru18/handwritten-digit-recognition",
-                features: ["ML algorithms", "Computer vision", "High accuracy"]
-            },
-            {
-                title: "Student Assignment Tracker",
-                description: "Java-based application for tracking student assignments, deadlines, and academic progress.",
-                category: "tools",
-                technologies: ["Java", "GUI", "Database"],
-                github: "https://github.com/Jimmyu2foru18/Student-Assignment-Tracker",
-                features: ["Assignment tracking", "Deadline management", "Progress monitoring"]
-            },
-            
-            // Learning & Concept Projects
-            {
-                title: "COVID Climate Analysis",
-                description: "Machine learning and data analysis project examining COVID-19 data and climate change trends with visualization.",
-                category: "learning",
-                technologies: ["Python", "Machine Learning", "Data Analysis", "Jupyter"],
-                github: "https://github.com/Jimmyu2foru18/covid-climate-analysis",
-                features: ["Data analysis", "ML models", "Visualization", "Research"]
-            },
-            {
-                title: "Research Project",
-                description: "Data exploration and research project using Jupyter notebooks for comprehensive data analysis.",
-                category: "learning",
-                technologies: ["Jupyter", "Python", "Data Science", "Research"],
-                github: "https://github.com/Jimmyu2foru18/Research-Project",
-                features: ["Data exploration", "Research methodology", "Jupyter notebooks"]
-            },
-            {
-                title: "Souls Series UML Diagrams",
-                description: "Comprehensive UML diagrams and system design documentation for Souls game series analysis.",
-                category: "learning",
-                technologies: ["UML", "System Design", "Documentation"],
-                github: "https://github.com/Jimmyu2foru18/Souls-Series",
-                features: ["UML diagrams", "System analysis", "Game design study"]
-            },
-            {
-                title: "Library Management System",
-                description: "C# implementation of a comprehensive library management system with book tracking and user management.",
-                category: "learning",
-                technologies: ["C#", ".NET", "Database", "System Design"],
-                github: "https://github.com/Jimmyu2foru18/Library-Management-System",
-                features: ["Book management", "User system", "Database integration"]
-            },
-            {
-                title: "Doodle Sketch Tool",
-                description: "HTML-based interactive sketching and drawing tool with various brush options and canvas features.",
-                category: "learning",
-                technologies: ["HTML5", "Canvas API", "JavaScript"],
-                github: "https://github.com/Jimmyu2foru18/doodle",
-                features: ["Interactive drawing", "Brush options", "Canvas manipulation"]
-            },
-            {
-                title: "LLM Hackathon Project",
-                description: "Large Language Model hackathon project exploring AI capabilities and innovative applications.",
-                category: "learning",
-                technologies: ["AI/ML", "LLM", "Innovation"],
-                github: "https://github.com/Jimmyu2foru18/LLM-Hackathon",
-                features: ["LLM integration", "AI innovation", "Hackathon project"]
-            }
-        ];
+    {
+        "title": "Resume",
+        "description": "Repository for Resume",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Resume",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Calculus II Notes",
+        "description": "Repository for Calculus-II-Notes",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Calculus-II-Notes",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Game 3D PS2 Style Sandbox",
+        "description": "Repository for Game-3D-PS2-Style-Sandbox",
+        "category": "games",
+        "technologies": [
+            "GDScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Game-3D-PS2-Style-Sandbox",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Bi Directional Decision Learning",
+        "description": "A thought to work on a neutral centered, bidirectional decision learning framework.",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Bi-Directional-Decision-Learning",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Silly_Prank",
+        "description": "Just a silly prank to pull on your friends (do loop)",
+        "category": "tools",
+        "technologies": [
+            "VBScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Silly_Prank",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "github analyzer",
+        "description": "An AI-powered GitHub repository analyzer and build automation tool. This project helps developers analyze repositories, extract build instructions from READMEs, and automate build processes using OpenAI and DSPy.",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/github-analyzer",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Sf6 AI Trained Fighter",
+        "description": "Repository for Sf6-AI-Trained-Fighter",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Sf6-AI-Trained-Fighter",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "skills connect the dots",
+        "description": "My clone repository",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/skills-connect-the-dots",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "SSL TLS E2EE",
+        "description": "A Cryptography Mobile Web project mix",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/SSL-TLS-E2EE",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Street fighter 6 AI Bot",
+        "description": "AI trained with Ollama to learn combos and adapt with deepseek-r1:14b training model to screen capture and learn combo and movements, good for understanding frame data, else additional usages",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Street-fighter-6-AI-Bot",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Jimmyu2foru18",
+        "description": "Config files for my GitHub profile.",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Jimmyu2foru18",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Newspaper Website",
+        "description": "Repository for Newspaper-Website",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Newspaper-Website",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Calculus Notes",
+        "description": "Repository for Calculus-Notes",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Calculus-Notes",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Photography Website",
+        "description": "A photography website designed for QR code access is typically built to make viewing, sharing, and interacting with images fast and seamless from a phone or tablet.",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Photography-Website",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Custom Open Amazon Echo AI",
+        "description": "This project connects Amazon Echo to an AI agent using OpenClaw for orchestration. Gemini 1.5 Flash handles complex cloud reasoning. Ollama runs Phi-3 locally to fit 4GB VRAM limits. A Python backend and Ngrok tunnel link Alexa to your hardware. This setup enables voice activated web searches and agentic tasks with low latency.",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Custom-Open-Amazon-Echo-AI",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "mcu portal",
+        "description": "A University Portal and Learning Management System (LMS) built with PHP, MySQL, and JavaScript, featuring role-based access control, degree auditing, and administrative management",
+        "category": "web",
+        "technologies": [
+            "PHP"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/mcu-portal",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "My Book",
+        "description": "A book",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/My-Book",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Private Tutoring",
+        "description": "A easy form for Booking with me PRivately",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Private-Tutoring",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "SUNY University",
+        "description": "basic university system",
+        "category": "web",
+        "technologies": [
+            "PHP"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/SUNY-University",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "J W Creative Studio",
+        "description": "Repository for J-W-Creative-Studio",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/J-W-Creative-Studio",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Computer Programming Notes",
+        "description": "Lots of Notes",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Computer-Programming-Notes",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "A Pathfinding Algorithm",
+        "description": "Repository for A-Pathfinding-Algorithm",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/A-Pathfinding-Algorithm",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Simple Linear Algebra",
+        "description": "A simpler way to Learn Linear Algebra",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Simple-Linear-Algebra",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "My_Obsidian_Vault",
+        "description": "Repository for My_Obsidian_Vault",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/My_Obsidian_Vault",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "card_game",
+        "description": "Repository for card_game",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/card_game",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Souls Series",
+        "description": "UML Diagrams of From software's Souls Series Games",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Souls-Series",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "C old content",
+        "description": "Repository for C-old-content",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/C-old-content",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Sys. Design Recspicy",
+        "description": "System Design Project - Recspicy",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Sys.-Design-Recspicy",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "skills introduction to git",
+        "description": "Exercise: Introduction to Git",
+        "category": "tools",
+        "technologies": [
+            "Shell"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/skills-introduction-to-git",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "AI GitHub Analyst",
+        "description": "Repository for AI-GitHub-Analyst",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/AI-GitHub-Analyst",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "AI Concepts Lab",
+        "description": "Repository for AI-Concepts-Lab",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/AI-Concepts-Lab",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "skills review pull requests",
+        "description": "Exercise: Review pull requests",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/skills-review-pull-requests",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "skills secure repository supply chain",
+        "description": "Exercise: Secure your Repository Supply Chain",
+        "category": "tools",
+        "technologies": [
+            "C#"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/skills-secure-repository-supply-chain",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "skills introduction to github",
+        "description": "My clone repository",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/skills-introduction-to-github",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Minimalist Portfolio",
+        "description": "Repository for Minimalist-Portfolio",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Minimalist-Portfolio",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Nexus P2P",
+        "description": "A secure peer-to-peer workspace with chat, file sharing, and real-time network visualization in a React dashboard.",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Nexus-P2P",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "StreamLocal",
+        "description": "A web-based video player that plays all videos from a selected folder on your PC in a loop. Perfect for creating a continuous video playback experience from your local video collection.",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/StreamLocal",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "SpotifyMp3",
+        "description": "Repository for SpotifyMp3",
+        "category": "web",
+        "technologies": [
+            "PHP"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/SpotifyMp3",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "periodic table",
+        "description": "An interactive periodic table of elements featuring clickable tiles, transitions, and detailed element information. HTML, CSS, and JavaScript, this application with coloring based on element categories and a responsive design for various screen sizes.",
+        "category": "web",
+        "technologies": [
+            "CSS"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/periodic-table",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "MusicMax",
+        "description": "Repository for MusicMax",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/MusicMax",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Cherry Valley Deli",
+        "description": "Website Modern ",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Cherry-Valley-Deli",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "LaRosa Pizzeria",
+        "description": "Pizzeria Project ",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/LaRosa-Pizzeria",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Music Website",
+        "description": "Music Website for Spotify and Youtube",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Music-Website",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "NC Practice Website",
+        "description": "Front End Practice with Dynamic Design",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/NC-Practice-Website",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "SachisPookies",
+        "description": "Repository for SachisPookies",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/SachisPookies",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "PookiesPlaytime",
+        "description": "Repository for PookiesPlaytime",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/PookiesPlaytime",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Ghostymon",
+        "description": "Repository for Ghostymon",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Ghostymon",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "pookies grand casino",
+        "description": "Repository for pookies-grand-casino",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/pookies-grand-casino",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "ghosts kitten adventure",
+        "description": "Repository for ghosts-kitten-adventure",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/ghosts-kitten-adventure",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Exercises",
+        "description": "Repository for Exercises",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Exercises",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Mini_Discord",
+        "description": "Repository for Mini_Discord",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Mini_Discord",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "nba dream team builder",
+        "description": "With Database and Login https://v0-nba-dream-team-builder.vercel.app/auth/login/",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/nba-dream-team-builder",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "JAVA Practice Projects",
+        "description": "These Java projects guide learners from basics to OOP principles. Start with loops and methods in a High\u2013Low card game and a Calculator, then move to arrays with Rock\u2013Paper\u2013Scissors. Build object models in a Contact Manager, apply multi-class design in a Library System, and finish with inheritance and error handling in a Student Management System.",
+        "category": "algorithms",
+        "technologies": [
+            "Java"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/JAVA-Practice-Projects",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Ollama Learning Example",
+        "description": "Repository for Ollama-Learning-Example",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Ollama-Learning-Example",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "First Fighting Game Learning Exercise",
+        "description": "Repository for First-Fighting-Game-Learning-Exercise",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/First-Fighting-Game-Learning-Exercise",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "My First System Design Project",
+        "description": "This was a project I was working on and was in the process of developing prior to my Capstone back in the summer of 2024, created directly after I completed my Internet & web technology course.",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/My-First-System-Design-Project",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Website Builder Beta",
+        "description": "Repository for Website-Builder-Beta",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Website-Builder-Beta",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "TTS to AI Model",
+        "description": "Text to speech to a Local AI Agent and TTS through Taliscale To the AI agent through Web Hosting & mobile",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/TTS-to-AI-Model",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Live Streaming Relay",
+        "description": "Repository for Live-Streaming-Relay",
+        "category": "tools",
+        "technologies": [
+            "Shell"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Live-Streaming-Relay",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Code Visualization Sandbox",
+        "description": "Repository for Code-Visualization-Sandbox",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Code-Visualization-Sandbox",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Screen Capture Object Detection",
+        "description": "Repository for Screen-Capture-Object-Detection",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Screen-Capture-Object-Detection",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "RESTfulAPI Explained",
+        "description": "Repository for RESTfulAPI-Explained",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/RESTfulAPI-Explained",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "CarrotQuest",
+        "description": "Repository for CarrotQuest",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/CarrotQuest",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "System Design Project",
+        "description": "System Design & Implementation Project",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/System-Design-Project",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Advanced Music Library Manager",
+        "description": "Repository for Advanced-Music-Library-Manager",
+        "category": "tools",
+        "technologies": [
+            "PowerShell"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Advanced-Music-Library-Manager",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "C Sharp   Class Chapter Work",
+        "description": "C# Exercises ",
+        "category": "tools",
+        "technologies": [
+            "C#"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/C-Sharp---Class-Chapter-Work",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Discord Bot Practice",
+        "description": "Repository for Discord-Bot-Practice",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Discord-Bot-Practice",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Alert Twitch Fix",
+        "description": "Repository for Alert-Twitch-Fix",
+        "category": "algorithms",
+        "technologies": [
+            "C++"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Alert-Twitch-Fix",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Video Transcription and Text to Speech",
+        "description": "Repository for Video-Transcription-and-Text-to-Speech",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Video-Transcription-and-Text-to-Speech",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Lighthouse Mouse Project",
+        "description": "Repository for Lighthouse-Mouse-Project",
+        "category": "web",
+        "technologies": [
+            "TypeScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Lighthouse-Mouse-Project",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "LLM Hackathon",
+        "description": "Clone of What was covered 2024",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/LLM-Hackathon",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "ai pdf summarizer",
+        "description": "Repository for ai-pdf-summarizer",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/ai-pdf-summarizer",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Loan Prediction",
+        "description": "Repository for Loan-Prediction",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Loan-Prediction",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "DBMS   Class Notes   Work",
+        "description": "Repository for DBMS---Class-Notes---Work",
+        "category": "tools",
+        "technologies": [
+            "Various"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/DBMS---Class-Notes---Work",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "CP Networks",
+        "description": "Repository for CP-Networks",
+        "category": "algorithms",
+        "technologies": [
+            "Java"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/CP-Networks",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Wine Quality Prediction",
+        "description": "Repository for Wine-Quality-Prediction",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Wine-Quality-Prediction",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Credit Card Approval Prediction",
+        "description": "Repository for Credit-Card-Approval-Prediction",
+        "category": "tools",
+        "technologies": [
+            "Go"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Credit-Card-Approval-Prediction",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "DNS Query Tool",
+        "description": "Repository for DNS-Query-Tool",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/DNS-Query-Tool",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Blockchain Gossip Network",
+        "description": "Repository for Blockchain-Gossip-Network",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Blockchain-Gossip-Network",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Titanic Survival Prediction",
+        "description": "Repository for Titanic-Survival-Prediction",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Titanic-Survival-Prediction",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Real Time Drawing Board",
+        "description": "Repository for Real-Time-Drawing-Board",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Real-Time-Drawing-Board",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Command Control",
+        "description": "Repository for Command-Control",
+        "category": "tools",
+        "technologies": [
+            "Go"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Command-Control",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Sales Prediction",
+        "description": "Repository for Sales-Prediction",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Sales-Prediction",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Music Recommendation System",
+        "description": "Repository for Music-Recommendation-System",
+        "category": "tools",
+        "technologies": [
+            "Julia"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Music-Recommendation-System",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Photo Cleaner",
+        "description": "Repository for Photo-Cleaner",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Photo-Cleaner",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Sentiment Analysis of Tweets",
+        "description": "Repository for Sentiment-Analysis-of-Tweets",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Sentiment-Analysis-of-Tweets",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "handwritten digit recognition",
+        "description": "Repository for handwritten-digit-recognition",
+        "category": "algorithms",
+        "technologies": [
+            "C++"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/handwritten-digit-recognition",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "vpnproxy simulator",
+        "description": "Repository for vpnproxy-simulator",
+        "category": "tools",
+        "technologies": [
+            "Go"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/vpnproxy-simulator",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Iris Flower Classification",
+        "description": "Repository for Iris-Flower-Classification",
+        "category": "tools",
+        "technologies": [
+            "R"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Iris-Flower-Classification",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Bank Account Simulator",
+        "description": "Repository for Bank-Account-Simulator",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Bank-Account-Simulator",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "RESTful Note API",
+        "description": "Repository for RESTful-Note-API",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/RESTful-Note-API",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "House Price Prediction",
+        "description": "Repository for House-Price-Prediction",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/House-Price-Prediction",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Mini Torrent",
+        "description": "Repository for Mini-Torrent",
+        "category": "algorithms",
+        "technologies": [
+            "Python"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Mini-Torrent",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "HTTP File Server",
+        "description": "Repository for HTTP-File-Server",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/HTTP-File-Server",
+        "features": [
+            "Source code",
+            "Version control"
+        ]
+    },
+    {
+        "title": "Student Assignment Tracker",
+        "description": "Repository for Student-Assignment-Tracker",
+        "category": "algorithms",
+        "technologies": [
+            "Java"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Student-Assignment-Tracker",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Job Portal Application System",
+        "description": "Repository for Job-Portal-Application-System",
+        "category": "web",
+        "technologies": [
+            "HTML"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Job-Portal-Application-System",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    },
+    {
+        "title": "Basic Snake",
+        "description": "Repository for Basic-Snake",
+        "category": "web",
+        "technologies": [
+            "JavaScript"
+        ],
+        "github": "https://github.com/Jimmyu2foru18/Basic-Snake",
+        "features": [
+            "Source code",
+            "Documentation"
+        ]
+    }
+];
 
         // Project filtering functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -710,7 +1658,7 @@
         }
         
         .project-features li::before {
-            content: "✓";
+            content: "";
             color: var(--primary-color);
             font-weight: bold;
             position: absolute;

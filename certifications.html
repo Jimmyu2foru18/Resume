@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -10,20 +10,7 @@
 
 	<style>
 		/* --- Global & Variable Setup --- */
-		:root {
-			--primary-color: #0f4c81;
-			--secondary-color: #1b8ace;
-			--bg-color: #f8fafc;
-			--surface-color: #ffffff;
-			--text-color: #1e293b;
-			--text-secondary: #64748b;
-			--text-muted: #94a3b8;
-			--border-color: #e2e8f0;
-			--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-			--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-			--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-			--radius: 10px;
-		}
+		
 
 		* {
 			box-sizing: border-box;
@@ -175,7 +162,7 @@
 		.cert-card {
 			background-color: var(--surface-color);
 			border: 1px solid var(--border-color);
-			border-radius: var(--radius);
+			border-radius: var(--radius-lg);
 			padding: 1.5rem;
 			display: flex;
 			flex-direction: column;
@@ -278,7 +265,7 @@
 		.competency-category {
 			background-color: var(--bg-color);
 			border: 1px solid var(--border-color);
-			border-radius: var(--radius);
+			border-radius: var(--radius-lg);
 			padding: 1.75rem;
 		}
 
@@ -380,7 +367,7 @@
 		.timeline-content {
 			background-color: var(--surface-color);
 			padding: 1.5rem;
-			border-radius: var(--radius);
+			border-radius: var(--radius-lg);
 			border: 1px solid var(--border-color);
 			box-shadow: var(--shadow-sm);
 		}
@@ -465,7 +452,7 @@
 	<nav class="navbar">
 		<div class="nav-container">
 			<div class="nav-logo">
-				<h2><a href="index.html">My Resume</a></h2>
+				<h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
 			</div>
 			<ul class="nav-menu">
 				<li class="nav-item">
@@ -1082,3 +1069,5 @@
 	<script src="script.js"></script>
 </body>
 </html>
+
+

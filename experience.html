@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -10,21 +10,7 @@
 
 	<style>
 		/* --- Root CSS Variables --- */
-		:root {
-			--primary-color: #0f4c81;
-			--secondary-color: #1b8ace;
-			--bg-color: #f8fafc;
-			--surface-color: #ffffff;
-			--text-color: #1e293b;
-			--text-secondary: #64748b;
-			--text-muted: #94a3b8;
-			--border-color: #e2e8f0;
-			--border-light: #cbd5e1;
-			--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-			--shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-			--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-			--radius: 12px;
-		}
+		
 
 		/* --- Global Reset & Layout --- */
 		* {
@@ -175,7 +161,7 @@
 		.timeline-content {
 			background-color: var(--surface-color);
 			padding: 2rem;
-			border-radius: var(--radius);
+			border-radius: var(--radius-lg);
 			border: 1px solid var(--border-color);
 			box-shadow: var(--shadow-sm);
 			transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -287,7 +273,7 @@
 		.skill-category {
 			background-color: var(--bg-color);
 			padding: 1.75rem;
-			border-radius: var(--radius);
+			border-radius: var(--radius-lg);
 			border: 1px solid var(--border-color);
 		}
 
@@ -396,7 +382,7 @@
 	<nav class="navbar">
 		<div class="nav-container">
 			<div class="nav-logo">
-				<h2><a href="index.html">My Resume</a></h2>
+				<h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
 			</div>
 			<ul class="nav-menu">
 				<li class="nav-item">
@@ -997,3 +983,5 @@
 	<script src="script.js"></script>
 </body>
 </html>
+
+

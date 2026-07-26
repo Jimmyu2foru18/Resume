@@ -13,7 +13,7 @@
 		.contact-hero {
 			padding: 120px 0 40px;
 			background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
-			text-align: left;
+			text-align: center;
 			border-bottom: 1px solid var(--border-color);
 		}
 
@@ -28,15 +28,26 @@
 			color: var(--text-secondary);
 		}
 
+		/* Centering Wrapper */
 		.contact-content {
-			padding: 3.5rem 0;
+			padding: 4rem 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 75vh;
+		}
+
+		.contact-content .container {
+			width: 100%;
+			max-width: 1100px;
+			margin: 0 auto;
 		}
 
 		.contact-grid {
 			display: grid;
 			grid-template-columns: 1.1fr 0.9fr;
 			gap: 3rem;
-			align-items: start;
+			align-items: center;
 		}
 		
 		.contact-info-section h2,
@@ -349,6 +360,10 @@
 			.contact-methods {
 				grid-template-columns: 1fr;
 			}
+
+			.contact-content {
+				min-height: auto;
+			}
 		}
 
 		@media (max-width: 600px) {
@@ -401,7 +416,7 @@
 		</div>
 	</section>
 
-	<!-- Contact Content -->
+	<!-- Contact Content (Centered) -->
 	<section class="contact-content">
 		<div class="container">
 			<div class="contact-grid">

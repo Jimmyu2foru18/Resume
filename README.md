@@ -1,92 +1,43 @@
-# James McGuigan - Professional Resume Website
+# James McGuigan - Portfolio Website
 
-A modern, responsive portfolio website showcasing my skills, projects, certifications, and professional experience. Built with HTML, CSS, and JavaScript, designed for deployment on GitHub Pages.
+A responsive personal portfolio website showcasing professional experience, projects, certifications, and technical skills. Built using plain HTML, CSS, and vanilla JavaScript, hosted on GitHub Pages.
 
-## 🌟 Features
+## Live Demo
 
-### Multi-Theme Support
+[View Portfolio](https://jimmyu2foru18.github.io/Resume)
 
-- **Light Theme**: Clean and professional
-- **Dark Theme**: Modern and sleek
-- **Purple Theme**: Creative and distinctive
-- Theme persistence across sessions
+## Key Features
 
-### Responsive Design
+* **Multi-Theme Support:** Light, Dark, and Purple themes with persistent `localStorage` preference saving.
+* **Responsive Layout:** Mobile-friendly design optimized across desktop, tablet, and mobile devices.
+* **Dynamic Content:** Automatic fetching and categorization of GitHub repositories via API.
+* **Interactive UI:** Smooth section scrolling, animated skill meters, and a client-side validated contact form.
 
-- Mobile-first approach
-- Optimized for all screen sizes
-- Touch-friendly navigation
-- Accessible design principles
+## Tech Stack
 
-### Interactive Components
+* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+* **Typography & Icons:** Inter (Google Fonts), Font Awesome 6
+* **Deployment:** GitHub Pages
 
-- Smooth scrolling navigation
-- Animated skill bars
-- Dynamic project filtering
-- Contact form with validation
-- GitHub integration
-- Typing animations
+## Project Structure
 
-### Professional Sections
-
-- **Home**: Hero section with introduction and quick links
-- **About**: Detailed background, skills, and philosophy
-- **Projects**: Categorized portfolio with filtering
-- **Certifications**: Educational achievements and skills
-- **Contact**: Professional contact form and information
-
-## 🚀 Live Demo
-
-[View Live Website](https://jimmyu2foru18.github.io/Resume)
-
-## 📁 Project Structure
-
-```
-MY WEBSITE/
-├── index.html      
-├── about.html       
-├── projects.html      
-├── certifications.html
-├── contact.html   
-├── styles.css    
-├── script.js         
-├── README.md        
-└── assets/       
-    ├── profile-photo.jpg
-    └── certifications/
+```text
+/
+├── index.html          # Main landing page
+├── about.html          # Background and skills overview
+├── projects.html       # Portfolio items and live repository feeds
+├── certifications.html # Credentials and course completions
+├── experience.html     # Detailed career timeline
+├── contact.html        # Interactive contact form
+├── styles.css          # Theme variables and global styles
+├── script.js          # Core JS modules and GitHub API handling
+└── assets/             # Images and local static files
 ```
 
-## 🛠️ Technologies Used
+| Contact Information |
+| --- |
+| **Email:** jamesmcguigan18@gmail.com<br>
 
-- HTML
-- CSS
-- JavaScript
+<br>**GitHub:** [Jimmyu2foru18](https://github.com/Jimmyu2foru18)<br>
 
-## 🎨 Design Features
-
-### Color Schemes
-
-- **Light Theme**: Clean whites and subtle grays
-- **Dark Theme**: Deep backgrounds with bright accents
-- **Purple Theme**: Creative purple gradients
-
-### Typography
-
-- Primary font: Inter (Google Fonts)
-- Responsive font sizing
-- Optimized readability
-
-### Animations
-
-- Smooth transitions
-- Hover effects
-- Scroll-triggered animations
-- Loading states
-
-## 📞 Contact
-
-- **Email**: james.mcguigan.dev@gmail.com
-- **GitHub**: [@Jimmyu2foru18](https://github.com/Jimmyu2foru18)
-- **LinkedIn**: [Connect with me](https://linkedin.com/in/james-mcguigan-jr-b26a5b317)
-
----
+<br>**LinkedIn:** [James McGuigan](https://linkedin.com/in/james-mcguigan-jr-b26a5b317) |

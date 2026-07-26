@@ -322,7 +322,7 @@ class GitHubStats {
             if (githubEmbed) {
                 githubEmbed.innerHTML = `
                     <div class="github-stats-cards">
-                        <img src="https://github-readme-stats.vercel.app/api?username=${this.username}&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" style="width: 100%; max-width: 500px; border-radius: 8px;">
+                        <img src="https://awesome-github-stats.azurewebsites.net/user-stats/jimmyu2foru18?cardType=level&fontFamily=Alice&preferLogin=false&Text=35ABFF&Ring=30DD00&borderRadius=30&Border=65DD83&Title=F00000&Background=000000" alt="GitHub Awesome Stats" style="width: 100%; max-width: 500px; border-radius: 8px;">
                         <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=${this.username}&layout=compact&theme=default&hide_border=true" alt="Top Languages" style="width: 100%; max-width: 500px; border-radius: 8px; margin-top: 1rem;">
                     </div>
                 `;

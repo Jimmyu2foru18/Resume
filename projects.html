@@ -85,50 +85,14 @@
             <h2 class="section-title">GitHub Activity</h2>
             <div class="github-stats-grid">
                 <div class="github-stat-card">
-                    <h3>Profile Overview</h3>
-                    <div class="github-embed">
-                        <iframe src="https://github.com/Jimmyu2foru18" width="100%" height="400" frameborder="0"></iframe>
-                    </div>
-                </div>
-                
-                <div class="github-stat-card">
                     <h3>Contribution Stats</h3>
                     <img src="https://awesome-github-stats.azurewebsites.net/user-stats/jimmyu2foru18?cardType=level&fontFamily=Alice&preferLogin=false&Text=35ABFF&Ring=30DD00&borderRadius=30&Border=65DD83&Title=F00000&Background=000000" alt="GitHub Awesome Stats" class="github-stats-img">
                 </div>
                 
                 <div class="github-stat-card">
-                    <h3>Top Languages</h3>
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Jimmyu2foru18&layout=compact&theme=radical" alt="Top Languages" class="github-stats-img">
-                </div>
-                
-                <div class="github-stat-card">
                     <h3>Recent Activity</h3>
-                    <div class="activity-list">
-                        <div class="activity-item">
-                            <i class="fas fa-code-branch"></i>
-                            <span>Created Video-Transcription-and-Text repository</span>
-                            <small>June 26, 2025</small>
-                        </div>
-                        <div class="activity-item">
-                            <i class="fas fa-plus"></i>
-                            <span>Created LLM-Hackathon repository</span>
-                            <small>June 17, 2025</small>
-                        </div>
-                        <div class="activity-item">
-                            <i class="fas fa-code"></i>
-                            <span>Created handwritten-digit-recognition</span>
-                            <small>June 12, 2025</small>
-                        </div>
-                        <div class="activity-item">
-                            <i class="fas fa-laptop-code"></i>
-                            <span>Created Student-Assignment-Tracker</span>
-                            <small>June 12, 2025</small>
-                        </div>
-                        <div class="activity-item">
-                            <i class="fas fa-globe"></i>
-                            <span>Created Job-Portal-Application-System</span>
-                            <small>June 12, 2025</small>
-                        </div>
+                    <div class="activity-list" id="githubActivityList">
+                        <div class="activity-loading">Loading live GitHub activity...</div>
                     </div>
                 </div>
             </div>
@@ -293,49 +257,98 @@
             const filteredProjects = category === 'all' ? allProjects : allProjects.filter(project => project.category === category);
             renderProjects(filteredProjects);
             
-            // Apply fade-in-up class to all project cards after filtering
             document.querySelectorAll('.project-card').forEach(card => {
-                // Remove the class first to reset the animation
                 card.classList.remove('fade-in-up');
-                
-                // Force a reflow to ensure the animation plays again
                 void card.offsetWidth;
-                
-                // Add the class back to trigger the animation
                 card.classList.add('fade-in-up');
             });
         }
 
-        // Initialize projects by simulating a click on the 'All Projects' button
-        // This ensures the grid looks the same on initial load as when the button is clicked
+        // Fetch Live GitHub Activity
+        async function fetchGitHubActivity() {
+            const container = document.getElementById('githubActivityList');
+            try {
+                const response = await fetch('https://api.github.com/users/Jimmyu2foru18/events');
+                if (!response.ok) throw new Error('Network error fetching GitHub events');
+                
+                const events = await response.json();
+                if (!events || events.length === 0) {
+                    container.innerHTML = '<p class="activity-empty">No recent public activity found.</p>';
+                    return;
+                }
+
+                // Render top 5 public events
+                const recentEvents = events.slice(0, 5);
+                container.innerHTML = recentEvents.map(event => {
+                    let iconClass = 'fas fa-code';
+                    let text = 'Performed action on';
+                    const repoName = event.repo ? event.repo.name.replace('Jimmyu2foru18/', '') : 'repository';
+
+                    switch (event.type) {
+                        case 'CreateEvent':
+                            iconClass = 'fas fa-plus';
+                            text = `Created ${event.payload.ref_type || 'repository'}`;
+                            break;
+                        case 'PushEvent':
+                            iconClass = 'fas fa-code-branch';
+                            text = `Pushed commits to`;
+                            break;
+                        case 'WatchEvent':
+                            iconClass = 'fas fa-star';
+                            text = `Starred`;
+                            break;
+                        case 'ForkEvent':
+                            iconClass = 'fas fa-code-fork';
+                            text = `Forked`;
+                            break;
+                        case 'IssuesEvent':
+                            iconClass = 'fas fa-exclamation-circle';
+                            text = `${event.payload.action} issue in`;
+                            break;
+                        case 'PullRequestEvent':
+                            iconClass = 'fas fa-code-pull-request';
+                            text = `${event.payload.action} pull request in`;
+                            break;
+                    }
+
+                    const formattedDate = new Date(event.created_at).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        year: 'numeric'
+                    });
+
+                    return `
+                        <div class="activity-item">
+                            <i class="${iconClass}"></i>
+                            <span>${text} <strong>${repoName}</strong></span>
+                            <small>${formattedDate}</small>
+                        </div>
+                    `;
+                }).join('');
+            } catch (error) {
+                container.innerHTML = '<p class="activity-empty">Unable to load live activity right now.</p>';
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
-            // First render all projects
             renderProjects(allProjects);
             
-            // Apply fade-in-up class to all project cards with proper animation
             document.querySelectorAll('.project-card').forEach(card => {
-                // Make sure the card is visible first
                 card.style.opacity = '1';
-                
-                // Remove the class first to reset the animation
                 card.classList.remove('fade-in-up');
-                
-                // Force a reflow to ensure the animation plays
                 void card.offsetWidth;
-                
-                // Add the class back to trigger the animation
                 card.classList.add('fade-in-up');
             });
             
-            // Make sure the 'All Projects' button is active
             const allProjectsBtn = document.querySelector('.filter-btn[data-filter="all"]');
             if (allProjectsBtn) {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 allProjectsBtn.classList.add('active');
             }
+
+            fetchGitHubActivity();
         });
 
-        // Filter button event listeners
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -412,7 +425,6 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
             border: 1px solid var(--border-color);
-            /* Ensure cards are visible on initial load */
             opacity: 1;
             transform: translateY(0);
         }
@@ -453,7 +465,6 @@
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            /* Ensure the link is visible and properly styled on initial load */
             opacity: 1;
             transform: translateY(0);
         }
@@ -545,11 +556,6 @@
             border-radius: 8px;
         }
         
-        .github-embed {
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
         .activity-list {
             display: flex;
             flex-direction: column;
@@ -578,6 +584,13 @@
         .activity-item small {
             color: var(--text-secondary);
             font-size: 0.85rem;
+        }
+
+        .activity-loading,
+        .activity-empty {
+            color: var(--text-secondary);
+            font-style: italic;
+            padding: 1rem;
         }
         
         @media (max-width: 768px) {

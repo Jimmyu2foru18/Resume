@@ -541,11 +541,76 @@
 						<h3>Technical Proficiency</h3>
 					</div>
 					<div class="skill-items">
-						<!-- Technical skills items can go here -->
+						<div class="skill-item">
+							<span>Web Development (HTML/CSS/JS)</span>
+							<div class="skill-level">
+								<div class="skill-bar" data-level="90"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<span>Database & SQL</span>
+							<div class="skill-level">
+								<div class="skill-bar" data-level="85"></div>
+							</div>
+						</div>
+						<div class="skill-item">
+							<span>Network Troubleshooting</span>
+							<div class="skill-level">
+								<div class="skill-bar" data-level="80"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; 2025 James McGuigan. All rights reserved.</p>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Mobile Navigation Menu Toggle
+			const hamburger = document.querySelector('.hamburger');
+			const navMenu = document.querySelector('.nav-menu');
+
+			if (hamburger && navMenu) {
+				hamburger.addEventListener('click', () => {
+					hamburger.classList.toggle('active');
+					navMenu.classList.toggle('active');
+				});
+
+				document.querySelectorAll('.nav-link').forEach(link => {
+					link.addEventListener('click', () => {
+						hamburger.classList.remove('active');
+						navMenu.classList.remove('active');
+					});
+				});
+			}
+
+			// Animate Skill Bars when scrolled into view
+			const skillBars = document.querySelectorAll('.skill-bar');
+			if (skillBars.length > 0) {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							const bar = entry.target;
+							const level = bar.getAttribute('data-level');
+							bar.style.width = level + '%';
+							observer.unobserve(bar);
+						}
+					});
+				}, { threshold: 0.2 });
+
+				skillBars.forEach(bar => observer.observe(bar));
+			}
+		});
+	</script>
+	<script src="script.js"></script>
 </body>
 </html>

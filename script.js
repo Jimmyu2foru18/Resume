@@ -71,7 +71,7 @@ class Navigation {
 			});
 		});
 		
-		if (document.querySelectorAll('section').length > 0) {
+		if (document.querySelectorAll('section[id]').length > 0) {
 			window.addEventListener('scroll', () => this.highlightActiveLink());
 		}
 	}
@@ -91,7 +91,7 @@ class Navigation {
 	}
 
 	highlightActiveLink() {
-		const sections = document.querySelectorAll('section');
+		const sections = document.querySelectorAll('section[id]');
 		const scrollPos = window.scrollY + 100;
 
 		sections.forEach(section => {
@@ -101,8 +101,8 @@ class Navigation {
 			
 			if (sectionId && scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
 				this.navLinks.forEach(link => {
-					link.classList.remove('active');
 					if (link.getAttribute('href') === `#${sectionId}`) {
+						this.navLinks.forEach(l => l.classList.remove('active'));
 						link.classList.add('active');
 					}
 				});
@@ -136,8 +136,9 @@ class ProjectsManager {
 	async loadProjectsData() {
 		try {
 			const response = await fetch('https://api.github.com/users/Jimmyu2foru18/repos?sort=updated&per_page=15');
-			const repos = await response.json();
+			if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 			
+			const repos = await response.json();
 			if (!Array.isArray(repos)) return;
 
 			this.projects = repos.filter(repo => !repo.fork).map(repo => {
@@ -168,6 +169,15 @@ class ProjectsManager {
 			this.renderProjects('all');
 		} catch (error) {
 			console.error("Failed to load GitHub projects", error);
+			if (this.projectsGrid) {
+				this.projectsGrid.innerHTML = `
+					<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary, #666);">
+						Unable to load projects dynamically. Visit 
+						<a href="https://github.com/Jimmyu2foru18" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color, #2563eb);">GitHub</a> 
+						to view repositories.
+					</p>
+				`;
+			}
 		}
 	}
 
@@ -254,7 +264,7 @@ class ContactForm {
 	}
 }
 
-// Scroll Animations
+// Scroll & Skill Bar Animations
 class ScrollAnimations {
 	constructor() {
 		this.observerOptions = {
@@ -269,19 +279,36 @@ class ScrollAnimations {
 			'section, .project-card, .cert-card, .skill-category'
 		);
 
-		if (elementsToAnimate.length === 0) return;
+		if (elementsToAnimate.length > 0) {
+			this.observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('fade-in-up');
+					}
+				});
+			}, this.observerOptions);
+			
+			elementsToAnimate.forEach(el => this.observer.observe(el));
+		}
 
-		this.observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('fade-in-up');
-				}
-			});
-		}, this.observerOptions);
-		
-		elementsToAnimate.forEach(el => {
-			this.observer.observe(el);
-		});
+		// Skill Bar Width Animation
+		const skillBars = document.querySelectorAll('.skill-bar');
+		if (skillBars.length > 0) {
+			const skillObserver = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const bar = entry.target;
+						const level = bar.getAttribute('data-level');
+						if (level) {
+							bar.style.width = level + '%';
+						}
+						skillObserver.unobserve(bar);
+					}
+				});
+			}, { threshold: 0.2 });
+
+			skillBars.forEach(bar => skillObserver.observe(bar));
+		}
 	}
 }
 
@@ -297,11 +324,9 @@ class NavbarScrollEffect {
 
 		window.addEventListener('scroll', () => {
 			if (window.scrollY > 100) {
-				this.navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-				this.navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+				this.navbar.classList.add('scrolled');
 			} else {
-				this.navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-				this.navbar.style.boxShadow = 'none';
+				this.navbar.classList.remove('scrolled');
 			}
 		});
 	}

@@ -73,7 +73,7 @@
     <!-- Projects Grid -->
     <section class="projects-grid-section">
         <div class="container">
-            <div class="projects-grid" id="projectsGrid">
+            <div class="projects-grid" id="allProjectsGrid">
                 <!-- Projects will be dynamically loaded here -->
             </div>
         </div>
@@ -1411,7 +1411,7 @@
 
         // Project filtering functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectsGrid = document.getElementById('projectsGrid');
+        const projectsGrid = document.getElementById('allProjectsGrid');
 
         function renderProjects(projects) {
             projectsGrid.innerHTML = projects.map(project => `

@@ -1001,102 +1001,82 @@
 				pdfPath: "assets/certifications/Photoshop Essential Completion Cert.pdf"
 			},
 			{
-				title: "Figma Design Certification",
-				provider: "Figma",
+				title: "Figma Design Certificate",
+				provider: "Figma Academy",
 				category: "design",
-				date: "2024",
-				description: "UI/UX design using Figma, including prototyping, collaboration, and design systems.",
-				skills: ["Figma", "UI Design", "Prototyping", "Design Systems", "Collaboration"],
-				credentialId: "FIGMA-2024",
+				date: "2023",
+				description: "Interface design, component systems, and rapid prototyping using Figma.",
+				skills: ["Figma", "UI Design", "Prototyping", "Design Systems"],
+				credentialId: "FIGMA-DES-2023",
 				image: "assets/certifications/figma-design.png",
 				pdfPath: "assets/certifications/figma-design.pdf"
-			},
-			{
-				title: "CISSP Information Security",
-				provider: "Alison",
-				category: "Alison",
-				date: "2025",
-				description: "Comprehensive information security certification covering security and risk management.",
-				skills: ["Information Security", "Risk Management", "Security Architecture", "Network Security"],
-				credentialId: "ALISON-CISSP-2024",
-				image: "assets/certifications/Alison Professional Certificate CISSP 2024.png",
-				pdfPath: "assets/certifications/Alison Professional Certificate CISSP 2024.pdf"
-			},
-			{
-				title: "CompTIA A+ 1000",
-				provider: "Alison",
-				category: "Alison",
-				date: "2025",
-				description: "Comprehensive entry-level IT certification covering hardware, networking, and troubleshooting.",
-				skills: ["IT Support", "Hardware", "Networking", "Troubleshooting"],
-				credentialId: "ALISON-COMPTIA-2025",
-				image: "assets/certifications/comptia-a.png",
-				pdfPath: "assets/certifications/comptia-a.pdf"
 			}
 		];
 
-		function renderCertifications(filter = 'all') {
-			const grid = document.getElementById('certificationsGrid');
-			if (!grid) return;
-
-			const filtered = filter === 'all' 
-				? certifications 
-				: certifications.filter(cert => cert.category.toLowerCase() === filter.toLowerCase());
-
-			if (filtered.length === 0) {
-				grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-secondary); padding: 3rem 0;">No certifications found under this category.</p>`;
-				return;
-			}
-
-			grid.innerHTML = filtered.map(cert => `
-				<div class="cert-card">
-					<div>
-						<div class="cert-header">
-							<span class="cert-provider">${cert.provider}</span>
-							<span class="cert-date">${cert.date}</span>
-						</div>
-						<h3>${cert.title}</h3>
-						<p>${cert.description}</p>
-						<div class="cert-skills">
-							${cert.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}
-						</div>
-					</div>
-					<div class="cert-actions">
-						${cert.pdfPath ? `<a href="${cert.pdfPath}" target="_blank" class="cert-link"><i class="fas fa-file-pdf"></i> View Certificate</a>` : ''}
-					</div>
-				</div>
-			`).join('');
-		}
-
 		document.addEventListener('DOMContentLoaded', () => {
-			renderCertifications('all');
-
+			const grid = document.getElementById('certificationsGrid');
 			const tabs = document.querySelectorAll('.category-tab');
-			tabs.forEach(tab => {
-				tab.addEventListener('click', (e) => {
-					tabs.forEach(t => t.classList.remove('active'));
-					e.target.classList.add('active');
-					const category = e.target.getAttribute('data-category');
-					renderCertifications(category);
-				});
-			});
-
 			const hamburger = document.querySelector('.hamburger');
 			const navMenu = document.querySelector('.nav-menu');
 
+			// Mobile navigation toggle
 			if (hamburger && navMenu) {
 				hamburger.addEventListener('click', () => {
-					hamburger.classList.toggle('active');
 					navMenu.classList.toggle('active');
 				});
+			}
 
-				document.querySelectorAll('.nav-link').forEach(link => {
-					link.addEventListener('click', () => {
-						hamburger.classList.remove('active');
-						navMenu.classList.remove('active');
-					});
+			// Render cards function
+			function renderCertifications(filter = 'all') {
+				grid.innerHTML = '';
+				const filtered = filter === 'all' 
+					? certifications 
+					: certifications.filter(cert => cert.category.toLowerCase() === filter.toLowerCase());
+
+				if (filtered.length === 0) {
+					grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 2rem 0;">No certifications found for this category.</p>';
+					return;
+				}
+
+				filtered.forEach(cert => {
+					const card = document.createElement('div');
+					card.className = 'cert-card';
+					
+					const skillsHTML = cert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
+
+					card.innerHTML = `
+						<div>
+							<div class="cert-header">
+								<span class="cert-provider">${cert.provider}</span>
+								<span class="cert-date">${cert.date}</span>
+							</div>
+							<h3>${cert.title}</h3>
+							<p>${cert.description}</p>
+							<div class="cert-skills">
+								${skillsHTML}
+							</div>
+						</div>
+						<div class="cert-actions">
+							<a href="${cert.pdfPath}" class="cert-link" target="_blank" rel="noopener noreferrer">
+								View Certificate <i class="fas fa-external-link-alt"></i>
+							</a>
+						</div>
+					`;
+					grid.appendChild(card);
 				});
 			}
+
+			// Tab filtering event listener
+			tabs.forEach(tab => {
+				tab.addEventListener('click', () => {
+					tabs.forEach(t => t.classList.remove('active'));
+					tab.classList.add('active');
+					renderCertifications(tab.dataset.category);
+				});
+			});
+
+			// Initial render
+			renderCertifications('all');
 		});
 	</script>
 	<script src="script.js"></script>

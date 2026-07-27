@@ -30,14 +30,10 @@ A responsive personal portfolio website showcasing professional experience, proj
 ├── experience.html     # Detailed career timeline
 ├── contact.html        # Interactive contact form
 ├── styles.css          # Theme variables and global styles
-├── script.js          # Core JS modules and GitHub API handling
+├── script.js           # Core JS modules and GitHub API handling
 └── assets/             # Images and local static files
 ```
 
 | Contact Information |
 | --- |
-| **Email:** jamesmcguigan18@gmail.com<br>
-
-|<br>**GitHub:** [Jimmyu2foru18](https://github.com/Jimmyu2foru18)<br>|
-
-|<br>**LinkedIn:** [James McGuigan](https://linkedin.com/in/james-mcguigan-jr-b26a5b317) |
+| **Email:** jamesmcguigan18@gmail.com<br>**GitHub:** [Jimmyu2foru18](https://github.com/Jimmyu2foru18)<br>**LinkedIn:** [James McGuigan](https://linkedin.com/in/james-mcguigan-jr-b26a5b317) |

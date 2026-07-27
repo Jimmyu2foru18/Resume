@@ -38,6 +38,6 @@ A responsive personal portfolio website showcasing professional experience, proj
 | --- |
 | **Email:** jamesmcguigan18@gmail.com<br>
 
-<br>**GitHub:** [Jimmyu2foru18](https://github.com/Jimmyu2foru18)<br>
+|<br>**GitHub:** [Jimmyu2foru18](https://github.com/Jimmyu2foru18)<br>|
 
-<br>**LinkedIn:** [James McGuigan](https://linkedin.com/in/james-mcguigan-jr-b26a5b317) |
+|<br>**LinkedIn:** [James McGuigan](https://linkedin.com/in/james-mcguigan-jr-b26a5b317) |

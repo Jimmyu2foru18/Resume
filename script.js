@@ -24,7 +24,6 @@ class ThemeManager {
 		themeToggle.innerHTML = `
 			<button class="theme-btn theme-light" data-theme="light" title="Light Theme"></button>
 			<button class="theme-btn theme-dark" data-theme="dark" title="Dark Theme"></button>
-			<button class="theme-btn theme-purple" data-theme="purple" title="Purple Theme"></button>
 		`;
 		
 		document.body.appendChild(themeToggle);
@@ -171,11 +170,12 @@ class ProjectsManager {
 			console.error("Failed to load GitHub projects", error);
 			if (this.projectsGrid) {
 				this.projectsGrid.innerHTML = `
-					<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary, #666);">
-						Unable to load projects dynamically. Visit 
-						<a href="https://github.com/Jimmyu2foru18" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color, #2563eb);">GitHub</a> 
-						to view repositories.
-					</p>
+					<div class="state-error" style="grid-column: 1/-1;">
+						<span>Unable to load projects dynamically.</span>
+						<a href="https://github.com/Jimmyu2foru18" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+							Visit GitHub
+						</a>
+					</div>
 				`;
 			}
 		}

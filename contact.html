@@ -1,697 +1,760 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact - James McGuigan</title>
-	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-	
-	<style>
-		/* --- Section & Layout Base --- */
-		.contact-hero {
-			padding: 120px 0 40px;
-			background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
-			text-align: center;
-			border-bottom: 1px solid var(--border-color);
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - James McGuigan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    
+    <style>
+        /* --- Section & Layout Base --- */
+        .contact-hero {
+            padding: var(--hero-padding-top) 0 var(--hero-padding-bottom);
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.page-title {
-			font-size: 2.75rem;
-			font-weight: 700;
-			margin-bottom: 0.5rem;
-		}
+        .page-title {
+            font-size: var(--text-display);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
 
-		.page-subtitle {
-			font-size: 1.15rem;
-			color: var(--text-secondary);
-		}
+        .page-subtitle {
+            font-size: var(--text-h3);
+            color: var(--text-secondary);
+        }
 
-		/* Centering Wrapper */
-		.contact-content {
-			padding: 4rem 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			min-height: 75vh;
-		}
+        /* Centering Wrapper */
+        .contact-content {
+            padding: var(--section-padding-y-lg) 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 75vh;
+        }
 
-		.contact-content .container {
-			width: 100%;
-			max-width: 1100px;
-			margin: 0 auto;
-		}
+        .contact-content .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-		.contact-grid {
-			display: grid;
-			grid-template-columns: 1.1fr 0.9fr;
-			gap: 3rem;
-			align-items: center;
-		}
-		
-		.contact-info-section h2,
-		.contact-form-section h2 {
-			font-size: 1.75rem;
-			color: var(--text-color);
-			margin-top: 0;
-			margin-bottom: 1.5rem;
-		}
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+        
+        .contact-info-section h2,
+        .contact-form-section h2 {
+            font-size: var(--text-h2);
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: var(--space-lg);
+        }
 
-		/* --- Form Formatting & Spacing --- */
-		.contact-form {
-			background-color: var(--surface-color);
-			padding: 2rem;
-			border-radius: 12px;
-			box-shadow: var(--shadow);
-			border: 1px solid var(--border-color);
-		}
+        /* --- Form Formatting & Spacing --- */
+        .contact-form {
+            background-color: var(--surface-color);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
 
-		.form-row {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 1.25rem;
-		}
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
 
-		.form-group {
-			margin-bottom: 1.25rem;
-		}
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
 
-		.form-group label {
-			display: block;
-			margin-bottom: 0.375rem;
-			color: var(--text-color);
-			font-weight: 500;
-			font-size: 0.9rem;
-		}
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: var(--text-small);
+        }
 
-		.form-group input,
-		.form-group select,
-		.form-group textarea {
-			width: 100%;
-			padding: 0.65rem 0.85rem;
-			border: 1px solid var(--border-color);
-			border-radius: 8px;
-			background-color: var(--bg-color);
-			color: var(--text-color);
-			font-size: 0.95rem;
-			transition: border-color 0.2s ease, box-shadow 0.2s ease;
-		}
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: var(--text-small);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
 
-		.form-group textarea {
-			resize: vertical;
-			min-height: 120px;
-		}
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
 
-		.form-group input:focus,
-		.form-group select:focus,
-		.form-group textarea:focus {
-			outline: none;
-			border-color: var(--primary-color);
-			box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.1);
-		}
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.1);
+        }
 
-		.form-group input.error,
-		.form-group select.error,
-		.form-group textarea.error {
-			border-color: #ef4444;
-		}
+        .form-group input.error,
+        .form-group select.error,
+        .form-group textarea.error {
+            border-color: #ef4444;
+        }
 
-		.field-error {
-			color: #ef4444;
-			font-size: 0.8rem;
-			margin-top: 0.25rem;
-			display: block;
-		}
+        .field-error {
+            color: #ef4444;
+            font-size: var(--text-xs);
+            margin-top: var(--space-xs);
+            display: block;
+        }
 
-		.submit-btn {
-			width: 100%;
-			padding: 0.85rem 1.5rem;
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-			color: white;
-			border: none;
-			border-radius: 8px;
-			font-size: 1rem;
-			font-weight: 600;
-			cursor: pointer;
-			transition: transform 0.2s ease, box-shadow 0.2s ease;
-		}
+        .submit-btn {
+            width: 100%;
+            padding: var(--space-md) var(--space-lg);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: var(--text-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-		.submit-btn:hover:not(:disabled) {
-			transform: translateY(-1px);
-			box-shadow: var(--shadow);
-		}
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow);
+        }
 
-		.submit-btn:disabled {
-			opacity: 0.7;
-			cursor: not-allowed;
-		}
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
 
-		.btn-loading {
-			display: none;
-			align-items: center;
-			justify-content: center;
-			gap: 0.5rem;
-		}
+        .btn-loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+        }
 
-		/* --- Right Side Info & Cards --- */
-		.contact-intro {
-			color: var(--text-secondary);
-			line-height: 1.5;
-			margin-bottom: 1.5rem;
-			font-size: 0.95rem;
-		}
+        /* --- Right Side Info & Cards --- */
+        .contact-intro {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-small);
+        }
 
-		.contact-methods {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1rem;
-			margin-bottom: 1.5rem;
-		}
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
 
-		.contact-method {
-			display: flex;
-			gap: 0.85rem;
-			padding: 1rem;
-			background-color: var(--surface-color);
-			border-radius: 10px;
-			box-shadow: var(--shadow-sm);
-			border: 1px solid var(--border-color);
-			align-items: flex-start;
-		}
+        .contact-method {
+            display: flex;
+            gap: var(--space-md);
+            padding: var(--space-md);
+            background-color: var(--surface-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            align-items: flex-start;
+        }
 
-		.method-icon {
-			width: 38px;
-			height: 38px;
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-			border-radius: 8px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-size: 1rem;
-			flex-shrink: 0;
-		}
+        .method-icon {
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
 
-		.method-info h3 {
-			color: var(--text-color);
-			margin-bottom: 0.15rem;
-			font-size: 0.95rem;
-			font-weight: 600;
-		}
+        .method-info h3 {
+            color: var(--text-color);
+            margin-bottom: var(--space-xs);
+            font-size: var(--text-small);
+            font-weight: 600;
+        }
 
-		.method-info p {
-			color: var(--text-secondary);
-			margin: 0 0 0.25rem;
-			font-size: 0.825rem;
-			word-break: break-word;
-		}
+        .method-info p {
+            color: var(--text-secondary);
+            margin: 0 0 var(--space-xs);
+            font-size: var(--text-xs);
+            word-break: break-word;
+        }
 
-		.method-info small {
-			color: var(--text-muted);
-			font-size: 0.75rem;
-			display: block;
-			line-height: 1.2;
-		}
+        .method-info small {
+            color: var(--text-muted);
+            font-size: var(--text-xs);
+            display: block;
+            line-height: 1.2;
+        }
 
-		.method-link {
-			color: var(--primary-color);
-			text-decoration: none;
-			font-weight: 500;
-			font-size: 0.825rem;
-		}
+        .method-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--text-xs);
+        }
 
-		.method-link:hover {
-			text-decoration: underline;
-		}
+        .method-link:hover {
+            text-decoration: underline;
+        }
 
-		.availability-status {
-			display: flex;
-			align-items: center;
-			gap: 0.65rem;
-			margin-bottom: 1.25rem;
-			padding: 0.75rem 1rem;
-			background-color: var(--surface-color);
-			border-radius: 8px;
-			border: 1px solid var(--border-color);
-			border-left: 4px solid #10b981;
-			font-size: 0.875rem;
-			font-weight: 500;
-		}
+        .availability-status {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            padding: var(--space-md);
+            background-color: var(--surface-color);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid #10b981;
+            font-size: var(--text-small);
+            font-weight: 500;
+        }
 
-		.status-indicator {
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			flex-shrink: 0;
-		}
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
 
-		.status-indicator.available {
-			background-color: #10b981;
-			box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-		}
+        .status-indicator.available {
+            background-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
 
-		.response-time {
-			background-color: var(--surface-color);
-			padding: 1.25rem;
-			border-radius: 10px;
-			box-shadow: var(--shadow-sm);
-			border: 1px solid var(--border-color);
-		}
+        .response-time {
+            background-color: var(--surface-color);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
 
-		.response-time h3 {
-			color: var(--text-color);
-			margin-bottom: 0.75rem;
-			font-size: 0.95rem;
-			font-weight: 600;
-		}
+        .response-time h3 {
+            color: var(--text-color);
+            margin-bottom: var(--space-sm);
+            font-size: var(--text-small);
+            font-weight: 600;
+        }
 
-		.response-item {
-			display: flex;
-			justify-content: space-between;
-			padding: 0.35rem 0;
-			color: var(--text-secondary);
-			font-size: 0.85rem;
-			border-bottom: 1px var(--border-light) dashed;
-		}
+        .response-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-xs) 0;
+            color: var(--text-secondary);
+            font-size: var(--text-xs);
+            border-bottom: 1px var(--border-light) dashed;
+        }
 
-		.response-item:last-child {
-			border-bottom: none;
-			padding-bottom: 0;
-		}
+        .response-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
 
-		/* --- FAQ Section --- */
-		.faq-section {
-			padding: 4rem 0;
-			background-color: var(--surface-color);
-			border-top: 1px solid var(--border-color);
-		}
+        /* --- Stat Band for Contact --- */
+        .stat-band {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+            padding: var(--space-lg) 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.faq-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-			gap: 1.5rem;
-		}
+        .stat-item {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
 
-		.faq-item {
-			background-color: var(--bg-color);
-			padding: 1.5rem;
-			border-radius: 10px;
-			border: 1px solid var(--border-color);
-		}
+        .stat-value {
+            display: block;
+            font-size: var(--text-h1);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text-color);
+            font-family: var(--font-mono);
+        }
 
-		.faq-item h3 {
-			color: var(--text-color);
-			margin-bottom: 0.5rem;
-			font-size: 1.05rem;
-		}
+        .stat-label {
+            display: block;
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: var(--space-xs);
+        }
 
-		.faq-item p {
-			color: var(--text-secondary);
-			line-height: 1.5;
-			font-size: 0.9rem;
-		}
+        /* --- FAQ Section --- */
+        .faq-section {
+            padding: var(--section-padding-y-lg) 0;
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		/* --- Notifications & Extras --- */
-		.notification {
-			position: fixed;
-			top: 20px;
-			right: 20px;
-			padding: 0.85rem 1.25rem;
-			border-radius: 8px;
-			color: white;
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-			z-index: 1000;
-			animation: slideIn 0.3s ease;
-			box-shadow: var(--shadow-lg);
-		}
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+        }
 
-		.notification.success { background-color: #10b981; }
-		.notification.error { background-color: #ef4444; }
+        .faq-item {
+            background-color: var(--bg-color);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+        }
 
-		.notification-close {
-			background: none;
-			border: none;
-			color: white;
-			font-size: 1.1rem;
-			cursor: pointer;
-			margin-left: 0.75rem;
-		}
+        .faq-item h3 {
+            color: var(--text-color);
+            margin-bottom: var(--space-sm);
+            font-size: var(--text-h4);
+        }
 
-		.brand-link {
-			text-decoration: none;
-			color: inherit;
-		}
+        .faq-item p {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-size: var(--text-small);
+        }
 
-		@keyframes slideIn {
-			from { transform: translateX(100%); opacity: 0; }
-			to { transform: translateX(0); opacity: 1; }
-		}
+        /* --- Notifications & Extras --- */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
 
-		/* --- Mobile Responsive Rules --- */
-		@media (max-width: 900px) {
-			.contact-grid {
-				grid-template-columns: 1fr;
-				gap: 2.5rem;
-			}
-			
-			.contact-methods {
-				grid-template-columns: 1fr;
-			}
+        .notification.success { background-color: #10b981; }
+        .notification.error { background-color: #ef4444; }
 
-			.contact-content {
-				min-height: auto;
-			}
-		}
+        .notification-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-left: var(--space-sm);
+        }
 
-		@media (max-width: 600px) {
-			.form-row {
-				grid-template-columns: 1fr;
-				gap: 0;
-			}
+        .brand-link {
+            text-decoration: none;
+            color: inherit;
+        }
 
-			.page-title {
-				font-size: 2.15rem;
-			}
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
 
-			.faq-grid {
-				grid-template-columns: 1fr;
-			}
-		}
-	</style>
+        /* --- Mobile Responsive Rules --- */
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                min-height: auto;
+            }
+            
+            .stat-value {
+                font-size: var(--text-h2);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .page-title {
+                font-size: var(--text-h1);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-	<!-- Navigation -->
-	<nav class="navbar">
-		<div class="nav-container">
-			<div class="nav-logo">
-				<h2><a href="index.html" class="brand-link">My Resume</a></h2>
-			</div>
-			<ul class="nav-menu">
-				<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-				<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-				<li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-				<li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
-				<li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
-				<li class="nav-item"><a href="experience.html" class="nav-link">Experience</a></li>
-				<li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
-			</ul>
-			<div class="hamburger">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" class="brand-link">My Resume</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="certifications.html" class="nav-link">Certifications</a></li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="experience.html" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Contact Hero Section -->
-	<section class="contact-hero">
-		<div class="container">
-			<div class="contact-hero-content">
-				<h1 class="page-title">Let's <span class="highlight">Connect</span></h1>
-				<p class="page-subtitle">Ready to collaborate on your next project or discuss opportunities</p>
-			</div>
-		</div>
-	</section>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1 class="page-title gradient-text">Let&apos;s <span class="highlight">Connect</span></h1>
+                <p class="page-subtitle">Data Science M.S. candidate | Google-certified | Currently accepting consulting & tutoring opportunities</p>
+            </div>
+        </div>
+    </section>
 
-	<!-- Contact Content (Centered) -->
-	<section class="contact-content">
-		<div class="container">
-			<div class="contact-grid">
-				<!-- Contact Form -->
-				<div class="contact-form-section">
-					<h2>Send Me a Message</h2>
-					<form class="contact-form" id="contactForm">
-						<div class="form-row">
-							<div class="form-group">
-								<label for="name">Full Name *</label>
-								<input type="text" id="name" name="name" required>
-							</div>
+    <!-- Stat Band -->
+    <div class="container">
+        <div class="stat-band">
+            <div class="stat-item">
+                <span class="stat-value">24</span>
+                <span class="stat-label">Hours Available</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">24h</span>
+                <span class="stat-label">Response Time</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">8+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">10+</span>
+                <span class="stat-label">Active Projects</span>
+            </div>
+        </div>
+    </div>
 
-							<div class="form-group">
-								<label for="email">Email Address *</label>
-								<input type="email" id="email" name="email" required>
-							</div>
-						</div>
+    <!-- Contact Content (Centered) -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <h2>Get In Touch</h2>
+                    <p class="contact-intro">
+                        I&apos;m always excited to connect with fellow developers, potential collaborators, and anyone interested in discussing technology, projects, or opportunities.
+                    </p>
 
-						<div class="form-row">
-							<div class="form-group">
-								<label for="company">Company/Organization</label>
-								<input type="text" id="company" name="company">
-							</div>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>Email</h3>
+                                <p>jimmymcguigan18@gmail.com</p>
+                                <small>Responds within 24 hours</small>
+                            </div>
+                        </div>
 
-							<div class="form-group">
-								<label for="subject">Subject *</label>
-								<select id="subject" name="subject" required>
-									<option value="">Select a subject</option>
-									<option value="collaboration">Project Collaboration</option>
-									<option value="job">Job Opportunity</option>
-									<option value="freelance">Freelance Work</option>
-									<option value="consultation">Technical Consultation</option>
-									<option value="mentorship">Mentorship</option>
-									<option value="other">Other</option>
-								</select>
-							</div>
-						</div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>LinkedIn</h3>
+                                <p>Connect professionally</p>
+                                <a href="https://www.linkedin.com/in/james-mcguigan-jr-b26a5b317" target="_blank" rel="noopener noreferrer" class="method-link">View Profile</a>
+                            </div>
+                        </div>
 
-						<div class="form-group">
-							<label for="message">Message *</label>
-							<textarea id="message" name="message" rows="4" required placeholder="Tell me about your project, goals, or how I can help you..."></textarea>
-						</div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>GitHub</h3>
+                                <p>Check out my repos</p>
+                                <a href="https://github.com/Jimmyu2foru18" target="_blank" rel="noopener noreferrer" class="method-link">@Jimmyu2foru18</a>
+                            </div>
+                        </div>
 
-						<button type="submit" class="submit-btn">
-							<span class="btn-text">Send Message</span>
-							<span class="btn-loading">
-								<i class="fas fa-spinner fa-spin"></i> Sending...
-							</span>
-						</button>
-					</form>
-				</div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>Schedule Call</h3>
+                                <p>30-min consultation</p>
+                                <a href="mailto:jimmymcguigan18@gmail.com?subject=Requesting%20a%2030-Minute%20Consultation" class="method-link">Email to Request</a>
+                            </div>
+                        </div>
+                    </div>
 
-				<!-- Contact Info -->
-				<div class="contact-info-section">
-					<h2>Get In Touch</h2>
-					<p class="contact-intro">
-						I'm always excited to connect with fellow developers, potential collaborators, and anyone interested in discussing technology, projects, or opportunities.
-					</p>
+                    <div class="availability-status">
+                        <div class="status-indicator available"></div>
+                        <span>Currently available for new projects</span>
+                    </div>
 
-					<div class="contact-methods">
-						<div class="contact-method">
-							<div class="method-icon">
-								<i class="fas fa-envelope"></i>
-							</div>
-							<div class="method-info">
-								<h3>Email</h3>
-								<p>jimmymcguigan18@gmail.com</p>
-								<small>Responds within 24 hours</small>
-							</div>
-						</div>
+                    <div class="response-time">
+                        <h3>Response Times</h3>
+                        <div class="response-item">
+                            <span>Email inquiries:</span>
+                            <span>Within 24 hours</span>
+                        </div>
+                        <div class="response-item">
+                            <span>Project proposals:</span>
+                            <span>Within 48 hours</span>
+                        </div>
+                        <div class="response-item">
+                            <span>Urgent matters:</span>
+                            <span>Same day</span>
+                        </div>
+                    </div>
+                </div>
 
-						<div class="contact-method">
-							<div class="method-icon">
-								<i class="fab fa-linkedin"></i>
-							</div>
-							<div class="method-info">
-								<h3>LinkedIn</h3>
-								<p>Connect professionally</p>
-								<a href="https://www.linkedin.com/in/james-mcguigan-jr-b26a5b317" target="_blank" rel="noopener noreferrer" class="method-link">View Profile</a>
-							</div>
-						</div>
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send Me a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
 
-						<div class="contact-method">
-							<div class="method-icon">
-								<i class="fab fa-github"></i>
-							</div>
-							<div class="method-info">
-								<h3>GitHub</h3>
-								<p>Check out my repos</p>
-								<a href="https://github.com/Jimmyu2foru18" target="_blank" rel="noopener noreferrer" class="method-link">@Jimmyu2foru18</a>
-							</div>
-						</div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
 
-						<div class="contact-method">
-							<div class="method-icon">
-								<i class="fas fa-calendar"></i>
-							</div>
-							<div class="method-info">
-								<h3>Schedule Call</h3>
-								<p>30-min consultation</p>
-								<a href="mailto:jimmymcguigan18@gmail.com?subject=Requesting%20a%2030-Minute%20Consultation" class="method-link">Email to Request</a>
-							</div>
-						</div>
-					</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company">
+                            </div>
 
-					<div class="availability-status">
-						<div class="status-indicator available"></div>
-						<span>Currently available for new projects</span>
-					</div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="collaboration">Project Collaboration</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="freelance">Freelance Work</option>
+                                    <option value="consultation">Technical Consultation</option>
+                                    <option value="mentorship">Mentorship</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
 
-					<div class="response-time">
-						<h3>Response Times</h3>
-						<div class="response-item">
-							<span>Email inquiries:</span>
-							<span>Within 24 hours</span>
-						</div>
-						<div class="response-item">
-							<span>Project proposals:</span>
-							<span>Within 48 hours</span>
-						</div>
-						<div class="response-item">
-							<span>Urgent matters:</span>
-							<span>Same day</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project, goals, or how I can help you..."></textarea>
+                        </div>
 
-	<!-- FAQ Section -->
-	<section class="faq-section">
-		<div class="container">
-			<h2 class="section-title">Frequently Asked Questions</h2>
-			<div class="faq-grid">
-				<div class="faq-item">
-					<h3>What types of projects do you work on?</h3>
-					<p>I specialize in web development, database design, algorithm implementation, and full-stack applications. I'm particularly interested in projects involving modern web technologies, data analysis, and innovative software solutions.</p>
-				</div>
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="faq-item">
-					<h3>What's your typical project timeline?</h3>
-					<p>Project timelines vary based on complexity and scope. Simple websites can be completed in 1-2 weeks, while complex applications may take 2-6 months. I always provide detailed timelines during our initial consultation.</p>
-				</div>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What types of projects do you work on?</h3>
+                    <p>I specialize in web development, database design, algorithm implementation, and full-stack applications. I'm particularly interested in projects involving modern web technologies, data analysis, and innovative software solutions.</p>
+                </div>
 
-				<div class="faq-item">
-					<h3>Do you work with teams or solo?</h3>
-					<p>I'm comfortable working both independently and as part of a team. I have experience collaborating with designers, other developers, and project managers using modern development workflows and tools.</p>
-				</div>
+                <div class="faq-item">
+                    <h3>What&apos;s your typical project timeline?</h3>
+                    <p>Project timelines vary based on complexity and scope. Simple websites can be completed in 1-2 weeks, while complex applications may take 2-6 months. I always provide detailed timelines during our initial consultation.</p>
+                </div>
 
-				<div class="faq-item">
-					<h3>What technologies do you specialize in?</h3>
-					<p>My core expertise includes JavaScript, Python, Java, React, Node.js, SQL databases, and cloud platforms. I'm always learning new technologies and can adapt to project-specific requirements.</p>
-				</div>
+                <div class="faq-item">
+                    <h3>Do you work with teams or solo?</h3>
+                    <p>I'm comfortable working both independently and as part of a team. I have experience collaborating with designers, other developers, and project managers using modern development workflows and tools.</p>
+                </div>
 
-				<div class="faq-item">
-					<h3>Do you provide ongoing support?</h3>
-					<p>Yes! I offer maintenance and support packages for projects I develop. This includes bug fixes, updates, performance optimization, and feature enhancements as needed.</p>
-				</div>
+                <div class="faq-item">
+                    <h3>What technologies do you specialize in?</h3>
+                    <p>My core expertise includes JavaScript, Python, Java, React, Node.js, SQL databases, and cloud platforms. I'm always learning new technologies and can adapt to project-specific requirements.</p>
+                </div>
 
-				<div class="faq-item">
-					<h3>How do you handle project communication?</h3>
-					<p>I believe in transparent, regular communication. I provide weekly progress updates, use project management tools, and am available for calls or meetings as needed throughout the project lifecycle.</p>
-				</div>
-			</div>
-		</div>
-	</section>
+                <div class="faq-item">
+                    <h3>Do you provide ongoing support?</h3>
+                    <p>Yes! I offer maintenance and support packages for projects I develop. This includes bug fixes, updates, performance optimization, and feature enhancements as needed.</p>
+                </div>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<p>&copy; 2026 James McGuigan. All rights reserved.</p>
-		</div>
-	</footer>
+                <div class="faq-item">
+                    <h3>How do you handle project communication?</h3>
+                    <p>I believe in transparent, regular communication. I provide weekly progress updates, use project management tools, and am available for calls or meetings as needed throughout the project lifecycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<script src="script.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			const contactForm = document.getElementById('contactForm');
-			if (!contactForm) return;
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 James McGuigan. All rights reserved.</p>
+        </div>
+    </footer>
 
-			const submitBtn = contactForm.querySelector('.submit-btn');
-			const btnText = submitBtn.querySelector('.btn-text');
-			const btnLoading = submitBtn.querySelector('.btn-loading');
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            if (!contactForm) return;
 
-			contactForm.addEventListener('submit', async (e) => {
-				e.preventDefault();
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
 
-				btnText.style.display = 'none';
-				btnLoading.style.display = 'inline-flex';
-				submitBtn.disabled = true;
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-				const formData = new FormData(contactForm);
-				const data = Object.fromEntries(formData.entries());
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline-flex';
+                submitBtn.disabled = true;
 
-				try {
-					await new Promise(resolve => setTimeout(resolve, 2000));
-					showNotification("Message sent successfully! I'll get back to you soon.", 'success');
-					contactForm.reset();
-				} catch (error) {
-					showNotification('Failed to send message. Please try again.', 'error');
-				} finally {
-					btnText.style.display = 'inline';
-					btnLoading.style.display = 'none';
-					submitBtn.disabled = false;
-				}
-			});
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
 
-			function showNotification(message, type) {
-				const notification = document.createElement('div');
-				notification.className = `notification ${type}`;
-				notification.innerHTML = `
-					<i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-					<span>${message}</span>
-					<button class="notification-close" aria-label="Close">&times;</button>
-				`;
+                try {
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    showNotification("Message sent successfully! I'll get back to you soon.", 'success');
+                    contactForm.reset();
+                } catch (error) {
+                    showNotification('Failed to send message. Please try again.', 'error');
+                } finally {
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            });
 
-				document.body.appendChild(notification);
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerHTML = `
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                    <span>${message}</span>
+                    <button class="notification-close" aria-label="Close">&times;</button>
+                `;
 
-				const timer = setTimeout(() => notification.remove(), 5000);
+                document.body.appendChild(notification);
 
-				notification.querySelector('.notification-close').addEventListener('click', () => {
-					clearTimeout(timer);
-					notification.remove();
-				});
-			}
+                const timer = setTimeout(() => notification.remove(), 5000);
 
-			const inputs = contactForm.querySelectorAll('input, textarea, select');
-			inputs.forEach(input => {
-				input.addEventListener('blur', validateField);
-				input.addEventListener('input', clearFieldError);
-			});
+                notification.querySelector('.notification-close').addEventListener('click', () => {
+                    clearTimeout(timer);
+                    notification.remove();
+                });
+            }
 
-			function validateField(e) {
-				const field = e.target;
-				const value = field.value.trim();
+            const inputs = contactForm.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearFieldError);
+            });
 
-				clearFieldError(e);
+            function validateField(e) {
+                const field = e.target;
+                const value = field.value.trim();
 
-				if (field.hasAttribute('required') && !value) {
-					showFieldError(field, 'This field is required');
-					return false;
-				}
+                clearFieldError(e);
 
-				if (field.type === 'email' && value) {
-					const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-					if (!emailRegex.test(value)) {
-						showFieldError(field, 'Please enter a valid email address');
-						return false;
-					}
-				}
+                if (field.hasAttribute('required') && !value) {
+                    showFieldError(field, 'This field is required');
+                    return false;
+                }
 
-				return true;
-			}
+                if (field.type === 'email' && value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        showFieldError(field, 'Please enter a valid email address');
+                        return false;
+                    }
+                }
 
-			function showFieldError(field, message) {
-				const formGroup = field.closest('.form-group');
-				const errorElement = document.createElement('span');
-				errorElement.className = 'field-error';
-				errorElement.textContent = message;
-				formGroup.appendChild(errorElement);
-				field.classList.add('error');
-			}
+                return true;
+            }
 
-			function clearFieldError(e) {
-				const field = e.target;
-				const formGroup = field.closest('.form-group');
-				const existingError = formGroup.querySelector('.field-error');
-				if (existingError) {
-					existingError.remove();
-				}
-				field.classList.remove('error');
-			}
-		});
-	</script>
+            function showFieldError(field, message) {
+                const formGroup = field.closest('.form-group');
+                const errorElement = document.createElement('span');
+                errorElement.className = 'field-error';
+                errorElement.textContent = message;
+                formGroup.appendChild(errorElement);
+                field.classList.add('error');
+            }
+
+            function clearFieldError(e) {
+                const field = e.target;
+                const formGroup = field.closest('.form-group');
+                const existingError = formGroup.querySelector('.field-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+                field.classList.remove('error');
+            }
+        });
+    </script>
 </body>
 </html>

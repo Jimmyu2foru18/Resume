@@ -33,16 +33,16 @@
 
 		/* --- Hero Section --- */
 		.certifications-hero {
-			padding: 4.5rem 0 2.5rem;
+			padding: var(--hero-padding-top) 0 var(--hero-padding-bottom);
 			background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
 			border-bottom: 1px solid var(--border-color);
 			text-align: center;
 		}
 
 		.page-title {
-			font-size: 2.75rem;
+			font-size: var(--text-display);
 			font-weight: 700;
-			margin-bottom: 0.75rem;
+			margin-bottom: var(--space-md);
 		}
 
 		.highlight {
@@ -50,7 +50,7 @@
 		}
 
 		.page-subtitle {
-			font-size: 1.15rem;
+			font-size: var(--text-h3);
 			color: var(--text-secondary);
 			max-width: 650px;
 			margin: 0 auto;
@@ -58,23 +58,23 @@
 
 		/* --- Category Filter Tabs --- */
 		.certification-categories {
-			padding: 2rem 0 1rem;
+			padding: var(--space-xl) 0 var(--space-md);
 		}
 
 		.category-tabs {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
-			gap: 0.6rem;
+			gap: var(--space-sm);
 		}
 
 		.category-tab {
 			background-color: var(--surface-color);
 			border: 1px solid var(--border-color);
 			color: var(--text-secondary);
-			padding: 0.6rem 1.25rem;
-			border-radius: 20px;
-			font-size: 0.9rem;
+			padding: var(--space-md) var(--space-lg);
+			border-radius: var(--radius-pill);
+			font-size: var(--text-small);
 			font-weight: 500;
 			cursor: pointer;
 			transition: all 0.2s ease;
@@ -94,20 +94,20 @@
 
 		/* --- Certification Cards Grid --- */
 		.certifications-grid-section {
-			padding: 2rem 0 4rem;
+			padding: var(--space-xl) 0 var(--section-padding-y-lg);
 		}
 
 		.certifications-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-			gap: 1.75rem;
+			gap: var(--space-lg);
 		}
 
 		.cert-card {
 			background-color: var(--surface-color);
 			border: 1px solid var(--border-color);
 			border-radius: var(--radius-lg);
-			padding: 1.5rem;
+			padding: var(--space-lg);
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
@@ -124,10 +124,10 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			font-size: 0.85rem;
+			font-size: var(--text-xs);
 			color: var(--text-muted);
 			font-weight: 500;
-			margin-bottom: 0.75rem;
+			margin-bottom: var(--space-sm);
 		}
 
 		.cert-provider {
@@ -136,38 +136,38 @@
 		}
 
 		.cert-card h3 {
-			font-size: 1.15rem;
+			font-size: var(--text-h3);
 			color: var(--text-color);
-			margin-bottom: 0.75rem;
+			margin-bottom: var(--space-sm);
 			line-height: 1.4;
 		}
 
 		.cert-card p {
-			font-size: 0.925rem;
+			font-size: var(--text-small);
 			color: var(--text-secondary);
-			margin-bottom: 1.25rem;
+			margin-bottom: var(--space-lg);
 		}
 
 		.cert-skills {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 0.4rem;
-			margin-bottom: 1.25rem;
+			gap: var(--space-sm);
+			margin-bottom: var(--space-lg);
 		}
 
 		.skill-tag {
 			background-color: var(--bg-color);
 			color: var(--text-secondary);
 			border: 1px solid var(--border-color);
-			font-size: 0.775rem;
+			font-size: var(--text-xs);
 			font-weight: 500;
-			padding: 0.25rem 0.55rem;
-			border-radius: 6px;
+			padding: var(--space-xs) var(--space-sm);
+			border-radius: var(--radius-sm);
 		}
 
 		.cert-actions {
 			margin-top: auto;
-			padding-top: 1rem;
+			padding-top: var(--space-md);
 			border-top: 1px solid var(--border-color);
 		}
 
@@ -175,10 +175,10 @@
 			text-decoration: none;
 			color: var(--secondary-color);
 			font-weight: 600;
-			font-size: 0.9rem;
+			font-size: var(--text-small);
 			display: inline-flex;
 			align-items: center;
-			gap: 0.4rem;
+			gap: var(--space-sm);
 			transition: color 0.2s ease;
 		}
 
@@ -189,37 +189,37 @@
 		/* --- Skills & Competencies Section --- */
 		.skills-competencies {
 			background-color: var(--surface-color);
-			padding: 4rem 0;
+			padding: var(--section-padding-y-lg) 0;
 			border-top: 1px solid var(--border-color);
 			border-bottom: 1px solid var(--border-color);
 		}
 
 		.section-title {
-			font-size: 2rem;
+			font-size: var(--text-h1);
 			text-align: center;
-			margin-bottom: 3rem;
+			margin-bottom: var(--space-2xl);
 		}
 
 		.competencies-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 2rem;
+			gap: var(--space-xl);
 		}
 
 		.competency-category {
 			background-color: var(--bg-color);
 			border: 1px solid var(--border-color);
 			border-radius: var(--radius-lg);
-			padding: 1.75rem;
+			padding: var(--space-lg);
 		}
 
 		.competency-category h3 {
-			font-size: 1.15rem;
+			font-size: var(--text-h3);
 			color: var(--text-color);
-			margin-bottom: 1.5rem;
+			margin-bottom: var(--space-lg);
 			display: flex;
 			align-items: center;
-			gap: 0.6rem;
+			gap: var(--space-sm);
 		}
 
 		.competency-category h3 i {
@@ -229,7 +229,7 @@
 		.competency-items {
 			display: flex;
 			flex-direction: column;
-			gap: 1.25rem;
+			gap: var(--space-lg);
 		}
 
 		.competency-item {
@@ -239,7 +239,7 @@
 		}
 
 		.competency-name {
-			font-size: 0.925rem;
+			font-size: var(--text-small);
 			font-weight: 500;
 			color: var(--text-color);
 		}
@@ -247,8 +247,8 @@
 		.competency-level {
 			display: flex;
 			align-items: center;
-			gap: 0.6rem;
-			font-size: 0.85rem;
+			gap: var(--space-sm);
+			font-size: var(--text-xs);
 			color: var(--text-secondary);
 		}
 
@@ -277,20 +277,20 @@
 
 		/* --- Continuous Learning Journey --- */
 		.learning-path {
-			padding: 4rem 0;
+			padding: var(--section-padding-y-lg) 0;
 		}
 
 		.learning-timeline {
 			position: relative;
 			max-width: 800px;
 			margin: 0 auto;
-			padding-left: 2rem;
+			padding-left: var(--space-2xl);
 			border-left: 3px solid var(--border-color);
 		}
 
 		.timeline-item {
 			position: relative;
-			margin-bottom: 2rem;
+			margin-bottom: var(--space-2xl);
 		}
 
 		.timeline-item:last-child {
@@ -299,8 +299,8 @@
 
 		.timeline-marker {
 			position: absolute;
-			left: -2.6rem;
-			top: 0.3rem;
+			left: calc(var(--space-2xl) * -1 + 8px);
+			top: var(--space-sm);
 			width: 16px;
 			height: 16px;
 			border-radius: 50%;
@@ -310,50 +310,50 @@
 
 		.timeline-content {
 			background-color: var(--surface-color);
-			padding: 1.5rem;
+			padding: var(--space-lg);
 			border-radius: var(--radius-lg);
 			border: 1px solid var(--border-color);
 			box-shadow: var(--shadow-sm);
 		}
 
 		.timeline-content h3 {
-			font-size: 1.1rem;
+			font-size: var(--text-h3);
 			color: var(--primary-color);
-			margin-bottom: 0.4rem;
+			margin-bottom: var(--space-sm);
 		}
 
 		.timeline-content p {
-			font-size: 0.95rem;
+			font-size: var(--text-small);
 			color: var(--text-secondary);
-			margin-bottom: 1rem;
+			margin-bottom: var(--space-md);
 		}
 
 		.timeline-skills {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 0.4rem;
+			gap: var(--space-sm);
 		}
 
 		/* --- Footer Layout --- */
 		.footer {
 			background-color: var(--surface-color);
-			padding: 2rem 0;
+			padding: var(--space-xl) 0;
 			text-align: center;
 			color: var(--text-secondary);
-			font-size: 0.9rem;
+			font-size: var(--text-small);
 			border-top: 1px solid var(--border-color);
 		}
 
 		/* --- Mobile Responsiveness --- */
 		@media (max-width: 768px) {
 			.page-title {
-				font-size: 2.15rem;
+				font-size: var(--text-h1);
 			}
 
 			.category-tabs {
 				justify-content: flex-start;
 				overflow-x: auto;
-				padding-bottom: 0.5rem;
+				padding-bottom: var(--space-sm);
 			}
 
 			.category-tab {
@@ -361,11 +361,11 @@
 			}
 
 			.learning-timeline {
-				padding-left: 1.5rem;
+				padding-left: var(--space-lg);
 			}
 
 			.timeline-marker {
-				left: -2.1rem;
+				left: calc(var(--space-lg) * -1 + 8px);
 			}
 
 			.hamburger {
@@ -382,7 +382,7 @@
 				text-align: center;
 				transition: 0.3s ease;
 				box-shadow: var(--shadow);
-				padding: 2rem 0;
+				padding: var(--space-2xl) 0;
 			}
 
 			.nav-menu.active {
@@ -433,8 +433,8 @@
 	<section class="certifications-hero">
 		<div class="container">
 			<div class="certifications-hero-content">
-				<h1 class="page-title">My <span class="highlight">Certifications</span></h1>
-				<p class="page-subtitle">Professional development and continuous learning achievements</p>
+				<h1 class="page-title gradient-text">My <span class="highlight">Certifications</span></h1>
+				<p class="page-subtitle">10 Google Coursera certs + 8 AWS badges + Oracle SQL + Adobe/Figma — verified credentials</p>
 			</div>
 		</div>
 	</section>
@@ -450,7 +450,7 @@
 				<button class="category-tab" data-category="technical">Technical Skills</button>
 				<button class="category-tab" data-category="design">Design & Creative</button>
 				<button class="category-tab" data-category="Alison">Alison</button>
-				<button class="category-tab" data-category="DOE">NYC Department of Education</button>
+				<button class="category-tab" data-category="DOE">NYC Dept of Education</button>
 			</div>
 		</div>
 	</section>
@@ -460,6 +460,7 @@
 		<div class="container">
 			<div class="certifications-grid" id="certificationsGrid">
 				<!-- Certifications dynamically loaded here -->
+				<div class="state-loading"></div>
 			</div>
 		</div>
 	</section>
@@ -470,7 +471,7 @@
 			<h2 class="section-title">Skills & Competencies</h2>
 			<div class="competencies-grid">
 				<div class="competency-category">
-					<h3><i class="fas fa-laptop-code"></i> Technical Proficiency</h3>
+					<h3>Technical Proficiency</h3>
 					<div class="competency-items">
 						<div class="competency-item">
 							<span class="competency-name">Software Development</span>
@@ -504,7 +505,7 @@
 				</div>
 				
 				<div class="competency-category">
-					<h3><i class="fas fa-users"></i> Professional Skills</h3>
+					<h3>Professional Skills</h3>
 					<div class="competency-items">
 						<div class="competency-item">
 							<span class="competency-name">Project Management</span>
@@ -538,7 +539,7 @@
 				</div>
 				
 				<div class="competency-category">
-					<h3><i class="fas fa-palette"></i> Design & Creative</h3>
+					<h3>Design & Creative</h3>
 					<div class="competency-items">
 						<div class="competency-item">
 							<span class="competency-name">UI/UX Design</span>
@@ -910,8 +911,8 @@
 				pdfPath: "assets/certifications/oracle-sql.pdf"
 			},
 			{
-				title: "Microslop Azure Fundamentals",
-				provider: "Microslop",
+				title: "Microsoft Azure Fundamentals",
+				provider: "Microsoft",
 				category: "technical",
 				date: "2024",
 				description: "Core Azure services, solutions, and management tools for cloud computing.",
@@ -965,7 +966,7 @@
 					: certifications.filter(cert => cert.category.toLowerCase() === filter.toLowerCase());
 
 				if (filtered.length === 0) {
-					grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 2rem 0;">No certifications found for this category.</p>';
+					grid.innerHTML = '<div class="state-empty"><p>No certifications found for this category.</p></div>';
 					return;
 				}
 
@@ -989,7 +990,7 @@
 						</div>
 						<div class="cert-actions">
 							<a href="${cert.pdfPath}" class="cert-link" target="_blank" rel="noopener noreferrer">
-								View Certificate <i class="fas fa-external-link-alt"></i>
+								Verify Credential
 							</a>
 						</div>
 					`;
@@ -1013,5 +1014,3 @@
 	<script src="script.js"></script>
 </body>
 </html>
-
-

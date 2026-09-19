@@ -1,715 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Education - James McGuigan</title>
-	<link rel="stylesheet" href="styles.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	<style>
-		.education-hero {
-			padding: 120px 0 80px;
-			background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
-			text-align: center;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - James McGuigan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .education-hero {
+            padding: var(--hero-padding-top) 0 var(--hero-padding-bottom);
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.page-title {
-			font-size: 3rem;
-			font-weight: 700;
-			margin-bottom: 1rem;
-		}
+        .page-title {
+            font-size: var(--text-display);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
 
-		.highlight {
-			color: #ffffff;
-		}
+        .highlight {
+            color: var(--primary-color);
+        }
 
-		.page-subtitle {
-			font-size: 1.3rem;
-			opacity: 0.9;
-		}
+        .page-subtitle {
+            font-size: var(--text-h3);
+            color: var(--text-secondary);
+        }
 
-		.academic-timeline {
-			padding: 5rem 0;
-		}
+        .academic-timeline {
+            padding: var(--section-padding-y-lg) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.timeline {
-			position: relative;
-			max-width: 800px;
-			margin: 0 auto;
-		}
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: var(--space-3xl);
+            border-left: 3px solid var(--border-color);
+        }
 
-		.timeline::before {
-			content: '';
-			position: absolute;
-			left: 30px;
-			top: 0;
-			bottom: 0;
-			width: 2px;
-			background: var(--primary-color);
-		}
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
 
-		.timeline-item {
-			position: relative;
-			margin-bottom: 3rem;
-			padding-left: 80px;
-		}
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-3xl);
+            padding-left: calc(var(--space-3xl) * 2);
+        }
 
-		.timeline-marker {
-			position: absolute;
-			left: 15px;
-			top: 0;
-			width: 30px;
-			height: 30px;
-			background: var(--primary-color);
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-size: 0.9rem;
-		}
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
 
-		.timeline-content {
-			background: var(--surface-color);
-			padding: 2rem;
-			border-radius: 12px;
-			box-shadow: var(--shadow);
-		}
+        .timeline-marker {
+            position: absolute;
+            left: calc(var(--space-3xl) - 32px);
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: var(--text-xs);
+        }
 
-		.timeline-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			margin-bottom: 1rem;
-		}
+        .timeline-content {
+            background: var(--surface-color);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
 
-		.timeline-header h3 {
-			color: var(--text-color);
-			font-size: 1.4rem;
-			margin: 0;
-		}
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--space-md);
+        }
 
-		.timeline-date {
-			background: var(--primary-color);
-			color: white;
-			padding: 0.3rem 0.8rem;
-			border-radius: 20px;
-			font-size: 0.9rem;
-			font-weight: 500;
-		}
+        .timeline-header h3 {
+            color: var(--text-color);
+            font-size: var(--text-h2);
+            margin: 0;
+        }
 
-		.timeline-institution {
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-			color: var(--text-secondary);
-			margin-bottom: 1rem;
-			font-weight: 500;
-		}
+        .timeline-date {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
 
-		.timeline-details p {
-			color: var(--text-secondary);
-			line-height: 1.6;
-			margin-bottom: 1.5rem;
-		}
+        .timeline-institution {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            font-weight: 500;
+        }
 
-		.coursework, .achievements {
-			margin-bottom: 1.5rem;
-		}
+        .timeline-details p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
 
-		.coursework h4, .achievements h4 {
-			color: var(--text-color);
-			margin-bottom: 0.8rem;
-			font-size: 1.1rem;
-		}
+        .coursework, .achievements {
+            margin-bottom: var(--space-lg);
+        }
 
-		.course-grid {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-		}
+        .coursework h4, .achievements h4 {
+            color: var(--text-color);
+            margin-bottom: var(--space-sm);
+            font-size: var(--text-h4);
+        }
 
-		.course-tag {
-			background: var(--primary-color);
-			color: white;
-			padding: 0.3rem 0.8rem;
-			border-radius: 20px;
-			font-size: 0.85rem;
-			font-weight: 500;
-		}
+        .course-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
 
-		.achievements ul {
-			list-style: none;
-			padding: 0;
-		}
+        .course-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
 
-		.achievements li {
-			position: relative;
-			padding-left: 1.5rem;
-			margin-bottom: 0.5rem;
-			color: var(--text-secondary);
-		}
+        .skills-development {
+            padding: var(--section-padding-y-lg) 0;
+            background: var(--surface-color);
+        }
 
-		.achievements li::before {
-			content: '✓';
-			position: absolute;
-			left: 0;
-			color: var(--success-color);
-			font-weight: bold;
-		}
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+        }
 
-		.skills-development {
-			padding: 5rem 0;
-			background: var(--surface-color);
-		}
+        .skill-category {
+            background: var(--bg-color);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
 
-		.skills-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-			gap: 2rem;
-		}
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            color: white;
+            font-size: 1.5rem;
+        }
 
-		.skill-category {
-			background: var(--bg-color);
-			padding: 2rem;
-			border-radius: 12px;
-			box-shadow: var(--shadow);
-			text-align: center;
-		}
+        .skill-category h3 {
+            color: var(--text-color);
+            margin-bottom: var(--space-md);
+        }
 
-		.skill-icon {
-			width: 60px;
-			height: 60px;
-			background: var(--gradient-primary);
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin: 0 auto 1rem;
-			color: white;
-			font-size: 1.5rem;
-		}
+        .skill-category p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
 
-		.skill-category h3 {
-			color: var(--text-color);
-			margin-bottom: 1rem;
-		}
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            justify-content: center;
+        }
 
-		.skill-category p {
-			color: var(--text-secondary);
-			margin-bottom: 1.5rem;
-			line-height: 1.6;
-		}
+        .skill-list span {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
 
-		.skill-list {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-			justify-content: center;
-		}
+        .academic-projects {
+            padding: var(--section-padding-y-lg) 0;
+        }
 
-		.skill-list span {
-			background: var(--primary-color);
-			color: white;
-			padding: 0.3rem 0.8rem;
-			border-radius: 20px;
-			font-size: 0.85rem;
-			font-weight: 500;
-		}
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
 
-		.academic-projects {
-			padding: 5rem 0;
-		}
+        .project-card {
+            background: var(--surface-color);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease;
+            border: 1px solid var(--border-color);
+        }
 
-		.projects-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 2rem;
-		}
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
 
-		.project-card {
-			background: var(--surface-color);
-			padding: 2rem;
-			border-radius: 12px;
-			box-shadow: var(--shadow);
-			transition: transform 0.3s ease;
-		}
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
 
-		.project-card:hover {
-			transform: translateY(-5px);
-		}
+        .project-header h3 {
+            color: var(--text-color);
+            margin: 0;
+            font-size: var(--text-h3);
+        }
 
-		.project-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			margin-bottom: 1rem;
-		}
+        .project-type {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
 
-		.project-header h3 {
-			color: var(--text-color);
-			margin: 0;
-		}
+        .project-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+        }
 
-		.project-type {
-			background: var(--primary-color);
-			color: white;
-			padding: 0.3rem 0.8rem;
-			border-radius: 20px;
-			font-size: 0.8rem;
-			font-weight: 500;
-		}
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
 
-		.project-card p {
-			color: var(--text-secondary);
-			line-height: 1.6;
-			margin-bottom: 1.5rem;
-		}
+        .project-tech span {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            font-size: var(--text-xs);
+            font-weight: 500;
+        }
 
-		.project-tech {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-		}
+        .download-section {
+            padding: var(--section-padding-y-lg) 0;
+            background: var(--surface-color);
+        }
 
-		.project-tech span {
-			background: var(--primary-color);
-			color: white;
-			padding: 0.3rem 0.8rem;
-			border-radius: 20px;
-			font-size: 0.8rem;
-			font-weight: 500;
-		}
+        .download-card {
+            background: var(--bg-color);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-xl);
+            border: 1px solid var(--border-color);
+        }
 
-		.download-section {
-			padding: 5rem 0;
-			background: var(--surface-color);
-		}
+        .download-content h2 {
+            color: var(--text-color);
+            margin-bottom: var(--space-sm);
+            font-size: var(--text-h2);
+        }
 
-		.download-card {
-			background: var(--bg-color);
-			padding: 3rem;
-			border-radius: 12px;
-			box-shadow: var(--shadow);
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			gap: 2rem;
-		}
+        .download-content p {
+            color: var(--text-secondary);
+            font-size: var(--text-small);
+        }
 
-		.download-content h2 {
-			color: var(--text-color);
-			margin-bottom: 0.5rem;
-		}
+        .download-buttons {
+            display: flex;
+            gap: var(--space-md);
+            flex-shrink: 0;
+        }
 
-		.download-content p {
-			color: var(--text-secondary);
-		}
+        @media (max-width: 768px) {
+            .timeline {
+                padding-left: var(--space-lg);
+            }
 
-		.download-buttons {
-			display: flex;
-			gap: 1rem;
-			flex-shrink: 0;
-		}
+            .timeline-item {
+                padding-left: calc(var(--space-lg) * 2);
+            }
 
-		@media (max-width: 768px) {
-			.timeline::before {
-				left: 15px;
-			}
+            .timeline-marker {
+                left: calc(var(--space-lg) - 16px);
+            }
 
-			.timeline-item {
-				padding-left: 50px;
-			}
+            .timeline-header {
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
 
-			.timeline-marker {
-				left: 0;
-			}
+            .download-card {
+                flex-direction: column;
+                text-align: center;
+            }
 
-			.timeline-header {
-				flex-direction: column;
-				gap: 0.3rem;
-			}
+            .download-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
 
-			.download-card {
-				flex-direction: column;
-				text-align: center;
-			}
-
-			.download-buttons {
-				flex-direction: column;
-				width: 100%;
-			}
-		}
-	</style>
+            .page-title {
+                font-size: var(--text-h1);
+            }
+        }
+    </style>
 </head>
 <body>
-	<!-- Navigation -->
-	<nav class="navbar">
-		<div class="nav-container">
-			<div class="nav-logo">
-				<h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
-			</div>
-			<ul class="nav-menu">
-				<li class="nav-item">
-					<a href="index.html" class="nav-link">Home</a>
-				</li>
-				<li class="nav-item">
-					<a href="about.html" class="nav-link">About</a>
-				</li>
-				<li class="nav-item">
-					<a href="projects.html" class="nav-link">Projects</a>
-				</li>
-				<li class="nav-item">
-					<a href="certifications.html" class="nav-link">Certifications</a>
-				</li>
-				<li class="nav-item">
-					<a href="education.html" class="nav-link active">Education</a>
-				</li>
-				<li class="nav-item">
-					<a href="experience.html" class="nav-link">Experience</a>
-				</li>
-				<li class="nav-item">
-					<a href="contact.html" class="nav-link">Contact</a>
-				</li>
-			</ul>
-			<div class="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="certifications.html" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="education.html" class="nav-link active">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experience.html" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" role="button" aria-label="Toggle navigation menu" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Education Hero Section -->
-	<section class="education-hero">
-		<div class="container">
-			<div class="education-hero-content">
-				<h1 class="page-title">Educational <span class="highlight">Journey</span></h1>
-				<p class="page-subtitle">Academic excellence in Management Information Systems</p>
-			</div>
-		</div>
-	</section>
+    <!-- Education Hero Section -->
+    <section class="education-hero">
+        <div class="container">
+            <div class="education-hero-content">
+                <h1 class="page-title gradient-text">Educational <span class="highlight">Journey</span></h1>
+                <p class="page-subtitle">B.S. MIS 3.7 GPA | M.S. Data Science in progress | 10+ certifications earned</p>
+            </div>
+        </div>
+    </section>
 
-	<!-- Academic Timeline -->
-	<section class="academic-timeline">
-		<div class="container">
-			<h2 class="section-title">Academic Achievements</h2>
-			<div class="timeline">
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-graduation-cap"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<h3>Master of Data Science</h3>
-							<span class="timeline-date">Expected 2028</span>
-						</div>
-						<div class="timeline-institution">
-							<i class="fas fa-university"></i>
-							<span>State University of New York College at Old Westbury</span>
-						</div>
-						<div class="timeline-details">
-							<p>Advanced studies in data science, predictive modeling, and analytics.</p>
-						</div>
-					</div>
-				</div>
+    <!-- Academic Timeline -->
+    <section class="academic-timeline">
+        <div class="container">
+            <h2 class="section-title">Academic Achievements</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Master of Data Science</h3>
+                            <span class="timeline-date">Expected 2028</span>
+                        </div>
+                        <div class="timeline-institution">
+                            State University of New York College at Old Westbury
+                        </div>
+                        <div class="timeline-details">
+                            <p>Advanced studies in data science, predictive modeling, and analytics.</p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-graduation-cap"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<h3>Bachelor of Education (Mathematics)</h3>
-							<span class="timeline-date">Expected 2027</span>
-						</div>
-						<div class="timeline-institution">
-							<i class="fas fa-university"></i>
-							<span>State University of New York College at Old Westbury</span>
-						</div>
-						<div class="timeline-details">
-							<p>Focus on mathematics education and pedagogical strategies.</p>
-						</div>
-					</div>
-				</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Bachelor of Education (Mathematics)</h3>
+                            <span class="timeline-date">Expected 2027</span>
+                        </div>
+                        <div class="timeline-institution">
+                            State University of New York College at Old Westbury
+                        </div>
+                        <div class="timeline-details">
+                            <p>Focus on mathematics education and pedagogical strategies.</p>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-graduation-cap"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<h3>Bachelor of Science in Management Information Systems</h3>
-							<span class="timeline-date">2022 - 2025</span>
-						</div>
-						<div class="timeline-institution">
-							<i class="fas fa-university"></i>
-							<span>State University of New York College at Old Westbury</span>
-						</div>
-						<div class="timeline-details">
-							<p><strong>GPA: 3.7</strong> - Comprehensive study in management information systems, combining business strategy with technology solutions.</p>
-							<div class="coursework">
-								<h4>Key Coursework:</h4>
-								<div class="course-grid">
-									<span class="course-tag">Database Management</span>
-									<span class="course-tag">Systems Analysis</span>
-									<span class="course-tag">Business Intelligence</span>
-									<span class="course-tag">Project Management</span>
-									<span class="course-tag">Information Security</span>
-									<span class="course-tag">Web Development</span>
-									<span class="course-tag">Data Analytics</span>
-									<span class="course-tag">Enterprise Systems</span>
-								</div>
-							</div>
-							<div class="achievements">
-								<h4>Academic Achievements:</h4>
-								<ul>
-									<li>Maintained 3.7 GPA while working full-time</li>
-									<li>Dean's List recognition for academic excellence</li>
-									<li>Specialized in business-technology integration</li>
-									<li>Completed advanced coursework in information systems</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Bachelor of Science in Management Information Systems</h3>
+                            <span class="timeline-date">2022 - 2025</span>
+                        </div>
+                        <div class="timeline-institution">
+                            State University of New York College at Old Westbury
+                        </div>
+                        <div class="timeline-details">
+                            <p><strong>GPA: 3.7</strong> - Comprehensive study in management information systems, combining business strategy with technology solutions.</p>
+                            <div class="coursework">
+                                <h4>Key Coursework:</h4>
+                                <div class="course-grid">
+                                    <span class="course-tag">Database Management</span>
+                                    <span class="course-tag">Systems Analysis</span>
+                                    <span class="course-tag">Business Intelligence</span>
+                                    <span class="course-tag">Project Management</span>
+                                    <span class="course-tag">Information Security</span>
+                                    <span class="course-tag">Web Development</span>
+                                    <span class="course-tag">Data Analytics</span>
+                                    <span class="course-tag">Enterprise Systems</span>
+                                </div>
+                            </div>
+                            <div class="achievements">
+                                <h4>Academic Achievements:</h4>
+                                <ul>
+                                    <li>Dean's List recognition for academic excellence</li>
+                                    <li>Completed advanced coursework in information systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-certificate"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<h3>Associate in Liberal Arts</h3>
-							<span class="timeline-date">Sep 2015 - Dec 2017</span>
-						</div>
-						<div class="timeline-institution">
-							<i class="fas fa-university"></i>
-							<span>Nassau Community College</span>
-						</div>
-						<div class="timeline-details">
-							<p><strong>GPA: 3.5</strong> - Foundational education in liberal arts with emphasis on critical thinking and communication skills.</p>
-							<div class="coursework">
-								<h4>Key Areas:</h4>
-								<div class="course-grid">
-									<span class="course-tag">English Composition</span>
-									<span class="course-tag">Mathematics</span>
-									<span class="course-tag">Natural Sciences</span>
-									<span class="course-tag">Social Sciences</span>
-									<span class="course-tag">Humanities</span>
-									<span class="course-tag">Critical Thinking</span>
-									<span class="course-tag">Communication</span>
-									<span class="course-tag">Research Skills</span>
-								</div>
-							</div>
-							<div class="achievements">
-								<h4>Academic Achievements:</h4>
-								<ul>
-									<li>Maintained 3.5 GPA throughout program</li>
-									<li>Strong foundation for advanced degree pursuits</li>
-									<li>Developed excellent written and verbal communication skills</li>
-									<li>Successfully transferred to four-year institution</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Associate in Liberal Arts</h3>
+                            <span class="timeline-date">Sep 2015 - Dec 2017</span>
+                        </div>
+                        <div class="timeline-institution">
+                            Nassau Community College
+                        </div>
+                        <div class="timeline-details">
+                            <p><strong>GPA: 3.5</strong> - Foundational education in liberal arts with emphasis on critical thinking and communication skills.</p>
+                            <div class="coursework">
+                                <h4>Key Areas:</h4>
+                                <div class="course-grid">
+                                    <span class="course-tag">English Composition</span>
+                                    <span class="course-tag">Mathematics</span>
+                                    <span class="course-tag">Natural Sciences</span>
+                                    <span class="course-tag">Social Sciences</span>
+                                    <span class="course-tag">Humanities</span>
+                                    <span class="course-tag">Critical Thinking</span>
+                                    <span class="course-tag">Communication</span>
+                                    <span class="course-tag">Research Skills</span>
+                                </div>
+                            </div>
+                            <div class="achievements">
+                                <h4>Academic Achievements:</h4>
+                                <ul>
+                                    <li>Successfully transferred to four-year institution</li>
+                                    <li>Developed excellent written and verbal communication skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-laptop-code"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<h3>Self-Directed Learning & Online Education</h3>
-							<span class="timeline-date">2018 - Present</span>
-						</div>
-						<div class="timeline-institution">
-							<i class="fas fa-globe"></i>
-							<span>Various Online Platforms</span>
-						</div>
-						<div class="timeline-details">
-							<p>Continuous professional development through online courses, tutorials, and hands-on projects.</p>
-							<div class="coursework">
-								<h4>Learning Platforms:</h4>
-								<div class="course-grid">
-									<span class="course-tag">Google Coursera</span>
-									<span class="course-tag">freeCodeCamp</span>
-									<span class="course-tag">Udemy</span>
-									<span class="course-tag">YouTube Tutorials</span>
-									<span class="course-tag">GitHub Learning</span>
-									<span class="course-tag">Stack Overflow</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Self-Directed Learning & Online Education</h3>
+                            <span class="timeline-date">2018 - Present</span>
+                        </div>
+                        <div class="timeline-institution">
+                            Various Online Platforms
+                        </div>
+                        <div class="timeline-details">
+                            <p>Continuous professional development through online courses, tutorials, and hands-on projects.</p>
+                            <div class="coursework">
+                                <h4>Learning Platforms:</h4>
+                                <div class="course-grid">
+                                    <span class="course-tag">Google Coursera</span>
+                                    <span class="course-tag">freeCodeCamp</span>
+                                    <span class="course-tag">Udemy</span>
+                                    <span class="course-tag">YouTube Tutorials</span>
+                                    <span class="course-tag">GitHub Learning</span>
+                                    <span class="course-tag">Stack Overflow</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Skills Development -->
-	<section class="skills-development">
-		<div class="container">
-			<h2 class="section-title">Skills Development Through Education</h2>
-			<div class="skills-grid">
-				<div class="skill-category">
-					<div class="skill-icon">
-						<i class="fas fa-code"></i>
-					</div>
-					<h3>Programming Languages</h3>
-					<p>Mastered multiple programming languages through coursework and personal projects</p>
-					<div class="skill-list">
-						<span>Java</span>
-						<span>Python</span>
-						<span>JavaScript</span>
-						<span>C++</span>
-						<span>SQL</span>
-					</div>
-				</div>
+    <!-- Skills Development -->
+    <section class="skills-development">
+        <div class="container">
+            <h2 class="section-title">Skills Development Through Education</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">1</div>
+                    <h3>Programming Languages</h3>
+                    <p>Mastered multiple programming languages through coursework and personal projects</p>
+                    <div class="skill-list">
+                        <span>Java</span>
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>C++</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
 
-				<div class="skill-category">
-					<div class="skill-icon">
-						<i class="fas fa-globe"></i>
-					</div>
-					<h3>Web Technologies</h3>
-					<p>Comprehensive understanding of modern web development stack</p>
-					<div class="skill-list">
-						<span>HTML5/CSS3</span>
-						<span>React.js</span>
-						<span>Node.js</span>
-						<span>Express.js</span>
-						<span>MongoDB</span>
-					</div>
-				</div>
+                <div class="skill-category">
+                    <div class="skill-icon">2</div>
+                    <h3>Web Technologies</h3>
+                    <p>Comprehensive understanding of modern web development stack</p>
+                    <div class="skill-list">
+                        <span>HTML5/CSS3</span>
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
 
-				<div class="skill-category">
-					<div class="skill-icon">
-						<i class="fas fa-database"></i>
-					</div>
-					<h3>Data Management</h3>
-					<p>Strong foundation in database design and data analysis</p>
-					<div class="skill-list">
-						<span>MySQL</span>
-						<span>PostgreSQL</span>
-						<span>MongoDB</span>
-						<span>Data Analytics</span>
-						<span>Business Intelligence</span>
-					</div>
-				</div>
+                <div class="skill-category">
+                    <div class="skill-icon">3</div>
+                    <h3>Data Management</h3>
+                    <p>Strong foundation in database design and data analysis</p>
+                    <div class="skill-list">
+                        <span>MySQL</span>
+                        <span>PostgreSQL</span>
+                        <span>MongoDB</span>
+                        <span>Data Analytics</span>
+                        <span>Business Intelligence</span>
+                    </div>
+                </div>
 
-				<div class="skill-category">
-					<div class="skill-icon">
-						<i class="fas fa-shield-alt"></i>
-					</div>
-					<h3>Cybersecurity</h3>
-					<p>Security-first mindset developed through specialized coursework</p>
-					<div class="skill-list">
-						<span>Network Security</span>
-						<span>Ethical Hacking</span>
-						<span>Risk Assessment</span>
-						<span>Compliance</span>
-						<span>Incident Response</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                <div class="skill-category">
+                    <div class="skill-icon">4</div>
+                    <h3>Cybersecurity</h3>
+                    <p>Security-first mindset developed through specialized coursework</p>
+                    <div class="skill-list">
+                        <span>Network Security</span>
+                        <span>Ethical Hacking</span>
+                        <span>Risk Assessment</span>
+                        <span>Compliance</span>
+                        <span>Incident Response</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Academic Projects -->
-	<section class="academic-projects">
-		<div class="container">
-			<h2 class="section-title">Notable Academic Projects</h2>
-			<div class="projects-grid">
-				<div class="project-card">
-					<div class="project-header">
-						<h3>Senior Capstone Project</h3>
-						<span class="project-type">Full-Stack Development</span>
-					</div>
-					<p>Developed a comprehensive web application for student course management with real-time collaboration features.</p>
-					<div class="project-tech">
-						<span>React</span>
-						<span>Node.js</span>
-						<span>MongoDB</span>
-						<span>Socket.io</span>
-					</div>
-				</div>
+    <!-- Academic Projects -->
+    <section class="academic-projects">
+        <div class="container">
+            <h2 class="section-title">Notable Academic Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Senior Capstone Project</h3>
+                        <span class="project-type">Full-Stack Development</span>
+                    </div>
+                    <p>Developed a comprehensive web application for student course management with real-time collaboration features.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>Socket.io</span>
+                    </div>
+                </div>
 
-				<div class="project-card">
-					<div class="project-header">
-						<h3>Database Design Project</h3>
-						<span class="project-type">Data Management</span>
-					</div>
-					<p>Designed and implemented a normalized database system for a fictional e-commerce platform with complex relationships.</p>
-					<div class="project-tech">
-						<span>MySQL</span>
-						<span>ERD Design</span>
-						<span>Normalization</span>
-						<span>Stored Procedures</span>
-					</div>
-				</div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Database Design Project</h3>
+                        <span class="project-type">Data Management</span>
+                    </div>
+                    <p>Designed and implemented a normalized database system for a fictional e-commerce platform with complex relationships.</p>
+                    <div class="project-tech">
+                        <span>MySQL</span>
+                        <span>ERD Design</span>
+                        <span>Normalization</span>
+                        <span>Stored Procedures</span>
+                    </div>
+                </div>
 
-				<div class="project-card">
-					<div class="project-header">
-						<h3>Machine Learning Research</h3>
-						<span class="project-type">AI/ML</span>
-					</div>
-					<p>Conducted research on predictive algorithms for student performance analysis using various ML techniques.</p>
-					<div class="project-tech">
-						<span>Python</span>
-						<span>Scikit-learn</span>
-						<span>Pandas</span>
-						<span>Data Visualization</span>
-					</div>
-				</div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Machine Learning Research</h3>
+                        <span class="project-type">AI/ML</span>
+                    </div>
+                    <p>Conducted research on predictive algorithms for student performance analysis using various ML techniques.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>Pandas</span>
+                        <span>Data Visualization</span>
+                    </div>
+                </div>
 
-				<div class="project-card">
-					<div class="project-header">
-						<h3>Network Security Audit</h3>
-						<span class="project-type">Cybersecurity</span>
-					</div>
-					<p>Performed comprehensive security assessment of a simulated corporate network infrastructure.</p>
-					<div class="project-tech">
-						<span>Penetration Testing</span>
-						<span>Vulnerability Assessment</span>
-						<span>Network Analysis</span>
-						<span>Security Reporting</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Network Security Audit</h3>
+                        <span class="project-type">Cybersecurity</span>
+                    </div>
+                    <p>Performed comprehensive security assessment of a simulated corporate network infrastructure.</p>
+                    <div class="project-tech">
+                        <span>Penetration Testing</span>
+                        <span>Vulnerability Assessment</span>
+                        <span>Network Analysis</span>
+                        <span>Security Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Download Resume Section -->
-	<section class="download-section">
-		<div class="container">
-			<div class="download-card">
-				<div class="download-content">
-					<h2>Download My Academic Transcripts & Resume</h2>
-					<p>Get detailed information about my educational background and achievements</p>
-				</div>
-				<div class="download-buttons">
-					<a href="James_McGuigan_Jr_Resume.pdf" download class="btn btn-primary">
-						<i class="fas fa-download"></i>
-						Download Resume
-					</a>
-					<a href="audit-700762533-A0086gYS.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-						<i class="fas fa-file-alt"></i>
-						View Transcripts
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Download Resume Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-content">
+                    <h2>Download My Academic Transcripts & Resume</h2>
+                    <p>Get detailed information about my educational background and achievements</p>
+                </div>
+                <div class="download-buttons">
+                    <a href="James_McGuigan_Jr_Resume.pdf" download class="btn btn-primary">
+                        Download Resume
+                    </a>
+                    <a href="audit-700762533-A0086gYS.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        View Transcripts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<p>&copy; 2025 James McGuigan. All rights reserved.</p>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 James McGuigan. All rights reserved.</p>
+        </div>
+    </footer>
 
-	<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

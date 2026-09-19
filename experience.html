@@ -1,932 +1,930 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Experience - James McGuigan</title>
-	<link rel="stylesheet" href="styles.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - James McGuigan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-	<style>
-		/* --- Root CSS Variables --- */
-		
+    <style>
+        /* --- Root CSS Variables --- */
+        
 
-		/* --- Global Reset & Layout --- */
-		* {
-			box-sizing: border-box;
-			margin: 0;
-			padding: 0;
-		}
+        /* --- Global Reset & Layout --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-		body {
-			font-family: 'Inter', system-ui, -apple-system, sans-serif;
-			background-color: var(--bg-color);
-			color: var(--text-color);
-			line-height: 1.6;
-		}
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-		.container {
-			max-width: 1100px;
-			margin: 0 auto;
-			padding: 0 1.5rem;
-		}
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
 
-		/* --- Hero Section --- */
-		.experience-hero {
-			padding: 5rem 0 3rem;
-			background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
-			border-bottom: 1px solid var(--border-color);
-			text-align: center;
-		}
+        /* --- Hero Section --- */
+        .experience-hero {
+            padding: var(--hero-padding-top) 0 var(--hero-padding-bottom);
+            background: linear-gradient(135deg, var(--bg-color) 0%, var(--surface-color) 100%);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
 
-		.page-title {
-			font-size: 2.75rem;
-			font-weight: 700;
-			margin-bottom: 0.75rem;
-		}
+        .page-title {
+            font-size: var(--text-display);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
 
-		.highlight {
-			color: var(--primary-color);
-		}
+        .highlight {
+            color: var(--primary-color);
+        }
 
-		.page-subtitle {
-			font-size: 1.15rem;
-			color: var(--text-secondary);
-			max-width: 700px;
-			margin: 0 auto;
-		}
+        .page-subtitle {
+            font-size: var(--text-h3);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-		/* --- Timeline Section --- */
-		.career-timeline {
-			padding: 4rem 0;
-		}
+        /* --- Timeline Section --- */
+        .career-timeline {
+            padding: var(--section-padding-y-lg) 0;
+        }
 
-		.section-title {
-			font-size: 2rem;
-			text-align: center;
-			margin-bottom: 3rem;
-			color: var(--text-color);
-		}
+        .section-title {
+            font-size: var(--text-h1);
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+            color: var(--text-color);
+        }
 
-		.timeline {
-			position: relative;
-			max-width: 850px;
-			margin: 0 auto;
-			padding-left: 2rem;
-			border-left: 3px solid var(--border-color);
-		}
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-left: calc(var(--space-3xl) + 8px);
+            border-left: 3px solid var(--border-color);
+        }
 
-		.timeline-item {
-			position: relative;
-			margin-bottom: 2.5rem;
-		}
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-3xl);
+        }
 
-		.timeline-item:last-child {
-			margin-bottom: 0;
-		}
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
 
-		.timeline-marker {
-			position: absolute;
-			left: -2.85rem;
-			top: 0;
-			width: 42px;
-			height: 42px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-			color: white;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 1.1rem;
-			box-shadow: var(--shadow);
-		}
+        .timeline-marker {
+            position: absolute;
+            left: calc(var(--space-3xl) - 21px);
+            top: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+        }
 
-		.timeline-content {
-			background-color: var(--surface-color);
-			padding: 2rem;
-			border-radius: var(--radius-lg);
-			border: 1px solid var(--border-color);
-			box-shadow: var(--shadow-sm);
-			transition: transform 0.2s ease, box-shadow 0.2s ease;
-		}
+        .timeline-content {
+            background-color: var(--surface-color);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-		.timeline-content:hover {
-			transform: translateY(-2px);
-			box-shadow: var(--shadow);
-		}
+        .timeline-content:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
 
-		.timeline-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-			margin-bottom: 1.25rem;
-			border-bottom: 1px solid var(--border-color);
-			padding-bottom: 1rem;
-		}
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--space-md);
+        }
 
-		.job-info h3 {
-			font-size: 1.35rem;
-			color: var(--text-color);
-			margin-bottom: 0.35rem;
-		}
+        .job-info h3 {
+            font-size: var(--text-h2);
+            color: var(--text-color);
+            margin-bottom: var(--space-xs);
+        }
 
-		.company-info, .location-info {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.4rem;
-			color: var(--text-secondary);
-			font-size: 0.9rem;
-			margin-right: 1rem;
-		}
+        .company-info, .location-info {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--text-secondary);
+            font-size: var(--text-small);
+            margin-right: var(--space-md);
+        }
 
-		.company-info i, .location-info i {
-			color: var(--primary-color);
-		}
+        .company-info i, .location-info i {
+            color: var(--primary-color);
+        }
 
-		.timeline-date {
-			background-color: var(--bg-color);
-			color: var(--primary-color);
-			padding: 0.35rem 0.75rem;
-			border-radius: 20px;
-			font-size: 0.85rem;
-			font-weight: 600;
-			border: 1px solid var(--border-color);
-		}
+        .timeline-date {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-pill);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
 
-		/* --- Content Lists & Formatting --- */
-		.job-description p {
-			color: var(--text-secondary);
-			margin-bottom: 1.25rem;
-		}
+        /* --- Content Lists & Formatting --- */
+        .job-description p {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
 
-		.responsibilities, .achievements, .skills-developed {
-			margin-top: 1.25rem;
-		}
+        .responsibilities, .achievements, .skills-developed {
+            margin-top: var(--space-lg);
+        }
 
-		.responsibilities h4, .achievements h4, .skills-developed h4 {
-			font-size: 0.95rem;
-			text-transform: uppercase;
-			letter-spacing: 0.05em;
-			color: var(--text-muted);
-			margin-bottom: 0.75rem;
-		}
+        .responsibilities h4, .achievements h4, .skills-developed h4 {
+            font-size: var(--text-h4);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: var(--space-sm);
+        }
 
-		.responsibilities ul, .achievements ul {
-			list-style: disc;
-			padding-left: 1.25rem;
-			color: var(--text-secondary);
-		}
+        .responsibilities ul, .achievements ul {
+            list-style: disc;
+            padding-left: var(--space-xl);
+            color: var(--text-secondary);
+        }
 
-		.responsibilities li, .achievements li {
-			margin-bottom: 0.5rem;
-			font-size: 0.95rem;
-		}
+        .responsibilities li, .achievements li {
+            margin-bottom: var(--space-xs);
+            font-size: var(--text-small);
+        }
 
-		.skill-tags {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5rem;
-		}
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
 
-		.skill-tags span {
-			background-color: var(--bg-color);
-			color: var(--text-color);
-			padding: 0.3rem 0.65rem;
-			border-radius: 6px;
-			font-size: 0.825rem;
-			font-weight: 500;
-			border: 1px solid var(--border-color);
-		}
+        .skill-tags span {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-size: var(--text-xs);
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
 
-		/* --- Professional Competencies Section --- */
-		.professional-skills {
-			background-color: var(--surface-color);
-			padding: 4rem 0;
-			border-top: 1px solid var(--border-color);
-		}
+        /* --- Stat Band for Achievements --- */
+        .stat-band {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+            padding: var(--space-lg) 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.skills-categories {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-			gap: 2rem;
-		}
+        .stat-item {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
 
-		.skill-category {
-			background-color: var(--bg-color);
-			padding: 1.75rem;
-			border-radius: var(--radius-lg);
-			border: 1px solid var(--border-color);
-		}
+        .stat-value {
+            display: block;
+            font-size: var(--text-h1);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: var(--text-color);
+            font-family: var(--font-mono);
+        }
 
-		.category-header {
-			display: flex;
-			align-items: center;
-			gap: 0.75rem;
-			margin-bottom: 1.5rem;
-		}
+        .stat-label {
+            display: block;
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: var(--space-xs);
+        }
 
-		.category-header i {
-			font-size: 1.5rem;
-			color: var(--primary-color);
-		}
+        /* --- Professional Competencies Section --- */
+        .professional-skills {
+            background-color: var(--surface-color);
+            padding: var(--section-padding-y-lg) 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-		.category-header h3 {
-			font-size: 1.2rem;
-		}
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
 
-		.skill-items {
-			display: flex;
-			flex-direction: column;
-			gap: 1.25rem;
-		}
+        .skill-category {
+            background-color: var(--bg-color);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+        }
 
-		.skill-item span {
-			display: block;
-			font-size: 0.9rem;
-			font-weight: 500;
-			margin-bottom: 0.4rem;
-		}
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
 
-		.skill-level {
-			width: 100%;
-			height: 8px;
-			background-color: var(--border-color);
-			border-radius: 4px;
-			overflow: hidden;
-		}
+        .category-header i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
 
-		.skill-bar {
-			height: 100%;
-			width: 0%;
-			background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-			border-radius: 4px;
-			transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-		}
+        .category-header h3 {
+            font-size: var(--text-h3);
+        }
 
-		/* --- Footer --- */
-		.footer {
-			background-color: var(--surface-color);
-			padding: 2rem 0;
-			text-align: center;
-			color: var(--text-secondary);
-			font-size: 0.9rem;
-			border-top: 1px solid var(--border-color);
-		}
+        .skill-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
 
-		/* --- Responsive Design --- */
-		@media (max-width: 768px) {
-			.page-title {
-				font-size: 2.15rem;
-			}
+        .skill-item span {
+            display: block;
+            font-size: var(--text-small);
+            font-weight: 500;
+            margin-bottom: var(--space-xs);
+        }
 
-			.timeline {
-				padding-left: 1.5rem;
-			}
+        .skill-level {
+            width: 100%;
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
 
-			.timeline-marker {
-				left: -2.25rem;
-				width: 34px;
-				height: 34px;
-				font-size: 0.9rem;
-			}
+        .skill-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-			.timeline-header {
-				flex-direction: column;
-				align-items: flex-start;
-			}
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--surface-color);
+            padding: var(--space-xl) 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: var(--text-small);
+            border-top: 1px solid var(--border-color);
+        }
 
-			.hamburger {
-				display: flex;
-			}
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: var(--text-h1);
+            }
 
-			.nav-menu {
-				position: fixed;
-				left: -100%;
-				top: 65px;
-				flex-direction: column;
-				background-color: var(--surface-color);
-				width: 100%;
-				text-align: center;
-				transition: 0.3s ease;
-				box-shadow: var(--shadow);
-				padding: 2rem 0;
-			}
+            .timeline {
+                padding-left: calc(var(--space-lg) + 8px);
+            }
 
-			.nav-menu.active {
-				left: 0;
-			}
-		}
-	</style>
+            .timeline-marker {
+                left: calc(var(--space-lg) - 21px);
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stat-value {
+                font-size: var(--text-h2);
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 65px;
+                flex-direction: column;
+                background-color: var(--surface-color);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s ease;
+                box-shadow: var(--shadow);
+                padding: var(--space-2xl) 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-	<!-- Navigation -->
-	<nav class="navbar">
-		<div class="nav-container">
-			<div class="nav-logo">
-				<h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
-			</div>
-			<ul class="nav-menu">
-				<li class="nav-item">
-					<a href="index.html" class="nav-link">Home</a>
-				</li>
-				<li class="nav-item">
-					<a href="about.html" class="nav-link">About</a>
-				</li>
-				<li class="nav-item">
-					<a href="projects.html" class="nav-link">Projects</a>
-				</li>
-				<li class="nav-item">
-					<a href="certifications.html" class="nav-link">Certifications</a>
-				</li>
-				<li class="nav-item">
-					<a href="education.html" class="nav-link">Education</a>
-				</li>
-				<li class="nav-item">
-					<a href="experience.html" class="nav-link active">Experience</a>
-				</li>
-				<li class="nav-item">
-					<a href="contact.html" class="nav-link">Contact</a>
-				</li>
-			</ul>
-			<div class="hamburger">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html" style="text-decoration: none; color: inherit;">My Resume</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="projects.html" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="certifications.html" class="nav-link">Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a href="education.html" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="experience.html" class="nav-link active">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Experience Hero Section -->
-	<section class="experience-hero">
-		<div class="container">
-			<div class="experience-hero-content">
-				<h1 class="page-title">Professional <span class="highlight">Experience</span></h1>
-				<p class="page-subtitle">Leadership and management excellence across retail, telecommunications, and hospitality industries</p>
-			</div>
-		</div>
-	</section>
+    <!-- Experience Hero Section -->
+    <section class="experience-hero">
+        <div class="container">
+            <div class="experience-hero-content">
+                <h1 class="page-title gradient-text">Professional <span class="highlight">Experience</span></h1>
+                <p class="page-subtitle">8 years leading teams at Starbucks and Verizon | 10+ freelance sites delivered | Content creator with 458+ videos published</p>
+            </div>
+        </div>
+    </section>
 
-	<!-- Career Timeline -->
-	<section class="career-timeline">
-		<div class="container">
-			<h2 class="section-title">Career Journey</h2>
-			<div class="timeline">
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-chalkboard-teacher"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Mathematics & CIS Tutor</h3>
-								<div class="company-info">
-									<i class="fas fa-university"></i>
-									<span>SUNY Old Westbury</span>
-								</div>
-							</div>
-							<span class="timeline-date">Aug 2025 - Present</span>
-						</div>
-						<div class="job-description">
-							<p>Providing specialized tutoring support for university students in mathematics and computer information systems.</p>
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Deliver individualized tutoring sessions in algebra, calculus, statistics, programming, and database management.</li>
-									<li>Track student progress and provide targeted feedback to enhance learning outcomes and study effectiveness.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+    <!-- Career Timeline -->
+    <section class="career-timeline">
+        <div class="container">
+            <h2 class="section-title">Career Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Mathematics & CIS Tutor</h3>
+                                <div class="company-info">SUNY Old Westbury</div>
+                            </div>
+                            <span class="timeline-date">Aug 2025 - Present</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Providing specialized tutoring support for university students in mathematics and computer information systems.</p>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Delivered individualized tutoring in algebra, calculus, statistics, programming, and database management.</li>
+                                    <li>Tracked student progress and provided targeted feedback to enhance learning outcomes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-network-wired"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Network Operations Support Intern</h3>
-								<div class="company-info">
-									<i class="fas fa-building"></i>
-									<span>Verizon</span>
-								</div>
-							</div>
-							<span class="timeline-date">Jan 2025 - Apr 2025</span>
-						</div>
-						<div class="job-description">
-							<p>Supported network infrastructure and operational strategies during an intensive internship program.</p>
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Provided technical support for network troubleshooting while monitoring operations to ensure optimal performance.</li>
-									<li>Analyzed strategic initiatives and researched emerging technologies to support network operation strategies.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Network Operations Support Intern</h3>
+                                <div class="company-info">Verizon</div>
+                            </div>
+                            <span class="timeline-date">Jan 2025 - Apr 2025</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Supported network infrastructure and operational strategies during an intensive internship program.</p>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Provided technical support for network troubleshooting and performance monitoring.</li>
+                                    <li>Analyzed strategic initiatives and researched emerging technologies to support network operations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-mobile-alt"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Brand Ambassador</h3>
-								<div class="company-info">
-									<i class="fas fa-store"></i>
-									<span>Akalade (AT&T)</span>
-								</div>
-							</div>
-							<span class="timeline-date">Apr 2025 - Aug 2025</span>
-						</div>
-						<div class="job-description">
-							<p>Represented AT&T products and services to drive customer engagement and sales.</p>
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Drove sales through product demonstrations of AT&T wireless, internet, and TV services.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Brand Ambassador</h3>
+                                <div class="company-info">Akalade (AT&T)</div>
+                            </div>
+                            <span class="timeline-date">Apr 2025 - Aug 2025</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Represented AT&T products and services to drive customer engagement and sales.</p>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Drove sales through product demonstrations of AT&T wireless, internet, and TV services.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-coffee"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Store Manager</h3>
-								<div class="company-info">
-									<i class="fas fa-building"></i>
-									<span>Starbucks</span>
-								</div>
-								<div class="location-info">
-									<i class="fas fa-map-marker-alt"></i>
-									<span>Nassau County, New York</span>
-								</div>
-							</div>
-							<span class="timeline-date">Sep 2016 - Jan 2025</span>
-						</div>
-						<div class="job-description">
-							<p>Progressed through multiple roles from Barista to Store Manager, overseeing daily operations and developing team members.</p>
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Store Manager</h3>
+                                <div class="company-info">
+                                    Starbucks
+                                </div>
+                                <div class="location-info">Nassau County, New York</div>
+                            </div>
+                            <span class="timeline-date">Sep 2016 - Jan 2025</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Progressed through multiple roles from Barista to Store Manager, overseeing daily operations and developing team members.</p>
 
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Managed comprehensive store operations including staffing, inventory control, and quality assurance for high-volume location.</li>
-									<li>Implemented customer satisfaction strategies that increased loyalty and drove consistent revenue growth.</li>
-									<li>Led staff training programs and developed team members to achieve performance and sales goals.</li>
-								</ul>
-							</div>
+                            <div class="stat-band">
+                                <div class="stat-item">
+                                    <span class="stat-value">8+</span>
+                                    <span class="stat-label">Years Starbucks</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">50+</span>
+                                    <span class="stat-label">Team Members Trained</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">Top 10%</span>
+                                    <span class="stat-label">District Performance</span>
+                                </div>
+                            </div>
 
-							<div class="achievements">
-								<h4>Career Progression:</h4>
-								<ul>
-									<li><strong>Team Lead Manager</strong> (May 2023 - Jan 2025): Led team operations and implemented strategic initiatives</li>
-									<li><strong>Store Manager</strong> (Feb 2021 - May 2023): Managed full store operations in New York location</li>
-									<li><strong>Assistant Store Manager</strong> (Jun 2020 - Jan 2021): Supported store management and operations</li>
-									<li><strong>Shift Supervisor</strong> (Nov 2017 - Jun 2020): Supervised daily operations and team members</li>
-									<li><strong>Barista</strong> (Aug 2016 - Nov 2017): Provided excellent customer service and beverage preparation</li>
-									<li>Completed all levels of Starbucks Coffee Academy certification (100, 200, and 300 levels)</li>
-									<li>Earned Coffee Master certification, demonstrating exceptional knowledge of coffee sourcing, roasting, and brewing techniques</li>
-								</ul>
-							</div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Managed comprehensive store operations including staffing, inventory control, and quality assurance for high-volume location.</li>
+                                    <li>Implemented customer satisfaction strategies that increased loyalty and drove consistent revenue growth.</li>
+                                    <li>Led staff training programs and developed team members to achieve performance and sales goals.</li>
+                                </ul>
+                            </div>
 
-							<div class="skills-developed">
-								<h4>Skills Developed:</h4>
-								<div class="skill-tags">
-									<span>Customer Satisfaction</span>
-									<span>Customer Service</span>
-									<span>High Quality Standards</span>
-									<span>Team Leadership</span>
-									<span>Operations Management</span>
-									<span>Inventory Management</span>
-									<span>Staff Development</span>
-									<span>Process Improvement</span>
-									<span>Strategic Planning</span>
-									<span>Performance Management</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="achievements">
+                                <h4>Career Progression:</h4>
+                                <ul>
+                                    <li><strong>Team Lead Manager</strong> (May 2023 - Jan 2025): Led team operations and implemented strategic initiatives</li>
+                                    <li><strong>Store Manager</strong> (Feb 2021 - May 2023): Managed full store operations in New York location</li>
+                                    <li><strong>Assistant Store Manager</strong> (Jun 2020 - Jan 2021): Supported store management and operations</li>
+                                    <li><strong>Shift Supervisor</strong> (Nov 2017 - Jun 2020): Supervised daily operations and team members</li>
+                                    <li><strong>Barista</strong> (Aug 2016 - Nov 2017): Provided excellent customer service and beverage preparation</li>
+                                    <li>Completed all levels of Starbucks Coffee Academy certification (100, 200, and 300 levels)</li>
+                                    <li>Earned Coffee Master certification, demonstrating exceptional knowledge of coffee sourcing, roasting, and brewing techniques</li>
+                                </ul>
+                            </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-mobile-alt"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Sales Expert</h3>
-								<div class="company-info">
-									<i class="fas fa-building"></i>
-									<span>T-Mobile</span>
-								</div>
-								<div class="location-info">
-									<i class="fas fa-map-marker-alt"></i>
-									<span>Garden City, New York</span>
-								</div>
-							</div>
-							<span class="timeline-date">Dec 2022 - Jul 2023</span>
-						</div>
-						<div class="job-description">
-							<p>Worked as a seasonal Sales Expert at T-Mobile's Garden City, New York location, focusing on customer relationship building and service excellence.</p>
+                            <div class="skills-developed">
+                                <h4>Skills Developed:</h4>
+                                <div class="skill-tags">
+                                    <span>Customer Satisfaction</span>
+                                    <span>Team Leadership</span>
+                                    <span>Operations Management</span>
+                                    <span>Inventory Management</span>
+                                    <span>Staff Development</span>
+                                    <span>Process Improvement</span>
+                                    <span>Strategic Planning</span>
+                                    <span>Performance Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Developed strong relationships with customers through effective communication skills</li>
-									<li>Provided support for management by completing assigned tasks in a timely manner</li>
-									<li>Analyzed customer feedback to determine areas of improvement within the store environment</li>
-									<li>Assisted customers with product selection, service plans, and technical support</li>
-									<li>Maintained product knowledge to effectively communicate features and benefits</li>
-									<li>Processed sales transactions and service activations accurately</li>
-								</ul>
-							</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Sales Expert</h3>
+                                <div class="company-info">T-Mobile</div>
+                                <div class="location-info">Garden City, New York</div>
+                            </div>
+                            <span class="timeline-date">Dec 2022 - Jul 2023</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Worked as a seasonal Sales Expert at T-Mobile's Garden City, New York location, focusing on customer relationship building and service excellence.</p>
 
-							<div class="skills-developed">
-								<h4>Skills Developed:</h4>
-								<div class="skill-tags">
-									<span>Communication</span>
-									<span>Customer Experience</span>
-									<span>Sales Techniques</span>
-									<span>Product Knowledge</span>
-									<span>Problem Solving</span>
-									<span>Team Collaboration</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Developed strong relationships with customers through effective communication</li>
+                                    <li>Assisted customers with product selection, service plans, and technical support</li>
+                                    <li>Processed sales transactions and service activations accurately</li>
+                                </ul>
+                            </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-utensils"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Manager of Operations</h3>
-								<div class="company-info">
-									<i class="fas fa-building"></i>
-									<span>The French Workshop</span>
-								</div>
-								<div class="location-info">
-									<i class="fas fa-map-marker-alt"></i>
-									<span>Garden City, New York</span>
-								</div>
-							</div>
-							<span class="timeline-date">Nov 2020 - Feb 2023</span>
-						</div>
-						<div class="job-description">
-							<p>Managed operations for The French Workshop in Garden City, New York, overseeing daily activities and implementing strategic initiatives to support business objectives.</p>
+                            <div class="skills-developed">
+                                <h4>Skills Developed:</h4>
+                                <div class="skill-tags">
+                                    <span>Communication</span>
+                                    <span>Customer Experience</span>
+                                    <span>Sales Techniques</span>
+                                    <span>Product Knowledge</span>
+                                    <span>Problem Solving</span>
+                                    <span>Team Collaboration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Collaborated with other managers across the organization to develop strategies that support overall company objectives</li>
-									<li>Oversaw inventory management activities including ordering supplies as needed</li>
-									<li>Conducted regular audits of employee performance and provided feedback on areas of improvement</li>
-									<li>Ensured high-quality customer service standards were maintained</li>
-									<li>Managed daily operations including scheduling, cash handling, and facility maintenance</li>
-									<li>Implemented training programs for new staff members</li>
-								</ul>
-							</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">6</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Manager of Operations</h3>
+                                <div class="company-info">The French Workshop</div>
+                                <div class="location-info">Garden City, New York</div>
+                            </div>
+                            <span class="timeline-date">Nov 2020 - Feb 2023</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Managed operations for The French Workshop, overseeing daily activities and implementing strategic initiatives to support business objectives.</p>
 
-							<div class="skills-developed">
-								<h4>Skills Developed:</h4>
-								<div class="skill-tags">
-									<span>Inventory Management</span>
-									<span>Operations Management</span>
-									<span>People Management</span>
-									<span>Strategic Planning</span>
-									<span>Team Leadership</span>
-									<span>Performance Evaluation</span>
-									<span>Process Improvement</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Oversaw inventory management including ordering supplies as needed</li>
+                                    <li>Conducted regular audits of employee performance and provided feedback</li>
+                                    <li>Managed daily operations including scheduling, cash handling, and facility maintenance</li>
+                                </ul>
+                            </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-store"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Store Manager</h3>
-								<div class="company-info">
-									<i class="fas fa-building"></i>
-									<span>Journeys</span>
-								</div>
-							</div>
-							<span class="timeline-date">Oct 2018 - Nov 2020</span>
-						</div>
-						<div class="job-description">
-							<p>Managed all aspects of store operations for Journeys retail location.</p>
+                            <div class="skills-developed">
+                                <h4>Skills Developed:</h4>
+                                <div class="skill-tags">
+                                    <span>Inventory Management</span>
+                                    <span>Operations Management</span>
+                                    <span>People Management</span>
+                                    <span>Strategic Planning</span>
+                                    <span>Team Leadership</span>
+                                    <span>Performance Evaluation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Recruited, trained, and mentored staff while monitoring sales trends to optimize operational efficiency.</li>
-									<li>Negotiated with suppliers to secure competitive pricing and favorable contract terms.</li>
-								</ul>
-							</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">7</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Store Manager</h3>
+                                <div class="company-info">Journeys</div>
+                            </div>
+                            <span class="timeline-date">Oct 2018 - Nov 2020</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Managed all aspects of store operations for Journeys retail location.</p>
 
-							<div class="skills-developed">
-								<h4>Skills Developed:</h4>
-								<div class="skill-tags">
-									<span>Competitive Pricing</span>
-									<span>Journey Management</span>
-									<span>Staff Training</span>
-									<span>Sales Analysis</span>
-									<span>Inventory Control</span>
-									<span>Vendor Relations</span>
-									<span>Team Building</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Recruited, trained, and mentored staff while monitoring sales trends</li>
+                                    <li>Negotiated with suppliers to secure competitive pricing</li>
+                                </ul>
+                            </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-laptop-code"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Freelance Web Developer</h3>
-								<div class="company-info">
-									<i class="fas fa-globe"></i>
-									<span>Self-Employed</span>
-								</div>
-							</div>
-							<span class="timeline-date">2022 - Present</span>
-						</div>
-						<div class="job-description">
-							<p>Leveraged my technical skills to design, develop, and deploy responsive websites and web applications for small businesses and individuals. Specialized in creating modern, user-friendly interfaces with clean, efficient code.</p>
+                            <div class="skills-developed">
+                                <h4>Skills Developed:</h4>
+                                <div class="skill-tags">
+                                    <span>Staff Training</span>
+                                    <span>Sales Analysis</span>
+                                    <span>Inventory Control</span>
+                                    <span>Vendor Relations</span>
+                                    <span>Team Building</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="responsibilities">
-								<h4>Key Responsibilities:</h4>
-								<ul>
-									<li>Consulted with clients to understand their business needs and translate requirements into technical specifications</li>
-									<li>Designed and developed responsive websites using HTML, CSS, JavaScript, and modern frameworks</li>
-									<li>Implemented SEO best practices to improve client site visibility and search engine rankings</li>
-									<li>Created and integrated content management systems for easy client updates</li>
-									<li>Performed cross-browser testing and debugging to ensure compatibility and optimal performance</li>
-									<li>Provided ongoing maintenance, updates, and technical support for client websites</li>
-									<li>Utilized version control systems (Git) to manage code and collaborate with other developers</li>
-									<li>Implemented analytics tracking to help clients understand user behavior and site performance</li>
-								</ul>
-							</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">8</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Freelance Web Developer</h3>
+                                <div class="company-info">Self-Employed</div>
+                            </div>
+                            <span class="timeline-date">2022 - Present</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Designed, developed, and deployed responsive websites for small businesses using modern web technologies.</p>
 
-							<div class="achievements">
-								<h4>Notable Achievements:</h4>
-								<ul>
-									<li>Successfully delivered 10+ websites for small businesses, resulting in improved online presence and increased customer engagement</li>
-									<li>Reduced page load times by an average of 40% through code optimization and modern development techniques</li>
-									<li>Implemented responsive designs that increased mobile traffic by 35% for client websites</li>
-									<li>Developed custom e-commerce solutions that increased online sales by 25% for retail clients</li>
-									<li>Created an automated appointment booking system that reduced administrative workload by 15 hours per week for a service-based business</li>
-									<li>Maintained 100% client satisfaction rate with clear communication and timely project delivery</li>
-									<li>Expanded service offerings to include SEO optimization, content strategy, and digital marketing integration</li>
-									<li>Built a portfolio of diverse projects across multiple industries, demonstrating versatility and adaptability</li>
-								</ul>
-							</div>
+                            <div class="stat-band">
+                                <div class="stat-item">
+                                    <span class="stat-value">10+</span>
+                                    <span class="stat-label">Sites Delivered</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">40%</span>
+                                    <span class="stat-label">Faster Load Times</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">35%</span>
+                                    <span class="stat-label">Mobile Traffic Increase</span>
+                                </div>
+                            </div>
 
-							<div class="skills-developed">
-								<h4>Skills Developed:</h4>
-								<div class="skill-tags">
-									<span>HTML5</span>
-									<span>CSS3</span>
-									<span>JavaScript</span>
-									<span>Responsive Design</span>
-									<span>UI/UX Design</span>
-									<span>WordPress</span>
-									<span>SEO Optimization</span>
-									<span>Git Version Control</span>
-									<span>Client Communication</span>
-									<span>Project Management</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="responsibilities">
+                                <h4>Key Responsibilities:</h4>
+                                <ul>
+                                    <li>Consulted with clients to translate business needs into technical specifications</li>
+                                    <li>Designed and developed responsive websites using HTML, CSS, JavaScript, and modern frameworks</li>
+                                    <li>Implemented SEO best practices to improve search engine rankings</li>
+                                </ul>
+                            </div>
 
-				<div class="timeline-item">
-					<div class="timeline-marker">
-						<i class="fas fa-gamepad"></i>
-					</div>
-					<div class="timeline-content">
-						<div class="timeline-header">
-							<div class="job-info">
-								<h3>Content Creator & Gaming Enthusiast</h3>
-								<div class="company-info">
-									<i class="fab fa-youtube"></i>
-									<span>Th3viousGameus YouTube Channel</span>
-								</div>
-							</div>
-							<span class="timeline-date">2021 - Present</span>
-						</div>
-						<div class="job-description">
-							<p>Building an engaging online community through gaming content creation, demonstrating creativity, technical skills, and audience engagement strategies across multiple social media platforms.</p>
+                            <div class="achievements">
+                                <h4>Notable Achievements:</h4>
+                                <ul>
+                                    <li>Successfully delivered 10+ websites for small businesses</li>
+                                    <li>Reduced page load times by an average of 40% through optimization</li>
+                                    <li>Implemented responsive designs that increased mobile traffic by 35%</li>
+                                    <li>Developed custom e-commerce solutions that increased online sales by 25%</li>
+                                </ul>
+                            </div>
 
-							<div class="responsibilities">
-								<h4>Content Creation Activities:</h4>
-								<ul>
-									<li>Produced and edited 458+ gaming videos showcasing diverse gameplay experiences</li>
-									<li>Developed consistent content strategy and publishing schedule</li>
-									<li>Engaged with community through comments, live streams, and social media interaction</li>
-									<li>Utilized video editing software for post-production and content enhancement</li>
-									<li>Managed multiple social media accounts across platforms (YouTube, Instagram, Facebook)</li>
-									<li>Analyzed performance metrics to optimize content strategy and audience engagement</li>
-								</ul>
-							</div>
+                            <div class="skills-developed">
+                                <h4>Skills Developed:</h4>
+                                <div class="skill-tags">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                    <span>React</span>
+                                    <span>WordPress</span>
+                                    <span>SEO Optimization</span>
+                                    <span>Git Version Control</span>
+                                    <span>Client Communication</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-							<div class="achievements">
-								<h4>Channel Metrics & Growth:</h4>
-								<ul>
-									<li>Built subscriber base of 27+ dedicated followers with consistent engagement</li>
-									<li>Published 458+ videos demonstrating commitment and content consistency</li>
-									<li>Developed unique brand identity and recognizable online presence</li>
-									<li>Maintained active presence across multiple social media platforms</li>
-									<li>Created entertaining content that showcases personality and gaming skills</li>
-								</ul>
-							</div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">9</div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="job-info">
+                                <h3>Content Creator</h3>
+                                <div class="company-info">Th3viousGameus YouTube Channel</div>
+                            </div>
+                            <span class="timeline-date">2021 - Present</span>
+                        </div>
+                        <div class="job-description">
+                            <p>Building an engaging online community through gaming content, demonstrating creativity and technical skills.</p>
 
-							<div class="skills-developed">
-								<h4>Skills Developed:</h4>
-								<div class="skill-tags">
-									<span>Video Editing</span>
-									<span>Content Strategy</span>
-									<span>Social Media Management</span>
-									<span>Brand Development</span>
-									<span>Community Engagement</span>
-									<span>Analytics & Metrics</span>
-									<span>Creative Storytelling</span>
-									<span>Technical Production</span>
-									<span>Audience Development</span>
-									<span>Digital Marketing</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                            <div class="stat-band">
+                                <div class="stat-item">
+                                    <span class="stat-value">458+</span>
+                                    <span class="stat-label">Videos Published</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">27+</span>
+                                    <span class="stat-label">YouTube Subscribers</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">Multi</span>
+                                    <span class="stat-label">Platform Presence</span>
+                                </div>
+                            </div>
 
-	<!-- Professional Skills -->
-	<section class="professional-skills">
-		<div class="container">
-			<h2 class="section-title">Professional Competencies</h2>
-			<div class="skills-categories">
-				<div class="skill-category">
-					<div class="category-header">
-						<i class="fas fa-users"></i>
-						<h3>Leadership & Management</h3>
-					</div>
-					<div class="skill-items">
-						<div class="skill-item">
-							<span>Team Leadership</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="90"></div>
-							</div>
-						</div>
-						<div class="skill-item">
-							<span>Project Management</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="85"></div>
-							</div>
-						</div>
-						<div class="skill-item">
-							<span>Training & Development</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="88"></div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="responsibilities">
+                                <h4>Content Creation Activities:</h4>
+                                <ul>
+                                    <li>Produced and edited 458+ gaming videos showcasing diverse gameplay</li>
+                                    <li>Developed consistent content strategy and publishing schedule</li>
+                                    <li>Managed multiple social media accounts across YouTube, Instagram, Facebook</li>
+                                </ul>
+                            </div>
 
-				<div class="skill-category">
-					<div class="category-header">
-						<i class="fas fa-handshake"></i>
-						<h3>Customer Relations</h3>
-					</div>
-					<div class="skill-items">
-						<div class="skill-item">
-							<span>Customer Service</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="95"></div>
-							</div>
-						</div>
-						<div class="skill-item">
-							<span>Conflict Resolution</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="87"></div>
-							</div>
-						</div>
-						<div class="skill-item">
-							<span>Communication</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="92"></div>
-							</div>
-						</div>
-					</div>
-				</div>
+                            <div class="skills-developed">
+                                <h4>Skills Developed:</h4>
+                                <div class="skill-tags">
+                                    <span>Video Editing</span>
+                                    <span>Content Strategy</span>
+                                    <span>Social Media Management</span>
+                                    <span>Brand Development</span>
+                                    <span>Community Engagement</span>
+                                    <span>Analytics & Metrics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<div class="skill-category">
-					<div class="category-header">
-						<i class="fas fa-cogs"></i>
-						<h3>Technical Proficiency</h3>
-					</div>
-					<div class="skill-items">
-						<div class="skill-item">
-							<span>Web Development (HTML/CSS/JS)</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="90"></div>
-							</div>
-						</div>
-						<div class="skill-item">
-							<span>Database & SQL</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="85"></div>
-							</div>
-						</div>
-						<div class="skill-item">
-							<span>Network Troubleshooting</span>
-							<div class="skill-level">
-								<div class="skill-bar" data-level="80"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Professional Skills -->
+    <section class="professional-skills">
+        <div class="container">
+            <h2 class="section-title">Professional Competencies</h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <div class="category-header">
+<<<<<<< ours
+                        <i class="fas fa-users"></i>
+=======
+>>>>>>> theirs
+                        <h3>Leadership & Management</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Team Leadership</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Project Management</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Training & Development</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="88"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<p>&copy; 2026 James McGuigan. All rights reserved.</p>
-		</div>
-	</footer>
+                <div class="skill-category">
+                    <div class="category-header">
+<<<<<<< ours
+                        <i class="fas fa-handshake"></i>
+=======
+>>>>>>> theirs
+                        <h3>Customer Relations</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Customer Service</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Conflict Resolution</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="87"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Communication</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="92"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-	<!-- Scripts -->
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			// Mobile Navigation Menu Toggle
-			const hamburger = document.querySelector('.hamburger');
-			const navMenu = document.querySelector('.nav-menu');
+                <div class="skill-category">
+                    <div class="category-header">
+<<<<<<< ours
+                        <i class="fas fa-cogs"></i>
+=======
+>>>>>>> theirs
+                        <h3>Technical Proficiency</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Web Development (HTML/CSS/JS)</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Database & SQL</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Network Troubleshooting</span>
+                            <div class="skill-level">
+                                <div class="skill-bar" data-level="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			if (hamburger && navMenu) {
-				hamburger.addEventListener('click', () => {
-					hamburger.classList.toggle('active');
-					navMenu.classList.toggle('active');
-				});
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 James McGuigan. All rights reserved.</p>
+        </div>
+    </footer>
 
-				document.querySelectorAll('.nav-link').forEach(link => {
-					link.addEventListener('click', () => {
-						hamburger.classList.remove('active');
-						navMenu.classList.remove('active');
-					});
-				});
-			}
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Navigation Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
 
-			// Animate Skill Bars when scrolled into view
-			const skillBars = document.querySelectorAll('.skill-bar');
-			if (skillBars.length > 0) {
-				const observer = new IntersectionObserver((entries) => {
-					entries.forEach(entry => {
-						if (entry.isIntersecting) {
-							const bar = entry.target;
-							const level = bar.getAttribute('data-level');
-							bar.style.width = level + '%';
-							observer.unobserve(bar);
-						}
-					});
-				}, { threshold: 0.2 });
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
 
-				skillBars.forEach(bar => observer.observe(bar));
-			}
-		});
-	</script>
-	<script src="script.js"></script>
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            // Animate Skill Bars when scrolled into view
+            const skillBars = document.querySelectorAll('.skill-bar');
+            if (skillBars.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const bar = entry.target;
+                            const level = bar.getAttribute('data-level');
+                            bar.style.width = level + '%';
+                            observer.unobserve(bar);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                skillBars.forEach(bar => observer.observe(bar));
+            }
+        });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-

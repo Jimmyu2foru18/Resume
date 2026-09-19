@@ -124,13 +124,10 @@ body {
 	display: flex;
 	align-items: center;
 	gap: var(--space-md);
-<<<<<<< ours
-=======
 	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
->>>>>>> theirs
 }
 
 .section-title::before {
@@ -244,11 +241,7 @@ i.fas, i.fab, i.far {
 }
 
 [data-theme="dark"] .navbar {
-<<<<<<< ours
-	background-color: rgba(15, 23, 42, 0.8);
-=======
 	background-color: var(--nav-bg-scrolled);
->>>>>>> theirs
 }
 
 .navbar.scrolled {
@@ -334,13 +327,10 @@ i.fas, i.fab, i.far {
 	letter-spacing: -0.03em;
 	line-height: 1.15;
 	margin-bottom: var(--space-md);
-<<<<<<< ours
-=======
 	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
->>>>>>> theirs
 }
 
 .hero-subtitle {
